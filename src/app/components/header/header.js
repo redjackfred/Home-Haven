@@ -1,5 +1,5 @@
 import Link from "next/link"
-import logo from "./logo.png"
+import logo from "/public/image/header/logo.png"
 import headerStyll from "./header.module.css"
 
 export default function MainHeader() {
@@ -13,16 +13,16 @@ export default function MainHeader() {
         <nav className={headerStyll.nav}>
             <ul>
                 <li>
-                    <Link href="/">Homes</Link>
+                    <Link href="/findhomes">Homes</Link>
                 </li>
                 <li>
-                    <Link href="/">Agents</Link>
+                    <Link href="/agents">Agents</Link>
                 </li>
                 <li>
-                    <Link href="/">Sell</Link>
+                    <Link href="/sell">Sell</Link>
                 </li>
                 <li>
-                    <Link href="/">Buy</Link>
+                    <Link href="/buy">Buy</Link>
                 </li>
                 <li>
                     <Link href="/">My Homes</Link>
