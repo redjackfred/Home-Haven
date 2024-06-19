@@ -5,6 +5,7 @@
     padding: 2rem 1rem;
     background-color: #d6f0fe;
     height: 2.5rem;
+    padding-top: 0;
 }
 
 @media (min-width : 768px) {
