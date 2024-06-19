@@ -8,8 +8,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <link rel="icon" href="/image/favicon.ico" type="image/x-icon" sizes="any"/>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
       </Head>
+      
     <main>
     <AssetCard
             imgData={houseImg}
