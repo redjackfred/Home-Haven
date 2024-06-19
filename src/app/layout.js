@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MainHeader from "./components/header/header";
+import MainHeader from "@/app/components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <header>
-          {/* <Header /> // A top navigation bar component which exists in entire website from Aaron*/}
+          {/* <MainHeader /> // A top navigation bar component which exists in entire website*/}
+          <MainHeader/>
         </header>
 
         <main>
@@ -26,11 +27,7 @@ export default function RootLayout({ children }) {
         <footer>
           {/* Some useful information for clients, such as contact info*/}
         </footer>
-      </body>
-      <body className={inter.className}>
-        <MainHeader/>
-        {children}
-      </body>
+      </body>     
     </html>
     
   );

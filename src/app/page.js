@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Head from "next/head"
 import AssetCard from "./components/assetCard/assetCard";
-import houseImg from "../../public/image/assetCard/house.png";
+
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       
     <main>
     <AssetCard
-            imgData={houseImg}
+            imgData={"/image/assetCard/house.png" }
             imgAlt="Placeholder Image"
             date="4 Feb, 2024"
             price="$40,999,999"

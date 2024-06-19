@@ -1,12 +1,15 @@
 import Link from "next/link"
-import logo from "/public/image/header/logo.png"
+import Image from "next/image"
 import headerStyll from "./header.module.css"
 
 export default function MainHeader() {
     return (
         <header className={headerStyll.header}>
-            <Link className={headerStyll.logo} href="/">
-            <img src={logo.src} alt="Home Haven Logo" />
+            <Link className={headerStyll.logo} href="/">            
+            <Image src="/image/header/logo.png" 
+                   alt="Home Haven Logo"                           
+                   width={100}
+                   height={100} />
             Home Haven
         </Link>
 

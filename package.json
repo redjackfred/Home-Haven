@@ -16,5 +16,10 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.4"
+  },
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/app/*"]
+    }
   }
 }
