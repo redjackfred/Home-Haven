@@ -11,7 +11,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <header>
+          {/* <TopNavigation /> // A top navigation bar component which exists in entire website from Aaron*/}
+        </header>
+
+        <main>
+          {/* Main contents for each page*/}
+          {children}
+        </main>
+
+        <footer>
+          {/* Some useful information for clients, such as contact info*/}
+        </footer>
+      </body>
     </html>
   );
 }
