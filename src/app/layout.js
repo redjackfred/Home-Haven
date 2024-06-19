@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <header>
-          {/* <TopNavigation /> // A top navigation bar component which exists in entire website from Aaron*/}
+          {/* <Header /> // A top navigation bar component which exists in entire website from Aaron*/}
         </header>
 
         <main>
