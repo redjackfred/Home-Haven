@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Head from "next/head"
 import AssetCard from "./components/assetCard/assetCard";
-import houseImg from "../../public/assetCard/house.png";
+import houseImg from "../../public/image/assetCard/house.png";
 
 export default function Home() {
   return (
