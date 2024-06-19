@@ -5,7 +5,7 @@
     padding: 2rem 1rem;
     background-color: #d6f0fe;
     height: 2.5rem;
-    padding-top: 0;
+    
 }
 
 @media (min-width : 768px) {
@@ -21,6 +21,7 @@
     gap: .1rem;
     font-family: 'Montserrat', sans-serif;
     font-size: .75rem;
+    
   }
 
   .nav li {
@@ -29,9 +30,9 @@
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    
   }
 
-  
 
 .logo {
     display: flex;
