@@ -1,0 +1,68 @@
+.container{
+    width: 393px;
+    height: 384px;
+}
+
+.image-container{
+    position: relative;
+    width: 345px;
+    height: 200px;
+}
+.favorite {
+    border: 0;
+    position: absolute;
+    background-color: transparent;
+    top: 10px; 
+    right: 10px; 
+}
+.houseInfo{
+    position: absolute;
+    left: 10px; 
+}
+
+.price{
+    color: #000000;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: 0.15px;
+    margin: 0;
+    padding: 0;
+}
+
+.house-area .address{
+    color: #000000;
+    opacity: 0.7;
+    font-size: 12px;
+    line-height: 166%;
+    letter-spacing: 0.4px;
+    display: flex;
+}
+.number .date{
+    font-size: 14px;
+    line-height: 157%;
+    letter-spacing: 0.1px;
+    padding: 0;
+}
+.number {
+    font-weight: bolder;
+    color: #19243D;
+    margin-right: 2px;
+}
+.date{
+    color: #2196F3;
+    margin: 0;
+}
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+.address{
+    letter-spacing: 0;
+}
