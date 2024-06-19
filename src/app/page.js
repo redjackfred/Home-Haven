@@ -1,12 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Head from "next/head"
 
 export default function Home() {
   return (
-    <> 
-      <p>This is a test from Amy</p>
-      <p>New Website</p>
-      <p>Test for github practicing.</p>
-    </>
+    <div>
+      <Head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
+      </Head>
+    <main>
+
+    </main>
+    </div>
   );
 }
