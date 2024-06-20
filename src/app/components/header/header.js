@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import headerStyll from "./header.module.css"
+import AltHeader from "./altHeader"
+
 
 export default function MainHeader() {
     return (
@@ -11,30 +13,34 @@ export default function MainHeader() {
                    width={100}
                    height={100} />
             Home Haven
-        </Link>
+            </Link>
 
-        <nav className={headerStyll.nav}>
-            <ul>
-                <li>
-                    <Link href="/findhomes">Homes</Link>
-                </li>
-                <li>
-                    <Link href="/agents">Agents</Link>
-                </li>
-                <li>
-                    <Link href="/sell">Sell</Link>
-                </li>
-                <li>
-                    <Link href="/buy">Buy</Link>
-                </li>
-                <li>
-                    <Link href="/">My Homes</Link>
-                </li>
-            </ul>
-            
-        </nav>
+            <nav className={headerStyll.nav}>
+                <ul>
+                    <li>
+                        <Link href="/findhomes">Homes</Link>
+                    </li>
+                    <li>
+                        <Link href="/agents">Agents</Link>
+                    </li>
+                    <li>
+                        <Link href="/sell">Sell</Link>
+                    </li>
+                    <li>
+                        <Link href="/buy">Buy</Link>
+                    </li>
+                    <li>
+                        <Link href="/">My Homes</Link>
+                    </li>
+                </ul>
+                
+            </nav>
+            </header>
 
-        </header>
+            <AltHeader/>
+        </main>
+        
+
         
     )
 }
