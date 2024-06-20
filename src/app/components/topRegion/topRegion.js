@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import styles from "./topRegion.module.css";
 import InspirationalPhrase from "./inspirationalPhrase";

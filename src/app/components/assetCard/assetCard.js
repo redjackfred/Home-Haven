@@ -24,7 +24,7 @@ export default function AssetCard({
             <Image 
                 src = {imgData}
                 imgAlt = {imgAlt}
-                layout="fill"
+                fill
                 objectFill = "cover"
             />
             <button className={styles.favorite} onClick = {toggleFavorite}>

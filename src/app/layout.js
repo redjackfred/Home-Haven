@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MainHeader from "@/app/components/header/header";
-import TopRegion from "@/app/components/topRegion/topRegion";
+import Head from "next/head"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,9 +11,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    
+  return (    
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
+      </Head>
+
       <body className={`${inter.className} antialiased`}>
         <header>
           {/* <MainHeader /> // A top navigation bar component which exists in entire website*/}
@@ -21,8 +24,7 @@ export default function RootLayout({ children }) {
         </header>
 
         <main>
-          {/* Main contents for each page*/}
-          <TopRegion/>
+          {/* Main contents for each page*/}          
           {children}
         </main>
 
