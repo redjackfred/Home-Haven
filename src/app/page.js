@@ -10,20 +10,19 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
       </Head>
-      
-    <main>
-    <AssetCard
-            imgData={houseImg}
-            imgAlt="Placeholder Image"
-            date="4 Feb, 2024"
-            price="$40,999,999"
-            numberOfBedrooms="3"
-            numberOfBaths="2"
-            numberOfSqft= "1,568"
-            address= "22055 White Stone Road, Marysville OH"
-        />
-
-    </main>
+      <p>New Listing</p> <br/>
+      <main>
+        <AssetCard
+                imgData={houseImg}
+                imgAlt="Placeholder Image"
+                date="4 Feb, 2024"
+                price="$40,999,999"
+                numberOfBedrooms="3"
+                numberOfBaths="2"
+                numberOfSqft= "1,568"
+                address= "22055 White Stone Road, Marysville OH"
+            />
+      </main>
     </div>
   );
 }
