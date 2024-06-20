@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;    
+    background-image: url("/image/topRegion/Background Image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-width: 3px; 
+    height: 400px;    
+}
+
+.inspirationalPhrase{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    width: 250px;
+    height: 150px;
+}
+
+.searchBox{
+    position: relative;
+    display: flex;
+    top: 70%;   
+}

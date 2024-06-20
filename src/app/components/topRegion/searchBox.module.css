@@ -1,0 +1,25 @@
+.flexContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.inputTxt {
+    font-size: 12pt;
+    height: 50px;
+    width : 25rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: hidden;
+    padding: 15px;
+}
+
+.searchButton{
+    display: block;
+    background-image: url("/image/topRegion/Search.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

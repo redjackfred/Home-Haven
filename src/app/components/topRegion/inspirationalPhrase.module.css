@@ -1,0 +1,10 @@
+.container{    
+    background-color: #14B49C;
+    opacity: 80%;
+    color: aliceblue;    
+    border-radius: 15px;
+    font-size: x-large;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+}

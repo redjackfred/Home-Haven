@@ -6,6 +6,7 @@ import AltHeader from "./altHeader"
 
 export default function MainHeader() {
     return (
+        <>
         <header className={headerStyll.header}>
             <Link className={headerStyll.logo} href="/">            
             <Image src="/image/header/logo.png" 
@@ -38,7 +39,7 @@ export default function MainHeader() {
             </header>
 
             <AltHeader/>
-        </main>
+        </>
         
 
         
