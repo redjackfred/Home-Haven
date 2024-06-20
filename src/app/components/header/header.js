@@ -3,15 +3,15 @@ import logo from "/public/image/header/logo.png"
 
 import headerStyll from "./header.module.css"
 import AltHeader from "./altHeader"
-
+import Image from "next/image"
 
 export default function MainHeader() {
     return (
         <main>
             <header className={headerStyll.header}>
             <Link className={headerStyll.logo} href="/">
-            <img src={logo.src} alt="Home Haven Logo" />
-            Home Haven
+                <Image src={logo.src} width={100} height={100}/>
+                Home Haven  
             </Link>
 
             <nav className={headerStyll.nav}>
