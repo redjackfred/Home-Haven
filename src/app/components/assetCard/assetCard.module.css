@@ -1,13 +1,22 @@
 .container{
-    width: 393px;
-    height: 384px;
-    /* background-color: green; */
+    width: 345px;
+    height: 328px;
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-4px); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: Roboto;
 }
+
 
 .image-container{
     position: relative;
     width: 345px;
     height: 200px;
+    border-top-left-radius: 16px; 
+    border-top-right-radius: 16px; 
+    overflow: hidden; 
 }
 .favorite {
     border: 0;
@@ -18,7 +27,7 @@
 }
 .houseInfo{
     position: absolute;
-    left: 10px; 
+    margin: 16px;
 }
 
 .price{
@@ -26,23 +35,20 @@
     font-size: 20px;
     line-height: 160%;
     letter-spacing: 0.15px;
-    margin: 0;
-    padding: 0;
 }
 
-.house-area .address{
+.house-area {
     color: #000000;
     opacity: 0.7;
     font-size: 12px;
     line-height: 166%;
     letter-spacing: 0.4px;
-    display: flex;
 }
-.number .date{
+.number, 
+.date{
     font-size: 14px;
     line-height: 157%;
     letter-spacing: 0.1px;
-    padding: 0;
 }
 .number {
     font-weight: bolder;
@@ -61,9 +67,13 @@
     display: inline-block;
     position: relative;
     bottom: 2px;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 .address{
-    letter-spacing: 0;
+    color: #000000;
+    opacity: 0.7;
+    font-size: 12px;
+    line-height: 166%;
+    letter-spacing: 0.4px;
 }
