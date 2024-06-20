@@ -11,14 +11,15 @@ export default function AltHeader() {
         setAltHeader(!altHeader);
     }
     return (
-        
-        <main className={headerStyll.alter}>
-            <div className={`${headerStyll.newHeader} ${altHeader ? headerStyll.show : ''}`}>
+        <>
+            <main className={headerStyll.alter}>
+                <div className={`${headerStyll.newHeader} ${altHeader ? headerStyll.show : ''}`}>
                 <button onMouseOver={handleClick}>
                     <Link href="/"><img src={vector.src} alt="verctor"/></Link>
                 </button>
-            </div>
+                </div>
             
-        </main>
+            </main>
+        </>
     )
 }

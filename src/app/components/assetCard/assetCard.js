@@ -24,12 +24,13 @@ export default function AssetCard({
             <Image 
                 src = {imgData}
                 imgAlt = {imgAlt}
-                layout="fill"
-                objectFit = "cover"
+                fill
+                objectFill = "cover"
+
             />
             <button className={styles.favorite} onClick = {toggleFavorite}>
                 <Image
-                    src={isFavorite ? "/assetCard/favorite-icon.png" : "/assetCard/non-favorite-icon.png"} 
+                    src={isFavorite ? "/image/assetCard/favorite-icon.png" : "/image/assetCard/non-favorite-icon.png"} 
                     alt={isFavorite ? "Remove from favorites" : "Add to favorites"}
                     width = {24}
                     height = {24}

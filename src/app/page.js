@@ -1,19 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Head from "next/head"
 import AssetCard from "./components/assetCard/assetCard";
-import houseImg from "../../public/image/assetCard/house.png";
+import TopRegion from "./components/topRegion/topRegion";
+
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
-      </Head>
-      <p>New Listing</p> <br/>
-      <main>
-        <AssetCard
-                imgData={houseImg}
+    <div>           
+      <TopRegion/>
+      <AssetCard
+                imgData={"/image/assetCard/house.png" }
                 imgAlt="Placeholder Image"
                 date="4 Feb, 2024"
                 price="$40,999,999"
@@ -21,8 +17,7 @@ export default function Home() {
                 numberOfBaths="2"
                 numberOfSqft= "1,568"
                 address= "22055 White Stone Road, Marysville OH"
-            />
-      </main>
+      />
     </div>
   );
 }
