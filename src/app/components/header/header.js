@@ -7,6 +7,13 @@ import { usePathname } from 'next/navigation';
 
 export default function MainHeader() {
     const pathname = usePathname();
+    const links = [
+        { href: '/findhomes', label: 'Homes' },
+        { href: '/agents', label: 'Agents' },
+        { href: '/sell', label: 'Sell' },
+        { href: '/buy', label: 'Buy' },
+        { href: '/', label: 'My Homes' },
+    ];  
     return (
         <>
         <header className={styles.header}>
@@ -20,22 +27,12 @@ export default function MainHeader() {
             </Link>
 
             <nav className={styles.nav}>
-                <ul>
-                    <li>
-                        <Link className = {pathname === '/findhomes' ? styles.underline : ""} href="/findhomes">Homes</Link>
-                    </li>
-                    <li>
-                        <Link className = {pathname === '/agents' ? styles.underline : ""} href="/agents">Agents</Link>
-                    </li>
-                    <li>
-                        <Link className = {pathname === '/sell' ? styles.underline : ""} href="/sell">Sell</Link>
-                    </li>
-                    <li>
-                        <Link className = {pathname === '/buy' ? styles.underline : ""} href="/buy">Buy</Link>
-                    </li>
-                    <li>
-                        <Link className = {pathname === '/' ? styles.underline : ""} href="/">My Homes</Link>
-                    </li>
+                <ul>  
+                    {links.map(({href, label}) => ( 
+                        <li key = {href} >
+                            <Link className = {pathname === href ? styles.underline : ""} href={href}>links.lable</Link>
+                        </li>
+                    ))}   
                 </ul>
                 
             </nav>
