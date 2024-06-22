@@ -1,13 +1,16 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
-import headerStyll from "./header.module.css"
+import styles from "./header.module.css"
 import AltHeader from "./altHeader"
+import { usePathname } from 'next/navigation';
 
 export default function MainHeader() {
+    const pathname = usePathname();
     return (
         <>
-        <header className={headerStyll.header}>
-            <Link className={headerStyll.logo} href="/">            
+        <header className={styles.header}>
+            <Link className={styles.logo} href="/">            
             <Image src="/image/header/logo.png" 
                    alt="Home Haven Logo"                           
                    width={100}
@@ -16,22 +19,22 @@ export default function MainHeader() {
 
             </Link>
 
-            <nav className={headerStyll.nav}>
+            <nav className={styles.nav}>
                 <ul>
                     <li>
-                        <Link href="/findhomes">Homes</Link>
+                        <Link className = {pathname === '/findhomes' ? styles.underline : ""} href="/findhomes">Homes</Link>
                     </li>
                     <li>
-                        <Link href="/agents">Agents</Link>
+                        <Link className = {pathname === '/agents' ? styles.underline : ""} href="/agents">Agents</Link>
                     </li>
                     <li>
-                        <Link href="/sell">Sell</Link>
+                        <Link className = {pathname === '/sell' ? styles.underline : ""} href="/sell">Sell</Link>
                     </li>
                     <li>
-                        <Link href="/buy">Buy</Link>
+                        <Link className = {pathname === '/buy' ? styles.underline : ""} href="/buy">Buy</Link>
                     </li>
                     <li>
-                        <Link href="/">My Homes</Link>
+                        <Link className = {pathname === '/' ? styles.underline : ""} href="/">My Homes</Link>
                     </li>
                 </ul>
                 
@@ -40,8 +43,5 @@ export default function MainHeader() {
 
             <AltHeader/>
         </>
-        
-
-        
     )
 }
