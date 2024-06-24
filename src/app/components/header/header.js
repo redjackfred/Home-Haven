@@ -37,10 +37,8 @@ export default function MainHeader() {
                         </li>
                     ))}   
                 </ul>
-                
             </nav>
             </header>
-
             <AltHeader/>
         </>
     )

@@ -15,11 +15,10 @@ export default function AltHeader() {
         <>
             <main className={headerStyll.alter}>
                 <div className={`${headerStyll.newHeader} ${altHeader ? headerStyll.show : ''}`}>
-                <button onMouseOver={handleClick}>
+                <button onClick={handleClick}>
                     <Link href="/"><img src={vector.src} alt="verctor"/></Link>
                 </button>
                 </div>
-            
             </main>
         </>
     )
