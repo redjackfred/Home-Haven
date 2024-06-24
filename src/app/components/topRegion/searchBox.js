@@ -1,18 +1,26 @@
 'use client'
+import * as React from 'react';
+import Button from '@mui/material/Button';
 import styles from "./searchBox.module.css";
+import { Input } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import json2mq from 'json2mq';
 
 export default function SearchBox() { 
-  return (
-    <div>     
-      <div className={styles.flexContainer}>
-        <div className={styles.inputField}>
-          <input type="text" className={styles.inputTxt} placeholder="Enter an address, neighborhood, city, or ZIP code"/>
-        </div>
-        <div className={styles.searchButton}>
-          <button type="submit" style={{background: 'transparent', border: 'none'}}>              
-          </button>   
-        </div>        
-      </div>
-    </div>
+  const matches = useMediaQuery(
+    json2mq({        
+      minWidth: 400,
+    }),
+  );  
+
+  return (        
+      <div className={styles.container}>         
+          <Input className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} disableUnderline/>            
+       
+          <Button sx={{ color: 'white', backgroundColor: '#14B49C', borderTopRightRadius: '8px', borderBottomRightRadius: '8px', borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px', minWidth: '48px'}}>        
+            <SearchIcon/>
+          </Button>    
+      </div>    
   );
 }

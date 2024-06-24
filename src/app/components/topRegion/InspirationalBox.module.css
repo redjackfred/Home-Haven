@@ -1,0 +1,34 @@
+.container{        
+    background-color:rgba(20, 180, 156, 0.8);    
+    color: aliceblue;    
+    border-radius: 16px;
+    font-size: x-large;
+    padding: 24px;
+    position: absolute;
+    top: 172px;
+    left: 96px;
+    width: 530px;  
+    display: flex;
+}
+
+.heroTextContainer{  
+    position: relative;   
+}
+
+
+@media (max-width : 1200px) {  
+    .container{
+        width: fit-content;
+        top: 92px;
+        left: 32px;
+    }
+    .heroTextContainer{
+        width: 281px;   
+    }   
+}
+
+@media (max-width : 400px) {  
+    .container{             
+        top: 74px;   
+    }    
+}

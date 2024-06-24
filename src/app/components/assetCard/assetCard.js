@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./assetCard.module.css";
+import { Typography } from "@mui/material";
 
 
 export default function AssetCard({
@@ -39,7 +40,11 @@ export default function AssetCard({
         </div>
         <div className={styles.houseInfo}>
             <div className={styles.date}>{date}</div>
-            <div className={styles.price}>{price}</div>
+            <div className={styles.price}>
+                <Typography variant="h6">
+                    {price}
+                 </Typography>   
+                </div>
             <div className={styles['house-area']}>
                 <span className={styles.number}>{numberOfBedrooms} </span>
                 <span>bedrooms</span>
