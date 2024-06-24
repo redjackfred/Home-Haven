@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import AssetCard from "./components/assetCard/assetCard";
 import TopRegion from "./components/topRegion/topRegion";
 import { Typography } from "@mui/material";
-
+import TypeCard from "./components/TypeCard/typeCard";
 
 export default function Home() { 
   return (
@@ -34,6 +34,7 @@ export default function Home() {
             How can we help?
           </Typography>
         </div>        
+        <TypeCard />
       </div>
     </div>
   );

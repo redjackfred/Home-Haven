@@ -1,3 +1,48 @@
-.title {
-    padding-left: 60px;
+.container{
+    display: inline-flex;
+    list-style: none;
+    text-align: center;
+    position: relative;
+    /* justify-content:center; */
+    /* align-items: center; */
+    height: 372px;
+    gap: 40px;
+    padding-left: 80px;
+    /* padding-right: auto;
+    padding: auto; */
 }
+
+.findHome{
+    
+    border: 1px solid #14B49C;
+    border-radius: 8px;
+    width: 400px;
+    padding: 0;
+   
+}
+
+.findHome li {
+    margin-bottom: 16px;
+}
+
+.sellHome {
+    border: 1px solid #14B49C;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.findAgent {
+    border: 1px solid #14B49C;
+    border-radius: 8px;
+    width: 400px;
+}
+.description{
+    height: 84px;
+    width: 352px;
+    /* position: relative; */
+    padding-left: 24px;
+    
+}
+
+
+
