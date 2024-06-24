@@ -4,6 +4,7 @@ import Image from "next/image"
 import styles from "./header.module.css"
 import AltHeader from "./altHeader"
 import { usePathname } from 'next/navigation';
+import { Typography } from "@mui/material"
 
 export default function MainHeader() {
     const pathname = usePathname();
@@ -22,7 +23,9 @@ export default function MainHeader() {
                    alt="Home Haven Logo"                           
                    width={100}
                    height={100} />
-            <h4>Home Haven</h4>
+            <Typography variant="h4">
+                Home Haven
+            </Typography>
 
             </Link>
 

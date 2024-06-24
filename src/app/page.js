@@ -3,7 +3,6 @@ import styles from "./page.module.css";
 import AssetCard from "./components/assetCard/assetCard";
 import TopRegion from "./components/topRegion/topRegion";
 import { Typography } from "@mui/material";
-import { Typography } from "@mui/material";
 
 
 export default function Home() { 
