@@ -10,6 +10,7 @@ export default function AltHeader() {
     const handleClick = () => {
         setAltHeader(!altHeader);
     }
+    
     return (
         <>
             <main className={headerStyll.alter}>

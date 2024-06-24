@@ -22,7 +22,7 @@ export default function MainHeader() {
                    alt="Home Haven Logo"                           
                    width={100}
                    height={100} />
-            Home Haven
+            <h4>Home Haven</h4>
 
             </Link>
 
@@ -30,7 +30,7 @@ export default function MainHeader() {
                 <ul>  
                     {links.map(({href, label}) => ( 
                         <li key = {href} >
-                            <Link className = {pathname === href ? styles.underline : ""} href={href}>links.lable</Link>
+                            <Link className = {pathname === href ? styles.underline : ""} href={href}>{`${label}`}</Link>
                         </li>
                     ))}   
                 </ul>

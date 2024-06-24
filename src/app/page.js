@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import AssetCard from "./components/assetCard/assetCard";
 import TopRegion from "./components/topRegion/topRegion";
-
+import TypeCard from "./components/TypeCard/typeCard";
 
 export default function Home() {
   return (
@@ -18,6 +18,8 @@ export default function Home() {
                 numberOfSqft= "1,568"
                 address= "22055 White Stone Road, Marysville OH"
       />
+      <TypeCard />
+      
     </div>
   );
 }

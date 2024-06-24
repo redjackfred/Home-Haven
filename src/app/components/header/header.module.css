@@ -1,16 +1,16 @@
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1rem;
     background-color: #d6f0fe;
-    height: 2.5rem;
-    
+    height: 92px;
 }
 
 @media (min-width : 1200px) {
+
     .header{
-        padding: .5rem 4%;
+        padding-left: 60px;
     }
     .alter{
         display: none;
@@ -26,63 +26,60 @@
 
 .nav ul{
     list-style: none;
-    margin: 0;
-    padding-left:0;
-    display: flex;
-    gap: .1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: .75rem;
-   
+    display: inline-flex;
+    align-items: center;
+    font-family:'Roboto' sans-serif;
+    height: 48px;
+    padding-right: 60px;
+    gap: 37.5px;
   }
 
   .nav li {
+    display: flex;
     text-decoration: none;
     color: #626e75;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    
+    font-weight:500;
+    height: 16px;
+    align-items: center;
+    letter-spacing:1.25px;
+    font-size: 14px;
+    resize: horizontal;
+    resize: vertical;
   }
+
   .nav a:hover,
   .nav a:active {
     background: #0b3650;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
   }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 16px;
     text-decoration: none;
     color: #0b3650;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* letter-spacing: 0.1rem; */
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 34px;
+    resize: horizontal;
+    resize: vertical;
 }
 
 .logo img {
-    width: 2rem;
-    height: 2rem;
+    display: flex;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
 }
 
 .alter img{
     /* bottom size */
     width: 1.25rem;
     height: 1rem; 
-    /*  */
-    /* position: relative;
-    width: 100%; */
-}
-
-.alter img:hover{
-    transform: rotate(90deg);
 }
 
 .alter button {
@@ -103,10 +100,6 @@
 
 .newHeader.show {
     background-color: #d6f0fe;
-}
-
-.underline {
-    text-decoration: underline;
 }
 
 
