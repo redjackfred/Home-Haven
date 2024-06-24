@@ -1,9 +1,10 @@
 'use client'
-import styles from "./inspirationalBox.module.css";
+
 import { Typography } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import * as React from 'react';
 import json2mq from 'json2mq';
+import styles from "./InspirationalBox.module.css";
 
 export default function InspirationalBox() {   
     const matches = useMediaQuery(
@@ -11,6 +12,7 @@ export default function InspirationalBox() {
           maxWidth: 1200,
         }),
       );    
+
     return (
         <div className={styles.container}>  
             <div className={styles.heroTextContainer}>
