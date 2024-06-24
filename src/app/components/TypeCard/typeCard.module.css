@@ -1,20 +1,15 @@
 .container{
-    display: inline-flex;
+    display: flex;
     list-style: none;
     text-align: center;
     position: relative;
-    /* justify-content:center; */
-    /* align-items: center; */
+    justify-content:space-evenly;
     height: 372px;
-    gap: 40px;
-    padding-left: 80px;
-    /* padding-right: auto;
-    padding: auto; */
 }
 @media (max-width: 400px) {
     .container {
+
         flex-direction: column;
-        padding-left: 24px;
     }
 }
 .findHome{
@@ -22,12 +17,7 @@
     border: 1px solid #14B49C;
     border-radius: 8px;
     width: 400px;
-    padding: 0;
    
-}
-
-.findHome li {
-    margin-bottom: 16px;
 }
 
 .sellHome {

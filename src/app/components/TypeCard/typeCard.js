@@ -25,9 +25,11 @@ export default function TypeCard() {
                     <Typography variant="h5">
                         Find a home
                     </Typography>
+                
                     <Typography variant="subtitle1" className={cssStyle.description}>
                         A real estate agent can provide you with a clear breakdown of costs so that you can avoid surprise expenses
                     </Typography>
+
                     <button onClick={() => handleNav('/findhomes')} className={cssStyle.button}>
                         <Typography variant="body1">
                             Start searching now
