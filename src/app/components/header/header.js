@@ -30,7 +30,7 @@ export default function MainHeader() {
                 <ul>  
                     {links.map(({href, label}) => ( 
                         <li key = {href} >
-                            <Link className = {pathname === href ? styles.underline : ""} href={href}>{`${label}`}</Link>
+                            <Link className = {pathname === href ? styles.underline : ""} href={href}>{label}</Link>
                         </li>
                     ))}   
                 </ul>

@@ -1,25 +1,24 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: col;
     position: relative;
     justify-content: center;    
     background-image: url("/image/topRegion/Background Image.png");
     background-size: cover;
     background-repeat: no-repeat;
-    border-width: 3px; 
-    height: 400px;    
+    background-position: center;    
+    height: 731px;    
+    width: 100%;    
 }
 
-.inspirationalPhrase{
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    width: 250px;
-    height: 150px;
+@media (max-width : 1200px) {  
+    .container{
+        height: 410px;   
+    }    
 }
 
-.searchBox{
-    position: relative;
-    display: flex;
-    top: 70%;   
+@media (max-width : 400px) {
+    .container{
+        height: 360px;  
+    }
 }

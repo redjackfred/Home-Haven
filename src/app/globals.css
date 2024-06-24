@@ -16,3 +16,9 @@ a {
   text-decoration: none;
 }
 
+.mainContainer{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
