@@ -25,8 +25,8 @@ export default function AssetCard({
             <Image 
                 src = {imgData}
                 alt = {imgAlt}
-                fill = {true}
-                objectFit = "cover"
+                fill
+                style={{objectFit: "cover"}}
 
             />
             <button className={styles.favorite} onClick = {toggleFavorite}>

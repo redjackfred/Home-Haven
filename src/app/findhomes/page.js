@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import SearchBox from "../components/searchBox/searchBox";
+import SearchBox from "@/app/components/searchBox/searchBox";
 import styles from "./page.module.css"
 
 export default function FindHomes() {
