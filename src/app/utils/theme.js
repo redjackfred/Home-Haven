@@ -2,6 +2,20 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#14B49C',
+        // light: will be calculated from palette.primary.main,
+        // dark: will be calculated from palette.primary.main,
+        // contrastText: will be calculated to contrast with palette.primary.main
+      },
+      blue: {
+        main: '#0B3650',        
+      },
+      background: {
+        main: '#EFFFFC',
+      }
+    },
     typography: { 
       h2: {             
         letterSpacing: "-0.03125rem",

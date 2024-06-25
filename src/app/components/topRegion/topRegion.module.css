@@ -11,14 +11,31 @@
     width: 100%;    
 }
 
+.searchBoxContainer{
+    position: relative;
+    width: 100%;    
+    top: 530px;
+    width: 487px;
+    height:fit-content;
+    display: flex;
+    max-width: 90%;
+}
+
 @media (max-width : 1200px) {  
     .container{
         height: 410px;   
     }    
+    .searchBoxContainer {   
+        top: 306px;
+    }
 }
 
 @media (max-width : 400px) {
     .container{
         height: 360px;  
+    }
+    .searchBoxContainer {   
+        top: 288px;
+        width: 286px;
     }
 }
