@@ -114,3 +114,18 @@
     object-fit: contain;
 }
 
+<<<<<<< Updated upstream
+=======
+.alter img{
+    /* bottom size */
+    width: 1.25rem;
+    height: 1rem; 
+}
+
+.alter button {
+    margin-top: 10px;
+    margin-left: 15px;
+    border: 0;
+    background-color: transparent;
+}
+>>>>>>> Stashed changes
