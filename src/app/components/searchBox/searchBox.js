@@ -17,7 +17,7 @@ export default function SearchBox({displayBorder}) {
   return (        
       <div className={styles.container}>      
           {displayBorder ? (         
-            <OutlinedInput className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} color='primary' autoFocus autoComplete/>
+            <OutlinedInput className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} color='primary'/>
           ) : (
             <Input className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} disableUnderline />       
           )}   
