@@ -114,3 +114,6 @@
     object-fit: contain;
 }
 
+.underline{
+    text-decoration: underline;
+}
