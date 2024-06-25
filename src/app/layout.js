@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
 
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider theme={theme}>
         <header>
           {/* <MainHeader /> // A top navigation bar component which exists in entire website*/}

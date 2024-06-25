@@ -17,14 +17,14 @@ export default function SearchBox({displayBorder}) {
   return (        
       <div className={styles.container}>      
           {displayBorder ? (         
-            <OutlinedInput className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} color='primary' autoFocus autoComplete/>
+            <OutlinedInput className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} color='primary'/>
           ) : (
             <Input className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} disableUnderline />       
           )}   
                
        
-          <Button sx={{ color: 'white', backgroundColor: '#14B49C', borderTopRightRadius: '8px', borderBottomRightRadius: '8px', borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px', minWidth: '48px', minHeight: '48px', flexShrink: 0}}>        
-            <SearchIcon fontSize="large"/>
+          <Button title='searchButton' sx={{ color: 'white', backgroundColor: '#14B49C', borderTopRightRadius: '8px', borderBottomRightRadius: '8px', borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px', minWidth: '48px', minHeight: '48px', flexShrink: 0}}>        
+            <SearchIcon/>
           </Button>    
       </div>    
   );
