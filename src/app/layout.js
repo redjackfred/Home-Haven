@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MainHeader from "@/app/components/header/header";
+import MainHeader from "./components/header/header";
 import Head from "next/head"
-import { theme } from "@/app/utils/theme";
+import { theme } from "./utils/theme";
 import { ThemeProvider } from "@mui/material";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
