@@ -25,7 +25,7 @@ const locations: Poi[] = [
 export default function FindHomes() {
     return (
         <div className={styles.container}>     
-            <APIProvider apiKey={'AIzaSyAY6EjQpAm5tuRdPhnGUSpari-Aj-5INS4'} onLoad={() => console.log('Maps API has loaded.')}>  
+            <APIProvider apiKey={'API-KEY'} onLoad={() => console.log('Maps API has loaded.')}>  
             <div className={styles.searchFilterContainer}>
                 <SearchBox displayBorder/>
                 {/* Add dropdown buttons here*/}
