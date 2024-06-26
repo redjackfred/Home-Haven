@@ -5,6 +5,7 @@
     position: relative;
     justify-content:space-evenly;
     height: 372px;
+    gap: 10px;
 }
 @media (max-width: 400px) {
     .container {

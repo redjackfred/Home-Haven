@@ -7,6 +7,12 @@
     height: 92px;
 }
 
+.alter{    
+    position: absolute;
+    width: 28.57px;
+    height: 25.14px;  
+}
+
 @media (min-width : 1200px) {
 
     .header{
@@ -21,15 +27,14 @@
     .header{
         display: none;
     }
+
     .alter img{
         /* bottom size */
         width: 28.57px;
         height: 25.14px;
     }
     
-    .alter button {
-        margin-top: 43.42px;
-        margin-left: 41.71px;
+    .altButton {       
         border: 0;
         background-color: transparent;
     }
@@ -42,11 +47,9 @@
         height: 25.14px;
     }
     
-    .alter button {
-        margin-top: 43.42px;
-        margin-left: 41.71px;
+    .altButton {       
         border: 0;
-        background-color: transparent;
+        background-color: transparent;        
     }
 }
 
@@ -57,9 +60,7 @@
         height: 18.86px;
     }
     
-    .alter button {
-        margin-top: 26.57px;
-        margin-left: 25.29px;
+    .altButton {       
         border: 0;
         background-color: transparent;
     }

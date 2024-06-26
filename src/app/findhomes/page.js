@@ -1,10 +1,11 @@
 import { Typography } from "@mui/material";
 import SearchBox from "@/app/components/searchBox/searchBox";
 import styles from "./page.module.css"
+import AltHeader from "@/app/components/header/altHeader";
 
 export default function FindHomes() {
     return (
-        <div className={styles.container}>
+        <div className={styles.container}>            
             <div className={styles.searchFilterContainer}>
                 <SearchBox displayBorder/>
                 {/* Add dropdown buttons here*/}

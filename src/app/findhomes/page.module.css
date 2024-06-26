@@ -5,6 +5,13 @@
     width: 100%;
 }
 
+.headerContainer {
+    position: relative;
+    top: 18.57px;
+    left: 33.29px;
+    
+}
+
 .searchFilterContainer {
     display: flex;
     position: relative; 
