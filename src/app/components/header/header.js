@@ -13,6 +13,7 @@ export default function MainHeader() {
         { href: '/agents', label: 'Agents' },
         { href: '/sell', label: 'Sell' },
         { href: '/buy', label: 'Buy' },
+        { href: '/', label: 'Message'},
         { href: '/', label: 'My Homes' },
     ];  
     return (
