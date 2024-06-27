@@ -1,14 +1,18 @@
 .container{
-    display: flex;
-    flex-direction: col;
-    position: relative;
-    justify-content: center;    
+    position: relative;    
     background-image: url("/image/topRegion/Background Image.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;    
     height: 731px;    
     width: 100%;    
+}
+
+.headerContainer {
+    position:relative;
+    top: 43.42px;
+    left: 41.71px;
+    
 }
 
 .searchBoxContainer{
@@ -19,6 +23,7 @@
     height:fit-content;
     display: flex;
     max-width: 90%;
+    margin: auto;
 }
 
 @media (max-width : 1200px) {  
