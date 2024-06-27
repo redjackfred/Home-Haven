@@ -14,15 +14,17 @@ export default function TypeCard() {
     }
 
     return (
-        <div>
+        <div className={cssStyle.bodyhtml}>
+        <div className={cssStyle.wrapContainer}>
             <ul className={cssStyle.container}>
                 <li className={cssStyle.findHome}>
                     <Image src="/image/typeCardsImage/microscopeIcon.png"
                         width={120}
                         height={120}
                         alt="Microscope"
+                        className={cssStyle.Image}
                     />
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={cssStyle.header}>
                         Find a home
                     </Typography>
                 
@@ -41,8 +43,9 @@ export default function TypeCard() {
                     width={120}
                     height={120}
                     alt="House Icon"
+                    className={cssStyle.Image}
                     />
-                    <Typography variant="h5" >
+                    <Typography variant="h5" className={cssStyle.header}>
                         Sell a home
                     </Typography>
                     <Typography variant="subtitle1" className={cssStyle.description}>
@@ -59,8 +62,9 @@ export default function TypeCard() {
                     width={120}
                     height={120}
                     alt="House Icon"
+                    className={cssStyle.Image}
                     />
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={cssStyle.header}>
                         Find an agent
                     </Typography>
                     <Typography variant="subtitle1" className={cssStyle.description}>
@@ -73,6 +77,7 @@ export default function TypeCard() {
                     </button>
                 </li>
             </ul>
+        </div>
         </div>
     )
 }

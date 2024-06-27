@@ -2,43 +2,211 @@
     display: flex;
     list-style: none;
     text-align: center;
-    position: relative;
     justify-content:space-evenly;
     height: 372px;
     gap: 10px;
 }
-@media (max-width: 400px) {
-    .container {
-
+/* 1st draft */
+/* each screen size has its' own setting  */
+@media (max-width: 700px) {
+   .container{
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+   }
+   .findHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #14B49C;
+    border-radius: 8px;
+    width: 400px;
+    }
+
+    .sellHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
+    }
+
+    .findAgent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
+    }
+    .description{
+        height: 84px;
+        width: 352px;
+        padding-left: 24px;
     }
 }
-.findHome{
+
+@media (min-width: 1060px) and (max-width: 1300px) {
+
+    .findHome{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 390px;
+    }
     
-    border: 1px solid #14B49C;
-    border-radius: 8px;
-    width: 400px;
-   
-}
-
-.sellHome {
-    border: 1px solid #14B49C;
-    border-radius: 8px;
-    width: 400px;
-}
-
-.findAgent {
-    border: 1px solid #14B49C;
-    border-radius: 8px;
-    width: 400px;
-}
-.description{
-    height: 84px;
-    width: 352px;
-    /* position: relative; */
-    padding-left: 24px;
+    .sellHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 390px;
+    }
+    
+    .findAgent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 390px;
+    }
 }
 
+@media(min-width: 1300px) {
+    /* it is the overall container layer 0 */
+    .bodyhtml{
+        display:grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: 1fr auto 1fr;
+    }
+    /* layer 1 */
+    .wrapContainer{
+       grid-row: 2 / 3;
+       grid-column: 2 / 3;
+       width: 1300px;
+    }
+
+    .findHome{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
+    
+    }
+    
+    .sellHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
+    }
+    
+    .findAgent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
+        
+    
+    }
+    .description{
+        height: 84px;
+        width: 352px;
+        padding-left: 24px;
+    }
+}
+
+@media (max-width:1060px) and (min-width:900px) {
+
+    .findHome{
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    
+    }
+    
+    .sellHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    }
+    
+    .findAgent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    }
+
+    .description{
+        margin-bottom: 16px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 700px) and (max-width:900px) {
+    .findHome{
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    }
+    
+    .sellHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    }
+    
+    .findAgent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+    }
+    .description{
+        margin-bottom: 16px;
+        height: 100px;
+    }
+}
+
+.Image {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.header {
+    margin-bottom: 16px;
+}
+
+.button{
+    background-color: transparent;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #0B3650;
+    border-color: #0B3650;
+    border-style: solid;
+}
 
 
