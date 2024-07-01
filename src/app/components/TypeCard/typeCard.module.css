@@ -8,7 +8,7 @@
 }
 /* 1st draft */
 /* each screen size has its' own setting  */
-@media (max-width: 700px) {
+@media (max-width: 788px) {
    .container{
         display: flex;
         flex-direction: column;
@@ -16,12 +16,12 @@
         gap: 20px;
    }
    .findHome{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #14B49C;
-    border-radius: 8px;
-    width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #14B49C;
+        border-radius: 8px;
+        width: 400px;
     }
 
     .sellHome {
@@ -44,7 +44,6 @@
     .description{
         height: 84px;
         width: 352px;
-        padding-left: 24px;
     }
 }
 
@@ -131,9 +130,12 @@
     }
 }
 
-@media (max-width:1060px) and (min-width:900px) {
+@media (max-width:1060px) and (min-width: 788px) {
 
     .findHome{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border: 1px solid #14B49C;
         border-radius: 8px;
     
@@ -156,35 +158,14 @@
     }
 
     .description{
-        margin-bottom: 16px;
-        height: 100px;
+        height: 87px;
     }
 }
 
 @media (min-width: 700px) and (max-width:900px) {
-    .findHome{
-        border: 1px solid #14B49C;
-        border-radius: 8px;
-    }
-    
-    .sellHome {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #14B49C;
-        border-radius: 8px;
-    }
-    
-    .findAgent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #14B49C;
-        border-radius: 8px;
-    }
+
     .description{
-        margin-bottom: 16px;
-        height: 100px;
+        height: 90px;
     }
 }
 

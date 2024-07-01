@@ -9,6 +9,8 @@ import ListingList from "./listingList";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import * as React from 'react';
 import json2mq from "json2mq";
+import HowCanWeHelp from "./components/TypeCard/HowCanWeHelp";
+
 
 export default function Home() { 
   const matches = useMediaQuery(
@@ -21,6 +23,7 @@ export default function Home() {
       maxWidth: 1200,
     }),    
   );  
+
 
   return (
     <div>           
@@ -35,14 +38,14 @@ export default function Home() {
           <ListingList/>          
         </div>
       </div>
+      
       <div className={styles.howCanWeHelp}>
         <div className={styles.title}>
-          <Typography variant="h3">
-            How can we help?
-          </Typography>
+          <HowCanWeHelp/>
+          <TypeCard />
         </div>        
-        <TypeCard />
       </div>
+      
     </div>
   );
 }

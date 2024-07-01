@@ -1,7 +1,6 @@
 'use client'
 // inside the app use next/navigation. if it is outside app, may think about using next/router
 import { useRouter } from "next/navigation";
-
 import cssStyle from "./typeCard.module.css"
 import Image from "next/image"
 import { Typography } from "@mui/material";
@@ -31,7 +30,6 @@ export default function TypeCard() {
                     <Typography variant="subtitle1" className={cssStyle.description}>
                         A real estate agent can provide you with a clear breakdown of costs so that you can avoid surprise expenses
                     </Typography>
-
                     <button onClick={() => handleNav('/findhomes')} className={cssStyle.button}>
                         <Typography variant="body1">
                             Start searching now
