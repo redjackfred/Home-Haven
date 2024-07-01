@@ -8,7 +8,7 @@
 }
 /* 1st draft */
 /* each screen size has its' own setting  */
-@media (max-width: 700px) {
+@media (max-width: 788px) {
    .container{
         display: flex;
         flex-direction: column;
@@ -130,7 +130,7 @@
     }
 }
 
-@media (max-width:1060px) and (min-width: 700px) {
+@media (max-width:1060px) and (min-width: 788px) {
 
     .findHome{
         display: flex;
