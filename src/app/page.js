@@ -4,8 +4,11 @@ import AssetCard from "./components/assetCard/assetCard";
 import TopRegion from "./components/topRegion/topRegion";
 import { Typography } from "@mui/material";
 import TypeCard from "./components/TypeCard/typeCard";
+import HowCanWeHelp from "./components/TypeCard/HowCanWeHelp";
+
 
 export default function Home() { 
+
   return (
     <div>           
       <TopRegion/>
@@ -28,14 +31,14 @@ export default function Home() {
           />
         </div>
       </div>
+      
       <div className={styles.howCanWeHelp}>
         <div className={styles.title}>
-          <Typography variant="h3">
-            How can we help?
-          </Typography>
+          <HowCanWeHelp/>
+          <TypeCard />
         </div>        
-        <TypeCard />
       </div>
+      
     </div>
   );
 }
