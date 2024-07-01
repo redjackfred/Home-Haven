@@ -40,7 +40,6 @@ export default function MainHeader() {
                 </ul>
             </nav>
             </header>
-            <AltHeader/>
         </>
     )
 }

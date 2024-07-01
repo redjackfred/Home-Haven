@@ -4,6 +4,7 @@
     text-align: center;
     justify-content:space-evenly;
     height: 372px;
+    gap: 10px;
 }
 /* 1st draft */
 /* each screen size has its' own setting  */
