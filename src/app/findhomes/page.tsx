@@ -2,8 +2,11 @@
 import { Typography } from "@mui/material";
 import SearchBox from "../components/searchBox/searchBox";
 import styles from "./page.module.css"
-import { APIProvider, Map } from '@vis.gl/react-google-maps';
+import { AdvancedMarker, APIProvider, InfoWindow, Map, Marker, Pin } from '@vis.gl/react-google-maps';
 import PoiMarkers from "./poiMarker";
+import GridExample from "./gridExample.js"
+import Image from "next/image";
+import CustomMarker from "../components/googleMap/marker";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -22,24 +25,27 @@ const locations: Poi[] = [
 ];
 
 
-export default function FindHomes() {       
+export default function FindHomes() {
     return (
         <div className={styles.container}>
-            <APIProvider apiKey={"API_KEY"} onLoad={() => console.log('Maps API has loaded.')}>
+            <APIProvider apiKey={"AIzaSyDuRMTgnB5qj_HCuF5EAfUIwtdyRLxpd44"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <SearchBox displayBorder />
                     {/* Add dropdown buttons here*/}
-                </div>         
+                </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
                         <Map
+                            mapId={'bf51a910020fa25a'}
                             defaultZoom={12.5}
                             defaultCenter={{ lat: 37.766338623365684, lng: -122.44773195354642 }}
-                            mapId='DEMO_MAP_ID'
-                            onCameraChanged={(ev) =>
-                                console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
-                            }>
+                            gestureHandling={'greedy'}
+                            disableDefaultUI>
                             <PoiMarkers pois={locations} />
+                            {/* advanced marker with html-content */}
+                            <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
+                            <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
+                            <CustomMarker lattidue={37.746338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House3.png" />     
                         </Map>
                     </div>
                     <div className={styles.listingsContainer}>
@@ -47,6 +53,7 @@ export default function FindHomes() {
                             Newest listings
                         </Typography>
                         {/* Add assetCard list here */}
+                        <GridExample />
                     </div>
                 </div>
             </APIProvider>

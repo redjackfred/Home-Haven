@@ -46,6 +46,8 @@ export default function PoiMarkers(props: { pois: Poi[] }){
             key={poi.key}
             position={poi.location}
             ref={marker => setMarkerRef(marker, poi.key)}
+            clickable={true}
+            onClick={() => alert('marker was clicked!')}
             >
               <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'} />
           </AdvancedMarker>
