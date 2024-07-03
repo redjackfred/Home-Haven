@@ -43,9 +43,12 @@ export default function FindHomes() {
                             disableDefaultUI>
                             <PoiMarkers pois={locations} />
                             {/* advanced marker with html-content */}
-                            <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
+                            {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
                             <CustomMarker lattidue={37.746338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House3.png" />     
+                            <CustomMarker lattidue={37.756338623365684} longitude={-122.42773195354642} title="This is a title" image="/image/houses/House4.png" />   
+                            <CustomMarker lattidue={37.766338623365684} longitude={-122.40773195354642} title="This is a title" image="/image/houses/House5.png" />   
+                            <CustomMarker lattidue={37.746338623365684} longitude={-122.39773195354642} title="This is a title" image="/image/houses/House6.png" />    */}
                         </Map>
                     </div>
                     <div className={styles.listingsContainer}>
