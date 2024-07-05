@@ -1,0 +1,44 @@
+.altButton {       
+    border: 0;
+    background-color: transparent;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.image{
+    height: 32px;
+    width: 32px;
+}
+.menu{
+    background-color: aqua;
+    z-index: 1;
+}
+@media (min-width: 1201px) {
+    .alter{
+        display: none;
+    }
+}
+
+@media(max-width: 1200px){
+    .alter img{
+        /* bottom size */
+        width: 28.57px;
+        height: 25.14px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .alter img{
+        /* bottom size */
+        width: 21.43px;
+        height: 18.86px;
+    }
+
+}
+

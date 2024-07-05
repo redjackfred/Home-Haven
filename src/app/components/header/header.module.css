@@ -1,4 +1,3 @@
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,59 +10,6 @@
     position: absolute;
     width: 28.57px;
     height: 25.14px;  
-}
-
-@media (min-width : 1200px) {
-
-    .header{
-        padding-left: 60px;
-    }
-    .alter{
-        display: none;
-    }
-}
-
-@media(max-width: 1200px){
-    .header{
-        display: none;
-    }
-
-    .alter img{
-        /* bottom size */
-        width: 28.57px;
-        height: 25.14px;
-    }
-    
-    .altButton {       
-        border: 0;
-        background-color: transparent;
-    }
-}
-
-@media(min-width: 850px) {
-    .alter img{
-        /* bottom size */
-        width: 28.57px;
-        height: 25.14px;
-    }
-    
-    .altButton {       
-        border: 0;
-        background-color: transparent;        
-    }
-}
-
-@media (max-width: 400px) {
-    .alter img{
-        /* bottom size */
-        width: 21.43px;
-        height: 18.86px;
-    }
-    
-    .altButton {       
-        border: 0;
-        background-color: transparent;
-    }
 }
 
 .nav ul{
@@ -85,8 +31,6 @@
     align-items: center;
     letter-spacing:1.25px;
     font-size: 14px;
-    resize: horizontal;
-    resize: vertical;
   }
 
   .nav a:hover,
@@ -115,6 +59,40 @@
     object-fit: contain;
 }
 
-.underline {
-    text-decoration: underline;
+.underline{
+    text-decoration: none;
+    position: relative;
+    color:inherit;
+}
+
+.underline::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #0b3650;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.underline:hover::after {
+    visibility: visible;
+    transform: scaleX(1.2);
+  }
+
+  @media (min-width: 1201px) {
+
+    .header{
+        padding-left: 60px;
+    }
+}
+
+@media(max-width: 1200px){
+    .header{
+        display: none;
+    }
+
 }
