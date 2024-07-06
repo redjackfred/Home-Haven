@@ -10,9 +10,9 @@
 
 .headerContainer {
     position:relative;
-    top: 43.42px;
+    /* top: 43.42px;
     left: 41.71px;
-    
+    width: calc(100% - 41.71px); */
 }
 
 .searchBoxContainer{

@@ -1,45 +1,213 @@
-.altButton {       
-    border: 0;
+.navMenu{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
     background-color: transparent;
-    
+    align-items: center;
 }
+
+.menu{
+    top: 43.42px;
+    left: 41.71px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu div{
+    width: 28.57px;
+    height: 3px;
+    background-color: black;
+    box-shadow: 0px 4px 4px #00000030;
+    border-radius: 5px;
+    transition:all 0.3;
+}
+/*Animation for second bar*/
+.menu.open div:nth-child(2) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/*Animation first bar translate to second bar and rotate*/
+.menu.open div:nth-child(1) {
+    animation: bar1 0.3s ease-in-out forwards;
+}
+
+@keyframes bar1 {
+    50%{
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(10px) rotateZ(45deg);
+    }
+}
+/*Animation third bar translate to second bar and rotate*/
+.menu.open div:nth-child(3) {
+    animation: bar3 0.3s ease-in-out forwards;
+}
+
+@keyframes bar3 {
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(-5px) rotateZ(135deg);
+    }
+}
+
+
+/*Reverse the animation*/
+.menu div:nth-child(1) {
+    animation: bar1Reverse 0.3s ease-in-out forwards;
+}
+
+@keyframes bar1Reverse{
+    0%{
+        transform: translateY(10px) rotate(45deg);
+    }
+    50%{
+        transform: translateY(10px) rotateZ(0deg);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.menu div:nth-child(3) {
+    animation: bar3Reverse 0.3s ease-in-out forwards;
+}
+
+@keyframes bar3Reverse{
+    0%{
+        transform: translateY(-5px) rotate(45deg);
+    }
+    50%{
+        transform: translateY(-5px) rotateZ(0deg);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+/*animation pop up navigation list */
+.menuList{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: -600px;
+    width: 100%;
+    align-items: center;
+    transition: all 0.3s;
+    background-color: #EFFFFC;
+    height: 600px;
+    box-shadow: 0px 4px 4px #00000030;
+}
+
+.active{
+    position: absolute;
+    z-index: 2 ;
+    top:0;
+    padding-left: -60px;
+}
+
+.list{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    row-gap: 32px;
+    padding-top: 20px;
+    align-self: flex-start;
+    transform:translateX(60px);
+    width: calc(100% - 60px);
+    color: #0b3650;
+}
+
 
 .logo{
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-top: 43.42px;
     gap: 8px;
 }
 
-.image{
-    height: 32px;
-    width: 32px;
+.navText{
+    top: 20px;
+    position: relative;
 }
-.menu{
-    background-color: aqua;
-    z-index: 1;
+.navText::after{
+    content: '';
+    position: absolute;
+    width: 87%;
+    height: 48px;
+    bottom: -5px;
+    left: 0;
+    background-color: #c3f0e9;
+    visibility: hidden;
+    transform: scaleX(0);
+    z-index: -1;
 }
+
+.navText:hover::after{
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.select{
+    top: 20px;
+    position: relative;
+}
+
+.select::after {
+    content: '';
+    position: absolute;
+    width: 87%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #48b49c;
+    visibility: hidden;
+    transform: scaleX(0);
+}
+
+.select:hover::after{
+    visibility: visible;
+    transform: scaleX(1);
+}
+
 @media (min-width: 1201px) {
-    .alter{
+    .navMenu{
         display: none;
     }
 }
 
-@media(max-width: 1200px){
-    .alter img{
-        /* bottom size */
-        width: 28.57px;
-        height: 25.14px;
-    }
-
-}
 
 @media (max-width: 400px) {
-    .alter img{
-        /* bottom size */
+    .menu div{
         width: 21.43px;
-        height: 18.86px;
+        height: 3px;
     }
 
-}
+    .menu{
+        left: 25.29px;
+        top:26.25px
+    }
+    .list{
+        transform:translateX(35px);
+        width: calc(100% - 35px);
+    }
+    .logo{
+        padding-top: 26.25px;
+    }
+    .menuList{
+        top:-500px;
+        height: 500px;
+    }
+    .active{
+        top:0px;
+    }
+
+}   
 
