@@ -8,7 +8,7 @@
     top: 172px;
     left: 96px;
     width: 530px;  
-    display: flex;
+    display: flex;  
 }
 
 .heroTextContainer{  
@@ -18,7 +18,7 @@
 
 @media (max-width : 1200px) {  
     .container{
-        width: fit-content;
+        width: 350px;
         top: 92px;
         left: 32px;
     }
@@ -27,8 +27,13 @@
     }   
 }
 
-@media (max-width : 400px) {  
-    .container{             
-        top: 74px;   
+@media (max-width : 400px) {      
+    .container{       
+        width: 80%;      
+        top: 74px;  
+        overflow: hidden;       
     }    
+    .heroTextContainer{         
+        overflow: hidden;   
+    }
 }
