@@ -12,11 +12,10 @@ export default function FilterButton() {
     setAge(event.target.value);
   };
 
-  return (
-    <div>
-      <FormControl sx={{ m: 0, minWidth: 120, height: 48}}>
+  return (    
+      <FormControl sx={{ m: 0, minWidth: 120, maxHeight: 48, height: 48}}>
         <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
-        <Select
+        <Select sx={{height: 48}}
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
           value={age}
@@ -29,9 +28,7 @@ export default function FilterButton() {
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>With label + helper text</FormHelperText>
-      </FormControl>    
-    </div>
+        </Select>        
+      </FormControl>     
   );
 }

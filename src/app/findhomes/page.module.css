@@ -12,6 +12,11 @@
     
 }
 
+.searchContainer{
+    position: relative;         
+    height:fit-content;  
+}
+
 .searchFilterContainer {
     display: flex;
     position: relative; 
@@ -23,6 +28,12 @@
     margin-bottom: 8px;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+.filterButtonContainer{  
+    width: 500px;
+    display: flex; 
+    justify-content: space-between;    
 }
 
 .contentContainer {
@@ -46,5 +57,11 @@
 @media (max-width: 1200px) {
     .container {
         height: 100vh;
+    }
+    .searchContainer{
+        display: none;
+    }
+    .filterButtonContainer{  
+        display: none;
     }
 }

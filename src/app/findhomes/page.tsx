@@ -29,11 +29,18 @@ const locations: Poi[] = [
 export default function FindHomes() {
     return (
         <div className={styles.container}>
-            <APIProvider apiKey={"AIzaSyDuRMTgnB5qj_HCuF5EAfUIwtdyRLxpd44"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
+            <APIProvider apiKey={"API-KEY"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
-                    <SearchBox displayBorder />
+                    <div className={styles.searchContainer}>
+                        <SearchBox displayBorder />
+                    </div>
                     {/* Add dropdown buttons here*/}
-                    <FilterButton/>
+                    <div className={styles.filterButtonContainer}>
+                        <FilterButton/>
+                        <FilterButton/>
+                        <FilterButton/>
+                        <FilterButton/>    
+                    </div>                
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
@@ -43,7 +50,7 @@ export default function FindHomes() {
                             defaultCenter={{ lat: 37.766338623365684, lng: -122.44773195354642 }}
                             gestureHandling={'greedy'}
                             disableDefaultUI>
-                            <PoiMarkers pois={locations} />
+                            {/* <PoiMarkers pois={locations} /> */}
                             {/* advanced marker with html-content */}
                             {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
