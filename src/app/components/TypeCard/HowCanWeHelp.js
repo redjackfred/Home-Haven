@@ -3,7 +3,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Typography } from "@mui/material";
 import json2mq from 'json2mq';
-
+import cssStyle from "./typeCard.module.css"
 export default function HowCanWeHelp()  {
     const matches1 = useMediaQuery(json2mq({minWidth: 1200}));
     const matches2 = useMediaQuery(json2mq({minWidth: 700}));
@@ -20,7 +20,7 @@ export default function HowCanWeHelp()  {
     }
 
     return (
-        <Typography variant={variant}>
+        <Typography variant={variant} className={cssStyle.HowCanWeHelp}>
             How can we help?
         </Typography>
     )

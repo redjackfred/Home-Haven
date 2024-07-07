@@ -29,7 +29,7 @@ export default function Home() {
     <div>           
       <TopRegion/>
       <div className={styles.newestListings}>
-        <div className={styles.title}>
+        <div className={styles.listingList}>
           <Typography variant={matchesMedium ? (matches ? "h6" : "h5") : "h3"} className={styles.typography}>
             Newest listings
           </Typography>         
