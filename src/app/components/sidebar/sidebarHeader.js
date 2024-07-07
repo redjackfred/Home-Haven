@@ -57,18 +57,16 @@ export default function SidebarHeader() {
                 </div>
                 {/* The logo setup for the small screen */}
                 <div className={`${headerStyll.menuList} ${isOpen ? headerStyll.active: ""}`}>
-                <Link href = '/'>
-                    <div className={headerStyll.logo}>
-                        <Image src="/image/header/logo.png" 
-                            alt="Home Haven Logo"                           
-                            width={32}
-                            height={32} 
-                            className={headerStyll.image}/>
-                        <Typography variant="h5" className={headerStyll.text}>
-                            Home Haven
-                        </Typography> 
-                    </div>
-                </Link>
+                <div className={headerStyll.logo}>
+                    <Image src="/image/header/logo.png" 
+                        alt="Home Haven Logo"                           
+                        width={32}
+                        height={32} 
+                        className={headerStyll.image}/>
+                    <Typography variant="h5" className={headerStyll.text}>
+                        Home Haven
+                    </Typography> 
+                </div>
                 {/* Navigation menu */}
                 <ul className={headerStyll.list}>
                      {links.map(({href, label})=>(
