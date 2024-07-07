@@ -48,7 +48,7 @@ export default function PoiMarkers(props: { pois: Poi[] }) {
           position={poi.location}
           ref={marker => setMarkerRef(marker, poi.key)}
           clickable={true}
-          onClick={() => {
+          onClick={() => {            
             document.querySelectorAll(".cardsInMap").forEach((card) => card.setAttribute("style", "display: none;"));
             document.getElementById(poi.key)?.setAttribute("style", "display: block;");
               console.log(poi.key + " has been clicked");

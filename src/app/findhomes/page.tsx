@@ -7,6 +7,7 @@ import PoiMarkers from "./poiMarker";
 import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
+import FilterButton from "../components/filterButton/filterButton";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -32,6 +33,7 @@ export default function FindHomes() {
                 <div className={styles.searchFilterContainer}>
                     <SearchBox displayBorder />
                     {/* Add dropdown buttons here*/}
+                    <FilterButton/>
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
