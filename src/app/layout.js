@@ -8,6 +8,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import SidebarHeader from "./components/sidebar/sidebarHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,9 @@ export default function RootLayout({ children }) {
         </header>
         
         <main>
+          <div style={{zIndex:1}}>
+            <SidebarHeader />
+          </div>
           <div className="mainContainer">
           {/* Main contents for each page*/}          
           {children}
