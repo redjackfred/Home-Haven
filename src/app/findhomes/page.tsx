@@ -29,7 +29,7 @@ const locations: Poi[] = [
 export default function FindHomes() {
     return (
         <div className={styles.container}>
-            <APIProvider apiKey={"API-KEY"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
+            <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
                         <SearchBox displayBorder />
@@ -39,7 +39,7 @@ export default function FindHomes() {
                         <FilterButton title="Price" items={["0-1000","1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]}/>
                         <FilterButton title="Beds & Baths" items={["1B/1B","1B/2B","2B/1B","2B/2B","1B/3B","3B/1B","3B/3B"]}/>
                         <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]}/>
-                        <FilterButton title="More" multiple={true} items={["Allow Dogs", "Allow Cats", "In-unit laundry"]}/>    
+                        <FilterButton title="More" multiple={true} items={["Allow Dogs", "Allow Cats", "In-unit laundry", "Microwaver", "A/C included", "Has basement", "Mountain view", "Park view", "Water view"]}/>    
                     </div>                
                 </div>
                 <div className={styles.contentContainer}>
