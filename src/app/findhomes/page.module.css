@@ -58,6 +58,12 @@
     .container {
         height: 100vh;
     }
+    .searchContainer{
+        display: none;
+    }
+    .filterButtonContainer{  
+        display: none;
+    }
 }
 .listingCardContainer {
     display: flex;
@@ -73,10 +79,4 @@
     /* padding-left: 60px;    
     margin-top: 40px; */
     /* margin-bottom: 24px;    */
-}
-.searchContainer{
-    display: none;
-}
-.filterButtonContainer{  
-    display: none;
 }
