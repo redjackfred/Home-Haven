@@ -76,7 +76,7 @@ export default function FindHomes() {
                             defaultCenter={{ lat: 37.766338623365684, lng: -122.44773195354642 }}
                             gestureHandling={'greedy'}
                             disableDefaultUI>
-                            {/* <PoiMarkers pois={locations} /> */}
+                            <PoiMarkers pois={locations} />
                             {/* advanced marker with html-content */}
                             {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
