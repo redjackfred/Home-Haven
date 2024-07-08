@@ -4,6 +4,7 @@ import SearchBox from "../components/searchBox/searchBox";
 import styles from "./page.module.css"
 import { AdvancedMarker, APIProvider, InfoWindow, Map, Marker, Pin } from '@vis.gl/react-google-maps';
 import PoiMarkers from "./poiMarker";
+import AssetCard from "../components/assetCard/assetCard";
 import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
@@ -25,6 +26,31 @@ const locations: Poi[] = [
     { key: 'sunset3', location: { lat: 37.75254918511742, lng: -122.4925432374971 } },
 ];
 
+type listing = {
+    imgData: string,
+    imgAlt: string,
+    date: string,
+    price: string,
+    numberOfBedrooms: number,
+    numberOfBaths: number, 
+    numberOfSqft: string,
+    address: string
+}
+
+const listings: listing[] = [];
+// store the fake data.
+for (let i = 0; i< 8; i++) {
+    listings.push({
+    imgData : '/image/assetCard/house.png', 
+    imgAlt: 'Placeholder Image', 
+    date: '4 Feb, 2024', 
+    price: '$40,999,999', 
+    numberOfBedrooms: 3,
+    numberOfBaths: 2,
+    numberOfSqft: "1,568",
+    address: "22055 White Stone Road, Marysville OH"
+    });
+}
 
 export default function FindHomes() {
     return (
@@ -41,7 +67,7 @@ export default function FindHomes() {
                         <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]}/>
                         <FilterButton title="More" multiple={true} items={["Allow Dogs", "Allow Cats", "In-unit laundry", "Microwaver", "A/C included", "Has basement", "Mountain view", "Park view", "Water view"]}/>    
                     </div>                
-                </div>
+              </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
                         <Map
@@ -61,12 +87,24 @@ export default function FindHomes() {
                         </Map>
                     </div>
                     <div className={styles.listingsContainer}>
-                        <Typography variant="h4" margin={'16px'}>
-                            Newest listings
-                        </Typography>
-                        {/* Add assetCard list here */}
-                        <GridExample />
-                    </div>
+                      <Typography variant="h4" margin={'16px'}>
+                          Newest listings
+                      </Typography>
+                      <div className= {styles.listingCardContainer}>
+                          {listings.map(listing => 
+                              <AssetCard 
+                              imgData={listing.imgData }
+                              imgAlt="Placeholder Image"
+                              date="4 Feb, 2024"
+                              price="$40,999,999"
+                              numberOfBedrooms="3"
+                              numberOfBaths="2"
+                              numberOfSqft= "1,568"
+                              address= "22055 White Stone Road, Marysville OH"
+                          />  
+                          )}
+                      </div>
+                   </div>
                 </div>
             </APIProvider>
         </div>

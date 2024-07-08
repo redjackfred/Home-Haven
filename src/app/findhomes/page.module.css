@@ -39,7 +39,7 @@
 .contentContainer {
     display: flex;
     position: relative;
-    background-color: rgba(192, 243, 226, 0.445);
+    background-color: white;
     width: 100%;
     height: 100%;
 }
@@ -58,10 +58,25 @@
     .container {
         height: 100vh;
     }
-    .searchContainer{
-        display: none;
-    }
-    .filterButtonContainer{  
-        display: none;
-    }
+}
+.listingCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Gap between cards */
+    padding: 16px;
+    overflow: hidden;
+    height: calc(100% - 74px);
+}
+
+.listingList{
+    position: relative;
+    /* padding-left: 60px;    
+    margin-top: 40px; */
+    /* margin-bottom: 24px;    */
+}
+.searchContainer{
+    display: none;
+}
+.filterButtonContainer{  
+    display: none;
 }
