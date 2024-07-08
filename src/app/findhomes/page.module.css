@@ -48,3 +48,18 @@
         height: 100vh;
     }
 }
+.listingCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Gap between cards */
+    padding: 16px;
+    overflow: hidden;
+    height: calc(100% - 74px);
+}
+
+.listingList{
+    position: relative;
+    /* padding-left: 60px;    
+    margin-top: 40px; */
+    /* margin-bottom: 24px;    */
+}
