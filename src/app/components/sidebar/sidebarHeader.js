@@ -4,11 +4,14 @@ import headerStyll from "./sidebarHeader.module.css"
 import Link from "next/link";
 import { Typography } from "@mui/material";
 import Image from "next/image"
+import useMediaQuery from '@mui/material/useMediaQuery';
+import json2mq from 'json2mq';
 
 export default function SidebarHeader() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSelect, setIsSelect] = useState(false);
     const menuRef = useRef(null);
+    const screensize = useMediaQuery(json2mq({minWidth:1200}));
 
     const links = [
         {href: '/findhomes', label:'Homes'},
@@ -44,6 +47,10 @@ export default function SidebarHeader() {
         }
     }, []);
 
+    if (screensize) {
+        document.removeEventListener('mousedown', closeMenu());
+    } 
+
     return (        
         <header>
             <nav className={headerStyll.nav}>
@@ -57,16 +64,18 @@ export default function SidebarHeader() {
                 </div>
                 {/* The logo setup for the small screen */}
                 <div className={`${headerStyll.menuList} ${isOpen ? headerStyll.active: ""}`}>
-                <div className={headerStyll.logo}>
-                    <Image src="/image/header/logo.png" 
-                        alt="Home Haven Logo"                           
-                        width={32}
-                        height={32} 
-                        className={headerStyll.image}/>
-                    <Typography variant="h5" className={headerStyll.text}>
-                        Home Haven
-                    </Typography> 
-                </div>
+                <Link href="/">
+                    <div className={headerStyll.logo}>
+                        <Image src="/image/header/logo.png" 
+                            alt="Home Haven Logo"                           
+                            width={32}
+                            height={32} 
+                            className={headerStyll.image}/>
+                        <Typography variant="h5" className={headerStyll.text}>
+                            Home Haven
+                        </Typography> 
+                    </div>
+                </Link>
                 {/* Navigation menu */}
                 <ul className={headerStyll.list}>
                      {links.map(({href, label})=>(
