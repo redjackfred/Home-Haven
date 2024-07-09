@@ -54,6 +54,17 @@
     width: 50%;
 }
 
+@media (max-width: 1502px) {
+    .mapContainer {     
+        width: 70%;
+    }
+    
+    .listingsContainer{    
+        width: 30%;    
+        min-width: 372px;
+    }
+}
+
 @media (max-width: 1200px) {
     .container {
         height: 100vh;
@@ -63,8 +74,19 @@
     }
     .filterButtonContainer{  
         display: none;
+    }  
+}
+
+@media (max-width: 800px) {
+    .mapContainer {     
+        width: 100%;
+    }
+    
+    .listingsContainer{   
+        display: none;  
     }
 }
+
 .listingCardContainer {
     display: flex;
     flex-wrap: wrap;
