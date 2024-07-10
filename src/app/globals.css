@@ -27,3 +27,10 @@ a {
       position: absolute;
   }    
 }
+
+
+.gm-style-iw {
+   width: fit-content !important;
+   padding: 0 !important;
+   border-radius: 15px !important;
+}

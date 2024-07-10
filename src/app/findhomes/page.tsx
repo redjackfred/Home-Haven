@@ -9,6 +9,7 @@ import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
+import { useState } from "react";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -53,6 +54,17 @@ for (let i = 0; i< 8; i++) {
 }
 
 export default function FindHomes() {
+    const [lattitude, setLattitude] = useState(37.766338623365684);
+    const [longitude, setLongitude] = useState(-122.44773195354642);
+    const [focus, setFocus] = useState(12.5);
+
+    const handleMarkerClick = (latitude, longitude) => {
+        // Update the map center and zoom based on the marker clicked
+        setLattitude(latitude);
+        setLongitude(longitude);
+        // Update the zoom level if necessary
+        setFocus(13.5);   
+    };
     return (
         <div className={styles.container}>
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
@@ -72,11 +84,11 @@ export default function FindHomes() {
                     <div className={styles.mapContainer}>
                         <Map
                             mapId={'bf51a910020fa25a'}
-                            defaultZoom={12.5}
-                            defaultCenter={{ lat: 37.766338623365684, lng: -122.44773195354642 }}
-                            gestureHandling={'greedy'}
+                            defaultZoom={focus}
+                            defaultCenter={{ lat: lattitude, lng: longitude }}
+                            gestureHandling={'greedy'}                      
                             disableDefaultUI>
-                            <PoiMarkers pois={locations} />
+                            <PoiMarkers pois={locations}/>
                             {/* advanced marker with html-content */}
                             {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
