@@ -49,7 +49,7 @@ export default function PoiMarkers(props: { pois: Poi[] }) {
     };
 
     if (map) {
-      map.addListener("click", handleMapClick);
+      map.addListener("click", handleMapClick);    
     }
 
   }, [map]);
