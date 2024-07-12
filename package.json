@@ -17,12 +17,17 @@
     "@mui/material": "^5.15.20",
     "@next/env": "^14.2.4",
     "@vis.gl/react-google-maps": "^1.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "bootstrap": "^5.3.3",
     "json2mq": "^0.2.0",
+    "jsx": "^0.9.89",
     "next": "^14.2.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "styled": "^1.0.0",
+    "styled-components": "^6.1.11",
+    "styled-jsx": "^5.1.6"
   },
   "devDependencies": {
     "@types/json2mq": "^0.2.2",

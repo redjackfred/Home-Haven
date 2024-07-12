@@ -11,7 +11,7 @@ export default function MainHeader() {
         { href: '/sell', label: 'Sell' },
         { href: '/buy', label: 'Buy' },
         { href: '/message', label: 'Message'},
-        { href: '/', label: 'My Homes' }
+        { href: '/signIn', label: 'My Homes' }
     ];  
     return (
         <>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import cssStyle from "./typeCard.module.css"
 import Image from "next/image"
 import { Typography } from "@mui/material";
+import Link from "next/link";
 
 export default function TypeCard() {
     const router = useRouter()
@@ -16,6 +17,7 @@ export default function TypeCard() {
         <div className={cssStyle.bodyhtml}>
         <div className={cssStyle.wrapContainer}>
             <ul className={cssStyle.container}>
+                <Link href='/findhomes'>
                 <li className={cssStyle.findHome}>
                     <Image src="/image/typeCardsImage/microscopeIcon.png"
                         width={120}
@@ -36,6 +38,8 @@ export default function TypeCard() {
                         </Typography>
                     </button>
                 </li>
+                </Link>
+                <Link href="/sell">
                 <li className={cssStyle.sellHome}>
                     <Image src="/image/typeCardsImage/houseIcon.png"
                     width={120}
@@ -55,6 +59,8 @@ export default function TypeCard() {
                         </Typography>
                     </button>
                 </li>
+                </Link>
+                <Link href="/agents">
                 <li className={cssStyle.findAgent}>
                     <Image src="/image/typeCardsImage/humanIcon.png"
                     width={120}
@@ -74,6 +80,7 @@ export default function TypeCard() {
                         </Typography>
                     </button>
                 </li>
+                </Link>
             </ul>
         </div>
         </div>

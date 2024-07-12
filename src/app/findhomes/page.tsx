@@ -10,6 +10,10 @@ import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
 import { useState } from "react";
+//
+import SidebarHeader from "../components/sidebar/sidebarHeader";
+import Link from "next/link";
+import styled from "styled-components";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -53,6 +57,14 @@ for (let i = 0; i< 8; i++) {
     });
 }
 
+const SignIn = styled.div`
+    display: flex;
+    align-items: center;
+    color : #14B49C;
+    margin-left: 8px;
+    width: 44px;
+`;
+
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
@@ -65,12 +77,29 @@ export default function FindHomes() {
         // Update the zoom level if necessary
         setFocus(13.5);   
     };
+    
     return (
         <div className={styles.container}>
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
-                        <SearchBox displayBorder />
+                        <SidebarHeader findhomes={true}/>
+                        <Link href="/" >
+                            <Image src="/image/header/logo.png" 
+                                alt="Home Haven Logo"                           
+                                width={32}
+                                height={32}
+                                className={styles.logo}
+                            /> 
+                        </Link>
+                        <SearchBox displayBorder/>
+                        <Link href="/signIn" className={styles.signIn}>
+                            <Typography variant="subtitle2">
+                                <SignIn>
+                                    Sign in
+                                </SignIn>
+                            </Typography>
+                        </Link>
                     </div>
                     {/* Add dropdown buttons here*/}
                     <div className={styles.filterButtonContainer}>

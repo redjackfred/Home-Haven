@@ -6,8 +6,10 @@ import { Typography } from "@mui/material";
 import Image from "next/image"
 import useMediaQuery from '@mui/material/useMediaQuery';
 import json2mq from 'json2mq';
+import windowsize from "../getWindowSize/getWindowSize";
+import styled, {css} from 'styled-components';
 
-export default function SidebarHeader() {
+export default function SidebarHeader({findhomes}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isSelect, setIsSelect] = useState(false);
     const menuRef = useRef(null);
@@ -19,15 +21,62 @@ export default function SidebarHeader() {
         { href: '/sell', label: 'Sell' },
         { href: '/buy', label: 'Buy' },
         { href: '/message', label: 'Message'},
-        { href: '/', label: 'My Homes' }
+        { href: '/signIn', label: 'My Homes' }
     ];
+    const{width, height} = windowsize();
+    //The css below only take pixel value.
+    const widthPx = typeof width === 'number' ? `${width}px` : width;
+
+    const ActiveStyles = css`
+        position: absolute;
+        z-index: 50;
+        top:0;
+        padding-left: -60px;
+
+        @media (max-width: 400px) {
+            top:0;
+        }
+        
+    `;
+
+    const MenuList = styled.div`
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: -6000px;
+        width: 100%;
+        align-items: center;
+        transition: all 0.4s ease-in-out;
+        background-color: #EFFFFC;
+        height: 600px;
+        box-shadow: 0px 4px 4px #00000030;
+
+        @media (max-width: 400px) {
+            top:-500px;
+            height: 500px;
+        }
+
+        ${(props) => props.isActive && ActiveStyles}
+    `;
+
+const MenuListFindhomes = styled(MenuList)`
+    left:-33.29px;
+
+    @media (max-width: 400px) {
+        top:-520px;
+        height: 500px;
+        margin-top: -10px;
+        width: ${widthPx};
+    }
+
+    ${(props) => props.isActive && ActiveStyles}
+    `;
 
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
     const selectNav = () => {
         setIsSelect(!isSelect);
-        
     }
     const closeMenu = () => {
         // setIsOpen(false);
@@ -47,15 +96,18 @@ export default function SidebarHeader() {
         }
     }, []);
 
-    if (screensize) {
-        document.removeEventListener('mousedown', closeMenu());
-    } 
+    useEffect(() =>{
+        if (screensize) {
+            document.removeEventListener('mousedown', closeMenu());
+        }
+    }, [screensize])
 
+    const MenuComponent = findhomes ? MenuListFindhomes : MenuList;
     return (        
         <header>
             <nav className={headerStyll.nav}>
                 <div className={headerStyll.navMenu}>
-                    <div ref={menuRef} onClick={handleClick} className={`${headerStyll.menu} ${isOpen ? headerStyll.open : ""}`}>
+                    <div ref={menuRef} onClick={handleClick} className={`${findhomes ? headerStyll.menuFindhomes: headerStyll.menu} ${isOpen ? headerStyll.open : ""}`}>
                         {/* this is the setup for the navigation bar */}
                         <div></div>
                         <div></div>
@@ -63,21 +115,21 @@ export default function SidebarHeader() {
                     </div>
                 </div>
                 {/* The logo setup for the small screen */}
-                <div className={`${headerStyll.menuList} ${isOpen ? headerStyll.active: ""}`}>
-                <Link href="/">
-                    <div className={headerStyll.logo}>
-                        <Image src="/image/header/logo.png" 
-                            alt="Home Haven Logo"                           
-                            width={32}
-                            height={32} 
-                            className={headerStyll.image}/>
-                        <Typography variant="h5" className={headerStyll.text}>
-                            Home Haven
-                        </Typography> 
-                    </div>
-                </Link>
-                {/* Navigation menu */}
-                <ul className={headerStyll.list}>
+                <MenuComponent isActive={isOpen}>
+                    <Link href="/">
+                        <div className={headerStyll.logo}>
+                            <Image src="/image/header/logo.png" 
+                                alt="Home Haven Logo"                           
+                                width={32}
+                                height={32} 
+                                className={headerStyll.image}/>
+                            <Typography variant="h5" className={headerStyll.text}>
+                                Home Haven
+                            </Typography> 
+                        </div>
+                    </Link>
+                    {/* Navigation menu */}
+                    <ul className={headerStyll.list}>
                      {links.map(({href, label})=>(
                         <li key = {href} onClick={selectNav} className={isSelect? headerStyll.select : headerStyll.navText}>
                            <Link  href={href} > {
@@ -88,8 +140,9 @@ export default function SidebarHeader() {
                        </li>
                    ))}
                 </ul>
-                </div>
+                </MenuComponent>
             </nav>
+           
         </header>
     )
 }
