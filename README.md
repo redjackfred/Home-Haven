@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Open `next.config.mjs`:
+
+Open the `next.config.mjs` file in your code editor.
+
+Add styled-components Configuration:
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    compiler: {
+        styledComponents: true,
+      },
+};
+export default nextConfig;
+```
+Install `styled-components`:
+```
+npm install styled-components
+```
+Restart the Development Server:
+```
+npm run dev
+```
+
