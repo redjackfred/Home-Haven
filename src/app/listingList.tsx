@@ -33,7 +33,7 @@ export default function ListingList() {
     >
       {homes.map((home) => (
         <ListItem
-          id={home._id}
+          key={home._id}
           sx={{ width: "345px", height: "332px", padding: 0, margin: 0 }}
         >
           <AssetCard
