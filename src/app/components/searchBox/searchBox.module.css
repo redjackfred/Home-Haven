@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    width: 90%;;
+    width: 90%;
 }
 
 .inputTxt {
@@ -15,4 +15,8 @@
     padding-left: 24px; 
     padding-right: 12px;   
     font-size: 0.8rem;
+}
+
+.button {
+    display: none;
 }

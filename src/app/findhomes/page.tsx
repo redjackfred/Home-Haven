@@ -9,6 +9,13 @@ import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
+import { useState } from "react";
+//
+import SidebarHeader from "../components/sidebar/sidebarHeader";
+import Link from "next/link";
+import styled, {css} from "styled-components";
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import { useEffect, useState } from "react";
 import { HomeType } from "../utils/data";
 
@@ -54,6 +61,50 @@ for (let i = 0; i < 8; i++) {
     });
 }
 
+const SignIn = styled.div`
+    display: flex;
+    align-items: center;
+    color : #14B49C;
+    margin-left: 8px;
+    width: 44px;
+`;
+
+
+const MappositionButton = css`
+    background-color: #EFFFFC;
+    border: 1px solid #14B49C;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 24px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    color: #14B49C;
+    z-index: 1;
+`
+const ListpositionButton = css`
+    background-color: #EFFFFC;
+    border: 1px solid #14B49C;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
+    margin-top: 20px;
+    margin-left: 64px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    position: absolute;
+    color: #14B49C;
+    z-index: 1;
+`
+
+const MapButton = styled.button`
+    ${MappositionButton}
+`;
+const ListButton = styled.button`
+    ${ListpositionButton}
+`;
 
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
@@ -83,12 +134,29 @@ export default function FindHomes() {
         getHomes();        
     }, []);
 
+    
     return (
         <div className={styles.container}>          
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
-                        <SearchBox displayBorder />
+                        <SidebarHeader findhomes={true}/>
+                        <Link href="/" >
+                            <Image src="/image/header/logo.png" 
+                                alt="Home Haven Logo"                           
+                                width={32}
+                                height={32}
+                                className={styles.logo}
+                            /> 
+                        </Link>
+                        <SearchBox displayBorder/>
+                        <Link href="/signIn" className={styles.signIn}>
+                            <Typography variant="subtitle2">
+                                <SignIn>
+                                    Sign in
+                                </SignIn>
+                            </Typography>
+                        </Link>
                     </div>
                     {/* Add dropdown buttons here*/}
                     <div className={styles.filterButtonContainer}>
@@ -100,6 +168,14 @@ export default function FindHomes() {
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
+                        <div>
+                        <MapButton>
+                            <MapOutlinedIcon></MapOutlinedIcon>
+                        </MapButton>
+                        <ListButton>
+                            <FormatListBulletedRoundedIcon></FormatListBulletedRoundedIcon>
+                        </ListButton>
+                        </div>
                         <Map
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}
