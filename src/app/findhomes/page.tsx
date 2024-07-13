@@ -10,7 +10,7 @@ import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
 import { useEffect, useState } from "react";
-import {Home} from "../api/data";
+import { Home } from "../api/data";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -54,6 +54,7 @@ for (let i = 0; i < 8; i++) {
     });
 }
 
+
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
@@ -68,24 +69,18 @@ export default function FindHomes() {
 
     const [homes, setHomes] = useState<Home[]>([]);
 
-    const getHomes = async () =>
-        fetch("/api")
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (homes) {
-                const homesArray = JSON.parse(homes);
-                setHomes(homesArray.data);
-            });
+    const getHomes = async () => {
+        const res = await fetch("http://localhost:3002/api");
+        const data = await res.json();
+        setHomes(data);
+    }
 
     useEffect(() => {
         getHomes();
-        // console.log(homes.length);
     }, []);
 
     return (
-        <div className={styles.container}>
-           
+        <div className={styles.container}>          
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
@@ -122,7 +117,22 @@ export default function FindHomes() {
                             Newest listings
                         </Typography>
                         <div className={styles.listingCardContainer}>
-                            {listings.map((listing, index) =>
+                            {homes.map((home) => (
+                                <AssetCard
+                                    imgData={home.image_url[0]}
+                                    imgAlt="Placeholder Image"
+                                    date="4 Feb, 2024"
+                                    price={home.price.toString()}
+                                    numberOfBedrooms={home.bedrooms}
+                                    numberOfBaths={home.bathrooms}
+                                    numberOfSqft={home.square_feet.toString()}
+                                    address={home.address}
+                                    key={home.id}
+                                />
+                            ))}
+
+
+                            {/* {listings.map((listing, index) =>
                                 <AssetCard
                                     imgData={listing.imgData}
                                     imgAlt="Placeholder Image"
@@ -134,7 +144,7 @@ export default function FindHomes() {
                                     address="22055 White Stone Road, Marysville OH"
                                     key={index}
                                 />
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>

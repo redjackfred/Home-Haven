@@ -3,15 +3,15 @@ import { type NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const city = searchParams.get("city") || "San Francisco";
+  const city = searchParams.get("city") || "";
   console.log(city);
   try{
     const { db } = await connectToDatabase();
           
     const posts = await db
       .collection("home_informations")
-      .find({city: city})
-      .limit(10)
+      .find({})
+      .limit(100)
       .toArray();
 
     return Response.json(posts);

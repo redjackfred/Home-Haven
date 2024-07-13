@@ -4,6 +4,18 @@ import { useState } from "react";
 import styles from "./assetCard.module.css";
 import { Typography } from "@mui/material";
 
+function addCommas(nStr)
+{
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
 
 export default function AssetCard({
     imgData, 
@@ -22,10 +34,11 @@ export default function AssetCard({
     return (
     <div className={styles.container}>
         <div className={styles['image-container']}>
-            <Image 
+            <img 
                 src = {imgData}
-                alt = {imgAlt}
-                fill
+                alt = {imgAlt} 
+                width={345}
+                height={200}        
                 style={{objectFit: "cover"}}
 
             />
@@ -42,7 +55,7 @@ export default function AssetCard({
             <div className={styles.date}>{date}</div>
             <div className={styles.price}>
                 <Typography variant="h6">
-                    {price}
+                    ${addCommas(price)}
                  </Typography>   
                 </div>
             <div className={styles['house-area']}>
