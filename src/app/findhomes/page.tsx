@@ -9,7 +9,8 @@ import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {Home} from "../api/data";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -56,24 +57,42 @@ for (let i = 0; i < 8; i++) {
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
-    const [focus, setFocus] = useState(12.5); 
+    const [focus, setFocus] = useState(12.5);
     const handleMarkerClick = (latitude, longitude) => {
         // Update the map center and zoom based on the marker clicked
         setLattitude(latitude);
         setLongitude(longitude);
         // Update the zoom level if necessary
         setFocus(13.5);
-    };    
+    };
+
+    const [homes, setHomes] = useState<Home[]>([]);
+
+    const getHomes = async () =>
+        fetch("/api")
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (homes) {
+                const homesArray = JSON.parse(homes);
+                setHomes(homesArray.data);
+            });
+
+    useEffect(() => {
+        getHomes();
+        // console.log(homes.length);
+    }, []);
 
     return (
-        <div className={styles.container}>    
-            <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>                
+        <div className={styles.container}>
+           
+            <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
                         <SearchBox displayBorder />
                     </div>
                     {/* Add dropdown buttons here*/}
-                    <div className={styles.filterButtonContainer}>                   
+                    <div className={styles.filterButtonContainer}>
                         <FilterButton title="Price" items={["0-1000", "1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]} />
                         <FilterButton title="Beds & Baths" items={["1B/1B", "1B/2B", "2B/1B", "2B/2B", "1B/3B", "3B/1B", "3B/3B"]} />
                         <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]} />
