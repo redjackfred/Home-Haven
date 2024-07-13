@@ -33,7 +33,7 @@ export default function ListingList() {
     >
       {homes.map((home) => (
         <ListItem
-          key={home._id}
+        key={home.id}
           sx={{ width: "345px", height: "332px", padding: 0, margin: 0 }}
         >
           <AssetCard
@@ -44,30 +44,10 @@ export default function ListingList() {
             numberOfBedrooms={home.bedrooms}
             numberOfBaths={home.bathrooms}
             numberOfSqft={home.square_feet.toString()}
-            address={home.address}
-            key={home.id}
+            address={home.address}            
           />
         </ListItem>
-      ))}
-      {Array(matches ? 5 : 8)
-        .fill(true)
-        .map((index) => (
-          <ListItem
-            id={index}
-            sx={{ width: "345px", height: "332px", padding: 0, margin: 0 }}
-          >
-            <AssetCard
-              imgData={"/image/assetCard/house.png"}
-              imgAlt="Placeholder Image"
-              date="4 Feb, 2024"
-              price="$40,999,999"
-              numberOfBedrooms="3"
-              numberOfBaths="2"
-              numberOfSqft="1,568"
-              address="22055 White Stone Road, Marysville OH"
-            />
-          </ListItem>
-        ))}
+      ))}    
     </Stack>
   );
 }
