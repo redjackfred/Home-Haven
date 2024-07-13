@@ -27,7 +27,8 @@
     "next": "^14.2.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/json2mq": "^0.2.2",

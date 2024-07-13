@@ -70,13 +70,17 @@ export default function FindHomes() {
     const [homes, setHomes] = useState<HomeType[]>([]);
 
     const getHomes = async () => {
-        const res = await fetch("/api");
-        const data = await res.json();
-        setHomes(data);
+        try{
+            const res = await fetch("/api");          
+            const data = await res.json();
+            setHomes(data);         
+        }catch(e){
+            console.error(e);
+        }
     }
 
     useEffect(() => {
-        getHomes();
+        getHomes();        
     }, []);
 
     return (
