@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/json2mq": "^0.2.2",
-    "@types/node": "20.14.9",
+    "@types/node": "^20.14.9",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "typescript": "5.5.2"

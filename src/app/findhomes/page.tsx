@@ -56,24 +56,24 @@ for (let i = 0; i < 8; i++) {
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
-    const [focus, setFocus] = useState(12.5);
-
+    const [focus, setFocus] = useState(12.5); 
     const handleMarkerClick = (latitude, longitude) => {
         // Update the map center and zoom based on the marker clicked
         setLattitude(latitude);
         setLongitude(longitude);
         // Update the zoom level if necessary
         setFocus(13.5);
-    };
+    };    
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container}>    
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>                
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
                         <SearchBox displayBorder />
                     </div>
                     {/* Add dropdown buttons here*/}
-                    <div className={styles.filterButtonContainer}>
+                    <div className={styles.filterButtonContainer}>                   
                         <FilterButton title="Price" items={["0-1000", "1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]} />
                         <FilterButton title="Beds & Baths" items={["1B/1B", "1B/2B", "2B/1B", "2B/2B", "1B/3B", "3B/1B", "3B/3B"]} />
                         <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]} />
@@ -103,7 +103,7 @@ export default function FindHomes() {
                             Newest listings
                         </Typography>
                         <div className={styles.listingCardContainer}>
-                            {listings.map(listing =>
+                            {listings.map((listing, index) =>
                                 <AssetCard
                                     imgData={listing.imgData}
                                     imgAlt="Placeholder Image"
@@ -113,6 +113,7 @@ export default function FindHomes() {
                                     numberOfBaths="2"
                                     numberOfSqft="1,568"
                                     address="22055 White Stone Road, Marysville OH"
+                                    key={index}
                                 />
                             )}
                         </div>
