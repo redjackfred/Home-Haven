@@ -1,7 +1,7 @@
-export const homes: Home[] = [    
+export const homes: HomeType[] = [    
   ];
   
-  export type Home = {
+  export type HomeType = {
     _id: number;
     id: number;
     name:string;

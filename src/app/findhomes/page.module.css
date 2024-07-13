@@ -44,14 +44,14 @@
     height: 100%;
 }
 
-.mapContainer {
-    border: solid;
+.mapContainer {   
     width: 50%;
 }
 
 .listingsContainer{
-    border: solid;
+    box-shadow: -5px 0px 10px rgba(0.5, 0.5, 0.5, 0.3);
     width: 50%;
+    z-index: 1;
 }
 
 @media (max-width: 1502px) {

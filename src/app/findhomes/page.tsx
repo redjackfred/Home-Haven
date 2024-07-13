@@ -10,7 +10,7 @@ import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
 import { useEffect, useState } from "react";
-import { Home } from "../api/data";
+import { HomeType } from "../utils/data";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -67,7 +67,7 @@ export default function FindHomes() {
         setFocus(13.5);
     };
 
-    const [homes, setHomes] = useState<Home[]>([]);
+    const [homes, setHomes] = useState<HomeType[]>([]);
 
     const getHomes = async () => {
         const res = await fetch("http://localhost:3002/api");

@@ -5,7 +5,7 @@ import AssetCard from "./components/assetCard/assetCard";
 import TopRegion from "./components/topRegion/topRegion";
 import { Typography } from "@mui/material";
 import TypeCard from "./components/TypeCard/typeCard";
-import ListingList from "./listingList";
+import ListingList from "./listingList.tsx"
 import useMediaQuery from '@mui/material/useMediaQuery';
 import * as React from 'react';
 import json2mq from "json2mq";
