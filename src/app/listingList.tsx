@@ -16,7 +16,7 @@ export default function ListingList() {
   const [homes, setHomes] = React.useState<HomeType[]>([]);
 
   const getHomes = async () => {
-      const res = await fetch("http://localhost:3002/api");
+      const res = await fetch("/api");
       const data = await res.json();
       setHomes(data);
   }
