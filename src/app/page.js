@@ -11,7 +11,6 @@ import * as React from 'react';
 import json2mq from "json2mq";
 import HowCanWeHelp from "./components/TypeCard/HowCanWeHelp";
 
-
 export default function Home() { 
   const matches = useMediaQuery(
     json2mq({        
@@ -23,8 +22,7 @@ export default function Home() {
       maxWidth: 1200,
     }),    
   );  
-
-
+  
   return (
     <div>           
       <TopRegion/>

@@ -5,29 +5,34 @@
     width: 100%;
 }
 
-.headerContainer {
+/* .headerContainer {
     position: relative;
     top: 18.57px;
     left: 33.29px;
-    
-}
+} */
 
-.searchContainer{
-    position: relative;         
-    height:fit-content;  
-}
 
 .searchFilterContainer {
     display: flex;
     position: relative; 
-    height: 48px;
+    height: 64px;
     width: 100%;
     flex-grow: 0;
     flex-shrink: 0;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding-left: 24px;
-    padding-right: 24px;
+    /* margin-top: 8px;
+    margin-bottom: 8px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 30px;
+
+}
+
+.searchContainer{
+    display: flex;
+    position: relative;         
+    align-items: center;
+    left: 33.29px;
+    gap: 10px;
 }
 
 .filterButtonContainer{  
@@ -45,7 +50,7 @@
 }
 
 .mapContainer {
-    border: solid;
+    border: none;
     width: 50%;
 }
 
@@ -53,6 +58,11 @@
     border: solid;
     width: 50%;
 }
+
+.logo{
+    margin-left: 7.29px;
+}
+
 
 @media (max-width: 1502px) {
     .mapContainer {     
@@ -69,12 +79,13 @@
     .container {
         height: 100vh;
     }
-    .searchContainer{
+    /* .searchContainer{
         display: none;
-    }
-    .filterButtonContainer{  
+    } */
+    /* .filterButtonContainer{  
         display: none;
-    }  
+    }   */
+
 }
 
 @media (max-width: 800px) {
@@ -85,6 +96,28 @@
     .listingsContainer{   
         display: none;  
     }
+}
+@media (max-width: 400px) {
+    .searchContainer{
+        display: flex;
+        align-items: center;
+    }
+    .searchFilterContainer{
+        background-color: #EFFFFC;
+    }
+    .filterButtonContainer{  
+        display: none;
+    }  
+}
+
+@media (min-width: 401px) {
+    .logo{
+        display: none;
+    }
+    .signIn{
+        display: none;
+    }
+    
 }
 
 .listingCardContainer {
