@@ -13,7 +13,9 @@ import { useState } from "react";
 //
 import SidebarHeader from "../components/sidebar/sidebarHeader";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -65,6 +67,43 @@ const SignIn = styled.div`
     width: 44px;
 `;
 
+
+const MappositionButton = css`
+    background-color: #EFFFFC;
+    border: 1px solid #14B49C;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 24px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    color: #14B49C;
+    z-index: 1;
+`
+const ListpositionButton = css`
+    background-color: #EFFFFC;
+    border: 1px solid #14B49C;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
+    margin-top: 20px;
+    margin-left: 64px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    position: absolute;
+    color: #14B49C;
+    z-index: 1;
+`
+
+const MapButton = styled.button`
+    ${MappositionButton}
+`;
+const ListButton = styled.button`
+    ${ListpositionButton}
+`;
+
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
@@ -111,6 +150,14 @@ export default function FindHomes() {
               </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
+                        <div>
+                        <MapButton>
+                            <MapOutlinedIcon></MapOutlinedIcon>
+                        </MapButton>
+                        <ListButton>
+                            <FormatListBulletedRoundedIcon></FormatListBulletedRoundedIcon>
+                        </ListButton>
+                        </div>
                         <Map
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}
