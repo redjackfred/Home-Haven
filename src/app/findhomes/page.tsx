@@ -9,7 +9,6 @@ import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
-import { useState } from "react";
 //
 import SidebarHeader from "../components/sidebar/sidebarHeader";
 import Link from "next/link";
