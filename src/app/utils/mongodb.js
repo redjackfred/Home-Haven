@@ -2,6 +2,9 @@ import { MongoClient } from 'mongodb'
 
 const { MONGODB_URI, MONGODB_DB } = process.env
 
+console.log("MONGODB_URI:", MONGODB_URI);
+console.log("MONGODB_DB:", MONGODB_DB);
+
 if (!MONGODB_URI) {
   throw new Error(
     'Please define the MONGODB_URI environment variable inside .env.local'
@@ -36,10 +39,10 @@ export async function connectToDatabase() {
       useUnifiedTopology : true
     }
 
-    cached.promise = MongoClient.connect(MONGODB_URI, opts).then((client) => {
+    cached.promise = MongoClient.connect("mongodb+srv://redjackfred:jackfred@home-haven.ozifybh.mongodb.net/?retryWrites=true&w=majority&appName=Home-Haven", opts).then((client) => {
       return {
         client,
-        db: client.db(MONGODB_DB),
+        db: client.db("home_haven"),
       }
     })
   }

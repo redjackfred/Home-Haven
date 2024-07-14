@@ -86,6 +86,7 @@ export default function SearchBox({displayBorder}) {
                   <Image src="/image/Vector.png" 
                     width={9.33}
                     height={13.33}
+                    alt="search icon"
                   ></Image>
                 </Link>
               </form>
