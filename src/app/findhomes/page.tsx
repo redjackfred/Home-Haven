@@ -9,13 +9,14 @@ import GridExample from "./gridExample.js"
 import Image from "next/image";
 import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
-import { useState } from "react";
 //
 import SidebarHeader from "../components/sidebar/sidebarHeader";
 import Link from "next/link";
 import styled, {css} from "styled-components";
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import { useEffect, useState } from "react";
+import { HomeType } from "../utils/data";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -39,23 +40,23 @@ type listing = {
     date: string,
     price: string,
     numberOfBedrooms: number,
-    numberOfBaths: number, 
+    numberOfBaths: number,
     numberOfSqft: string,
     address: string
 }
 
 const listings: listing[] = [];
 // store the fake data.
-for (let i = 0; i< 8; i++) {
+for (let i = 0; i < 8; i++) {
     listings.push({
-    imgData : '/image/assetCard/house.png', 
-    imgAlt: 'Placeholder Image', 
-    date: '4 Feb, 2024', 
-    price: '$40,999,999', 
-    numberOfBedrooms: 3,
-    numberOfBaths: 2,
-    numberOfSqft: "1,568",
-    address: "22055 White Stone Road, Marysville OH"
+        imgData: '/image/assetCard/house.png',
+        imgAlt: 'Placeholder Image',
+        date: '4 Feb, 2024',
+        price: '$40,999,999',
+        numberOfBedrooms: 3,
+        numberOfBaths: 2,
+        numberOfSqft: "1,568",
+        address: "22055 White Stone Road, Marysville OH"
     });
 }
 
@@ -108,17 +109,33 @@ export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
     const [focus, setFocus] = useState(12.5);
-
     const handleMarkerClick = (latitude, longitude) => {
         // Update the map center and zoom based on the marker clicked
         setLattitude(latitude);
         setLongitude(longitude);
         // Update the zoom level if necessary
-        setFocus(13.5);   
+        setFocus(13.5);
     };
+
+    const [homes, setHomes] = useState<HomeType[]>([]);
+
+    const getHomes = async () => {
+        try{
+            const res = await fetch("/api");          
+            const data = await res.json();
+            setHomes(data);         
+        }catch(e){
+            console.error(e);
+        }
+    }
+
+    useEffect(() => {
+        getHomes();        
+    }, []);
+
     
     return (
-        <div className={styles.container}>
+        <div className={styles.container}>          
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
                     <div className={styles.searchContainer}>
@@ -142,12 +159,12 @@ export default function FindHomes() {
                     </div>
                     {/* Add dropdown buttons here*/}
                     <div className={styles.filterButtonContainer}>
-                        <FilterButton title="Price" items={["0-1000","1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]}/>
-                        <FilterButton title="Beds & Baths" items={["1B/1B","1B/2B","2B/1B","2B/2B","1B/3B","3B/1B","3B/3B"]}/>
-                        <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]}/>
-                        <FilterButton title="More" multiple={true} items={["Allow Dogs", "Allow Cats", "In-unit laundry", "Microwaver", "A/C included", "Has basement", "Mountain view", "Park view", "Water view"]}/>    
-                    </div>                
-              </div>
+                        <FilterButton title="Price" items={["0-1000", "1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]} />
+                        <FilterButton title="Beds & Baths" items={["1B/1B", "1B/2B", "2B/1B", "2B/2B", "1B/3B", "3B/1B", "3B/3B"]} />
+                        <FilterButton title="Home Type" items={["Single Family House", "Condo", "Apartment", "Duplex", "Town House"]} />
+                        <FilterButton title="More" multiple={true} items={["Allow Dogs", "Allow Cats", "In-unit laundry", "Microwaver", "A/C included", "Has basement", "Mountain view", "Park view", "Water view"]} />
+                    </div>
+                </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.mapContainer}>
                         <div>
@@ -162,9 +179,9 @@ export default function FindHomes() {
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}
                             defaultCenter={{ lat: lattitude, lng: longitude }}
-                            gestureHandling={'greedy'}                      
+                            gestureHandling={'greedy'}
                             disableDefaultUI>
-                            <PoiMarkers pois={locations}/>
+                            <PoiMarkers pois={locations} />
                             {/* advanced marker with html-content */}
                             {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
@@ -175,24 +192,40 @@ export default function FindHomes() {
                         </Map>
                     </div>
                     <div className={styles.listingsContainer}>
-                      <Typography variant="h4" margin={'16px'}>
-                          Newest listings
-                      </Typography>
-                      <div className= {styles.listingCardContainer}>
-                          {listings.map(listing => 
-                              <AssetCard 
-                              imgData={listing.imgData }
-                              imgAlt="Placeholder Image"
-                              date="4 Feb, 2024"
-                              price="$40,999,999"
-                              numberOfBedrooms="3"
-                              numberOfBaths="2"
-                              numberOfSqft= "1,568"
-                              address= "22055 White Stone Road, Marysville OH"
-                          />  
-                          )}
-                      </div>
-                   </div>
+                        <Typography variant="h4" margin={'16px'}>
+                            Newest listings
+                        </Typography>
+                        <div className={styles.listingCardContainer}>
+                            {homes.map((home) => (
+                                <AssetCard
+                                    imgData={home.image_url[0]}
+                                    imgAlt="Placeholder Image"
+                                    date="4 Feb, 2024"
+                                    price={home.price.toString()}
+                                    numberOfBedrooms={home.bedrooms}
+                                    numberOfBaths={home.bathrooms}
+                                    numberOfSqft={home.square_feet.toString()}
+                                    address={home.address}
+                                    key={home.id}
+                                />
+                            ))}
+
+
+                            {/* {listings.map((listing, index) =>
+                                <AssetCard
+                                    imgData={listing.imgData}
+                                    imgAlt="Placeholder Image"
+                                    date="4 Feb, 2024"
+                                    price="$40,999,999"
+                                    numberOfBedrooms="3"
+                                    numberOfBaths="2"
+                                    numberOfSqft="1,568"
+                                    address="22055 White Stone Road, Marysville OH"
+                                    key={index}
+                                />
+                            )} */}
+                        </div>
+                    </div>
                 </div>
             </APIProvider>
         </div>
