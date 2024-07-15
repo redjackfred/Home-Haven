@@ -123,6 +123,7 @@ export default function FindHomes() {
         try{
             const res = await fetch("/api");          
             const data = await res.json();
+            console.log(data);
             setHomes(data);         
         }catch(e){
             console.error(e);
