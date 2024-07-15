@@ -96,6 +96,10 @@
     .listingsContainer{   
         display: none;  
     }
+
+    .filterButtonContainer{  
+        display: none;
+    }   
 }
 @media (max-width: 400px) {
     .searchContainer{

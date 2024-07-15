@@ -12,11 +12,16 @@ export default function InspirationalBox() {
           maxWidth: 1200,
         }),
       );    
+    const matchesSmall = useMediaQuery(
+        json2mq({        
+          maxWidth: 400,
+        }),
+    );   
 
     return (
         <div className={styles.container}>  
             <div className={styles.heroTextContainer}>
-                <Typography variant={matches ? "h4" : "h2"}>
+                <Typography variant={!matches ? "h2" : (!matchesSmall ? "h4" : "h5")}>
                     A perfect match when it comes to homes.   
                 </Typography>    
             </div>          

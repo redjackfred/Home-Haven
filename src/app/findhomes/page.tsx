@@ -105,6 +105,22 @@ const ListButton = styled.button`
     ${ListpositionButton}
 `;
 
+const FilterButtonContainer = styled.div`
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    padding: 0px;
+    border-radius: 5px;
+    border: solid 2px; 
+    border-color: #14B49C;
+    background-color: #EFFFFC;
+    z-index: 1;
+    @media (max-width: 800px) {
+        display: block;
+    }  
+`;
+
 export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
@@ -123,7 +139,6 @@ export default function FindHomes() {
         try{
             const res = await fetch("/api");          
             const data = await res.json();
-            console.log(data);
             setHomes(data);         
         }catch(e){
             console.error(e);
@@ -167,15 +182,17 @@ export default function FindHomes() {
                     </div>
                 </div>
                 <div className={styles.contentContainer}>
-                    <div className={styles.mapContainer}>
-                        <div>
+                    <div className={styles.mapContainer}>                        
                         <MapButton>
                             <MapOutlinedIcon></MapOutlinedIcon>
                         </MapButton>
                         <ListButton>
                             <FormatListBulletedRoundedIcon></FormatListBulletedRoundedIcon>
                         </ListButton>
-                        </div>
+                        <FilterButtonContainer>
+                            <FilterButton title="Filters" items={["Price", "Beds & Baths", "Home Type", "More"]} />
+                        </FilterButtonContainer>
+                    
                         <Map
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}

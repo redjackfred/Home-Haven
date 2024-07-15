@@ -20,15 +20,14 @@ export default function SearchBox({displayBorder}) {
     json2mq({
       maxWidth:400
     })
-  );
+  ); 
 
   const InputTxt = styled.div`
     background-color: white;
     width: 439px;
     border: 1px solid #14B49C;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-
+    border-bottom-left-radius: 8px;   
   
     & input {
         width:388px;
