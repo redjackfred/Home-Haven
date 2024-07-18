@@ -4,19 +4,17 @@ import SearchBox from "../components/searchBox/searchBox";
 import styles from "./page.module.css"
 import { AdvancedMarker, APIProvider, InfoWindow, Map, Marker, Pin } from '@vis.gl/react-google-maps';
 import PoiMarkers from "./poiMarker";
-import AssetCard from "../components/assetCard/assetCard";
-import GridExample from "./gridExample.js"
 import Image from "next/image";
-import CustomMarker from "../components/googleMap/marker";
 import FilterButton from "../components/filterButton/filterButton";
-//
 import SidebarHeader from "../components/sidebar/sidebarHeader";
 import Link from "next/link";
 import styled, {css} from "styled-components";
-import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import { useEffect, useState } from "react";
-import { HomeType } from "../utils/data";
+import { useEffect, useState, useRef } from "react";
+import ToggleButtons from "../components/toggleComponents/toggleButton";
+import HomeListing from "../components/homeListing/homeListing";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import json2mq from "json2mq";
+import windowsize from "../components/getWindowSize/getWindowSize";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
@@ -34,31 +32,6 @@ const locations: Poi[] = [
     { key: 'sunset3', location: { lat: 37.75254918511742, lng: -122.4925432374971 } },
 ];
 
-type listing = {
-    imgData: string,
-    imgAlt: string,
-    date: string,
-    price: string,
-    numberOfBedrooms: number,
-    numberOfBaths: number,
-    numberOfSqft: string,
-    address: string
-}
-
-const listings: listing[] = [];
-// store the fake data.
-for (let i = 0; i < 8; i++) {
-    listings.push({
-        imgData: '/image/assetCard/house.png',
-        imgAlt: 'Placeholder Image',
-        date: '4 Feb, 2024',
-        price: '$40,999,999',
-        numberOfBedrooms: 3,
-        numberOfBaths: 2,
-        numberOfSqft: "1,568",
-        address: "22055 White Stone Road, Marysville OH"
-    });
-}
 
 const SignIn = styled.div`
     display: flex;
@@ -69,51 +42,13 @@ const SignIn = styled.div`
 `;
 
 
-const MappositionButton = css`
-    background-color: #EFFFFC;
-    border: 1px solid #14B49C;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 24px;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-    color: #14B49C;
-    z-index: 1;
-`
-const ListpositionButton = css`
-    background-color: #EFFFFC;
-    border: 1px solid #14B49C;
-    border-top-right-radius:6px;
-    border-bottom-right-radius:6px;
-    margin-top: 20px;
-    margin-left: 64px;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-    position: absolute;
-    color: #14B49C;
-    z-index: 1;
-`
-
-const MapButton = styled.button`
-    ${MappositionButton}
-`;
-const ListButton = styled.button`
-    ${ListpositionButton}
-`;
-
 const FilterButtonContainer = styled.div`
     display: none;
     position: absolute;
     top: 20px;
     right: 24px;
-    padding: 0px;
     border-radius: 5px;
-    border: solid 2px; 
-    border-color: #14B49C;
+    border: #14B49C solid 1px; 
     background-color: #EFFFFC;
     z-index: 1;
     @media (max-width: 800px) {
@@ -125,6 +60,13 @@ export default function FindHomes() {
     const [lattitude, setLattitude] = useState(37.766338623365684);
     const [longitude, setLongitude] = useState(-122.44773195354642);
     const [focus, setFocus] = useState(12.5);
+    const [isload, setIsload] = useState(false);
+    const [isMapButtonActive, setIsMapButtonActive] = useState(true); //lift up states between components.
+
+    const handleMapButtonClick = () =>{
+        setIsMapButtonActive(!isMapButtonActive);
+    }
+
     const handleMarkerClick = (latitude, longitude) => {
         // Update the map center and zoom based on the marker clicked
         setLattitude(latitude);
@@ -132,28 +74,49 @@ export default function FindHomes() {
         // Update the zoom level if necessary
         setFocus(13.5);
     };
-
-    const [homes, setHomes] = useState<HomeType[]>([]);
-
-    const getHomes = async () => {
-        try{
-            const res = await fetch("/api");          
-            const data = await res.json();
-            setHomes(data);         
-        }catch(e){
-            console.error(e);
-        }
-    }
+    const{width, height} = windowsize();
 
     useEffect(() => {
-        getHomes();        
-    }, []);
+        setTimeout(()=>{
+            setIsload(true);
+        }, 100);
+        
+    },[]);
 
+    // useEffect(()=>{
+    //     if (width > 800) {
+    //         setIsMapButtonActive(true);
+    //         console.log("enter");
+    //     }else{
+    //         setIsMapButtonActive(true);
+    //         console.log("no");
+    //     }
+    // }, [width])
     
+    let mapDisplayString = "";
+    if(!isMapButtonActive) {
+        mapDisplayString = "none";
+    }
+    const MapContainer = styled.div`   
+        width: 50%;
+        @media (max-width: 1502px) {
+            width: 70%;
+        }
+        @media (max-width: 800px) {
+            display: ${mapDisplayString};
+            width: 100%;
+        }
+        @media (max-width: 428px) {
+            display: ${mapDisplayString};
+        }
+    `;
+    
+    // console.log(isMapButtonActive);
     return (
         <div className={styles.container}>          
             <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
                 <div className={styles.searchFilterContainer}>
+                    {isload ? 
                     <div className={styles.searchContainer}>
                         <SidebarHeader findhomes={true}/>
                         <Link href="/" >
@@ -172,7 +135,7 @@ export default function FindHomes() {
                                 </SignIn>
                             </Typography>
                         </Link>
-                    </div>
+                    </div>: ""}
                     {/* Add dropdown buttons here*/}
                     <div className={styles.filterButtonContainer}>
                         <FilterButton title="Price" items={["0-1000", "1000-2000", "2000-3000", "3000-4000", "4000-5000", "4000-5000", "5000-6000", "6000-7000"]} />
@@ -182,24 +145,19 @@ export default function FindHomes() {
                     </div>
                 </div>
                 <div className={styles.contentContainer}>
-                    <div className={styles.mapContainer}>                        
-                        <MapButton>
-                            <MapOutlinedIcon></MapOutlinedIcon>
-                        </MapButton>
-                        <ListButton>
-                            <FormatListBulletedRoundedIcon></FormatListBulletedRoundedIcon>
-                        </ListButton>
-                        <FilterButtonContainer>
-                            <FilterButton title="Filters" items={["Price", "Beds & Baths", "Home Type", "More"]} />
-                        </FilterButtonContainer>
-                    
-                        <Map
+                    <ToggleButtons OnMapButtonClick={handleMapButtonClick} mapStatus={isMapButtonActive}/> {/* This is a toggleButtons on the google map */}
+                    <FilterButtonContainer>
+                        {isload? 
+                            <FilterButton title="Filters" items={["Price", "Beds & Baths", "Home Type", "More"]} /> : ""}
+                    </FilterButtonContainer>
+                    <MapContainer>   
+                        <Map 
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}
                             defaultCenter={{ lat: lattitude, lng: longitude }}
                             gestureHandling={'greedy'}
                             disableDefaultUI>
-                            <PoiMarkers pois={locations} />
+                            <PoiMarkers pois={locations}/>
                             {/* advanced marker with html-content */}
                             {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
                             <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
@@ -208,8 +166,8 @@ export default function FindHomes() {
                             <CustomMarker lattidue={37.766338623365684} longitude={-122.40773195354642} title="This is a title" image="/image/houses/House5.png" />   
                             <CustomMarker lattidue={37.746338623365684} longitude={-122.39773195354642} title="This is a title" image="/image/houses/House6.png" />    */}
                         </Map>
-                    </div>
-                    <div className={styles.listingsContainer}>
+                    </MapContainer>
+                    {/* <div className={styles.listingsContainer}>
                         <Typography variant="h4" margin={'16px'}>
                             Newest listings
                         </Typography>
@@ -227,23 +185,9 @@ export default function FindHomes() {
                                     key={home.id}
                                 />
                             ))}
-
-
-                            {/* {listings.map((listing, index) =>
-                                <AssetCard
-                                    imgData={listing.imgData}
-                                    imgAlt="Placeholder Image"
-                                    date="4 Feb, 2024"
-                                    price="$40,999,999"
-                                    numberOfBedrooms="3"
-                                    numberOfBaths="2"
-                                    numberOfSqft="1,568"
-                                    address="22055 White Stone Road, Marysville OH"
-                                    key={index}
-                                />
-                            )} */}
                         </div>
-                    </div>
+                    </div> */}
+                    <HomeListing onListButton={!isMapButtonActive}/>
                 </div>
             </APIProvider>
         </div>

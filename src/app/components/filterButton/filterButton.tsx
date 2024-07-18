@@ -5,8 +5,14 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Slider } from '@mui/material';
+import { Typography } from "@mui/material";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import json2mq from "json2mq";
+
+
 
 export default function FilterButton({
+
   // props here
   // e.g. title,
   title,
@@ -37,7 +43,7 @@ export default function FilterButton({
 }) {
   const [age, setAge] = React.useState('');
   const [values, setValues] = React.useState([]);
-
+  const max428 = useMediaQuery(json2mq({maxWidth: 428}));
   const handleChanges = (event: SelectChangeEvent<typeof values>) => {
     const {
       target: { value },
@@ -75,11 +81,18 @@ export default function FilterButton({
 function valuetext(value: number) {
   return `${value}°C`;
 }
+  const theme ={
+    spacing: 8,
+  }
 
   return (
-    <FormControl sx={{ m: 0, width: 140, maxHeight: 48, height: 48 }}>
-      <InputLabel id="select-label" >{title}</InputLabel>
-      <Select sx={{ height: 48 }}
+    <FormControl sx={max428 ? { m: 0, width: 104, maxHeight: 48, height: 39}: {m: 0, width: 140, maxHeight: 48, height: 48}}>
+      <InputLabel id="select-label"  sx={max428?{m:-0.8, ml:0.3, color:"#0B3650"}: {color:"#0B3650"}}>
+        <Typography variant='subtitle2'>
+          {title}
+        </Typography>
+      </InputLabel>
+      <Select sx={max428 ? { height: 39 }: {height: 48}}
         labelId="select-label"
         id="select-label"
         multiple={multiple}
