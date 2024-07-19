@@ -43,7 +43,7 @@ export default function FilterButton({
 }) {
   const [age, setAge] = React.useState('');
   const [values, setValues] = React.useState([]);
-  const max428 = useMediaQuery(json2mq({maxWidth: 428}));
+  const max430 = useMediaQuery(json2mq({maxWidth: 430}));
   const handleChanges = (event: SelectChangeEvent<typeof values>) => {
     const {
       target: { value },
@@ -86,13 +86,13 @@ function valuetext(value: number) {
   }
 
   return (
-    <FormControl sx={max428 ? { m: 0, width: 104, maxHeight: 48, height: 39}: {m: 0, width: 140, maxHeight: 48, height: 48}}>
-      <InputLabel id="select-label"  sx={max428?{m:-0.8, ml:0.3, color:"#0B3650"}: {color:"#0B3650"}}>
+    <FormControl sx={max430 ? { m: 0, width: 104, maxHeight: 48, height: 39}: {m: 0, width: 140, maxHeight: 48, height: 48}}>
+      <InputLabel id="select-label"  sx={max430?{m:-0.8, ml:0.3, color:"#0B3650"}: {color:"#0B3650"}}>
         <Typography variant='subtitle2'>
           {title}
         </Typography>
       </InputLabel>
-      <Select sx={max428 ? { height: 39 }: {height: 48}}
+      <Select sx={max430 ? { height: 39 }: {height: 48}}
         labelId="select-label"
         id="select-label"
         multiple={multiple}

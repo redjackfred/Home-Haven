@@ -165,6 +165,7 @@ export default function FindHomes() {
                             <CustomMarker lattidue={37.746338623365684} longitude={-122.39773195354642} title="This is a title" image="/image/houses/House6.png" />    */}
                         </Map>
                         {/* NextJs'way to write css */}
+                        </div>
                         <style jsx>
                             {`#mapContainer{
                                 width: 50%;
@@ -180,7 +181,7 @@ export default function FindHomes() {
                                 width: 100%;
                                 }
                             }
-                            @media (max-width: 428px) {
+                            @media (max-width: 430px) {
                                 #mapContainer{
                                 display: ${mapDisplayString};
                                 width: 100%;
@@ -188,8 +189,6 @@ export default function FindHomes() {
                             }
                             `}
                         </style>
-                        </div>
-                        
                     {/* </MapContainer> */}
                     
                     <HomeListing onListButton={!isMapButtonActive}/>

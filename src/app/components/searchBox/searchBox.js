@@ -13,12 +13,12 @@ import Link from 'next/link';
 export default function SearchBox({displayBorder}) { 
   const matches = useMediaQuery(
     json2mq({        
-      minWidth: 429,
+      minWidth: 431,
     }),
   );  
   const below400 = useMediaQuery(
     json2mq({
-      maxWidth:428
+      maxWidth:430
     })
   ); 
 
@@ -38,7 +38,7 @@ export default function SearchBox({displayBorder}) {
         background-color: transparent;
     }
     
-     @media (min-width: 429px) {
+     @media (min-width: 431px) {
       & img{
         display: none;
       }

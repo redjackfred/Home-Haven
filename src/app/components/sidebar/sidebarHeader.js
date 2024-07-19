@@ -35,7 +35,7 @@ export default function SidebarHeader({findhomes}) {
         top:0;
         padding-left: -60px;
 
-        @media (max-width: 428px) {
+        @media (max-width: 430px) {
             top:0;
         }
         
@@ -53,7 +53,7 @@ export default function SidebarHeader({findhomes}) {
         height: 600px;
         box-shadow: 0px 4px 4px #00000030;
 
-        @media (max-width: 428px) {
+        @media (max-width: 430px) {
             top:-500px;
             height: 500px;
         }
@@ -64,7 +64,7 @@ export default function SidebarHeader({findhomes}) {
 const MenuListFindhomes = styled(MenuList)`
     left:-33.29px;
 
-    @media (max-width: 428px) {
+    @media (max-width: 430px) {
         top:-520px;
         height: 500px;
         margin-top: -10px;

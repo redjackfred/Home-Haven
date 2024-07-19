@@ -98,7 +98,7 @@
     }   
 }
 
-@media (max-width: 428px) {
+@media (max-width: 430px) {
     /* .mapContainer{
         display: none;
     } */
@@ -114,7 +114,7 @@
     }  
 }
 
-@media (min-width: 429px) {
+@media (min-width: 431px) {
     .logo{
         display: none;
     }

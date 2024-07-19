@@ -36,7 +36,7 @@ for (let i = 0; i < 8; i++) {
 
 export default function HomeListing({onListButton}) {
     // console.log(onListButton);
-    const max428 = useMediaQuery(json2mq({maxWidth: 428}));
+    const max428 = useMediaQuery(json2mq({maxWidth: 430}));
     const [homes, setHomes] = useState<HomeType[]>([]);
     const [isload, setIsload] = useState(false);
 
@@ -69,7 +69,7 @@ export default function HomeListing({onListButton}) {
             min-width: 372px;
         }
 
-        @media (min-width: 429px) and (max-width: 800px) {
+        @media (min-width: 431px) and (max-width: 800px) {
             display: ${listDisplayString};
             box-shadow: none;
             width: 100%;
@@ -78,7 +78,7 @@ export default function HomeListing({onListButton}) {
             
         }
 
-        @media (max-width: 428px) {
+        @media (max-width: 430px) {
             display: ${listDisplayString};
             box-shadow: none;
             width: 100%;
