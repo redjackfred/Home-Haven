@@ -61,7 +61,7 @@ export default function HomeListing({onListButton}) {
     const ListingsContainer = styled.div`
         box-shadow: 5px 0px 10px rgba(0.5, 0.5, 0.5, 0.3);
         width: 50%;
-        z-index: 0;
+        z-index: 1;
         
 
         @media (max-width: 1502px) {
@@ -74,6 +74,8 @@ export default function HomeListing({onListButton}) {
             box-shadow: none;
             width: 100%;
             background-color: #EFFFFC;
+            z-index: 1;
+            
         }
 
         @media (max-width: 428px) {
@@ -81,6 +83,7 @@ export default function HomeListing({onListButton}) {
             box-shadow: none;
             width: 100%;
             background-color: #EFFFFC;
+            z-index: 1;
         }
     `;
 

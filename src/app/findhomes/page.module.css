@@ -49,15 +49,16 @@
     height: 100%;
 }
 
-/* .mapContainer {   
-    width: 50%;
-} */
 
 /* .listingsContainer{
     box-shadow: -5px 0px 10px rgba(0.5, 0.5, 0.5, 0.3);
     width: 50%;
     z-index: 1;
 } */
+ .mapContainer {     
+        width: 50%;
+        z-index: 0;
+    }
 
 .logo{
     margin-left: 7.29px;
@@ -65,10 +66,10 @@
 
 
 @media (max-width: 1502px) {
-    /* .mapContainer {     
+    .mapContainer {     
         width: 70%;
     }
-     */
+     
     /* .listingsContainer{    
         width: 30%;    
         min-width: 372px;
@@ -83,10 +84,10 @@
 }
 
 @media (max-width: 800px) {
-    /* .mapContainer {     
+    .mapContainer {     
         width: 100%;
-        display: none;
-    } */
+        /* display: none; */
+    }
     
     /* .listingsContainer{   
         display: none;  

@@ -12,10 +12,8 @@ import styled, {css} from "styled-components";
 import { useEffect, useState, useRef } from "react";
 import ToggleButtons from "../components/toggleComponents/toggleButton";
 import HomeListing from "../components/homeListing/homeListing";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import json2mq from "json2mq";
 import windowsize from "../components/getWindowSize/getWindowSize";
-
+import useMediaQuery from "@mui/material/useMediaQuery";
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
     { key: 'paintedLadies', location: { lat: 37.77620759443369, lng: -122.43277996388103 } },
@@ -50,7 +48,7 @@ const FilterButtonContainer = styled.div`
     border-radius: 5px;
     border: #14B49C solid 1px; 
     background-color: #EFFFFC;
-    z-index: 1;
+    z-index: 2;
     @media (max-width: 800px) {
         display: block;
     }  
@@ -62,6 +60,8 @@ export default function FindHomes() {
     const [focus, setFocus] = useState(12.5);
     const [isload, setIsload] = useState(false);
     const [isMapButtonActive, setIsMapButtonActive] = useState(true); //lift up states between components.
+    const max1502 = useMediaQuery("(max-width:1502px)");
+
 
     const handleMapButtonClick = () =>{
         setIsMapButtonActive(!isMapButtonActive);
@@ -83,6 +83,13 @@ export default function FindHomes() {
         
     },[]);
 
+    const newStyle ={
+        mapContainer :{
+            width: "70%",
+        }
+    }
+
+
     // useEffect(()=>{
     //     if (width > 800) {
     //         setIsMapButtonActive(true);
@@ -97,19 +104,6 @@ export default function FindHomes() {
     if(!isMapButtonActive) {
         mapDisplayString = "none";
     }
-    const MapContainer = styled.div`   
-        width: 50%;
-        @media (max-width: 1502px) {
-            width: 70%;
-        }
-        @media (max-width: 800px) {
-            display: ${mapDisplayString};
-            width: 100%;
-        }
-        @media (max-width: 428px) {
-            display: ${mapDisplayString};
-        }
-    `;
     
     // console.log(isMapButtonActive);
     return (
@@ -150,7 +144,11 @@ export default function FindHomes() {
                         {isload? 
                             <FilterButton title="Filters" items={["Price", "Beds & Baths", "Home Type", "More"]} /> : ""}
                     </FilterButtonContainer>
-                    <MapContainer>   
+                       
+                    
+                    {/* <MapContainer> */}
+                        {/* <div className="mapContainer" style={newStyle.mapContainer}>  */}
+                        <div id="mapContainer" > 
                         <Map 
                             mapId={'bf51a910020fa25a'}
                             defaultZoom={focus}
@@ -166,27 +164,34 @@ export default function FindHomes() {
                             <CustomMarker lattidue={37.766338623365684} longitude={-122.40773195354642} title="This is a title" image="/image/houses/House5.png" />   
                             <CustomMarker lattidue={37.746338623365684} longitude={-122.39773195354642} title="This is a title" image="/image/houses/House6.png" />    */}
                         </Map>
-                    </MapContainer>
-                    {/* <div className={styles.listingsContainer}>
-                        <Typography variant="h4" margin={'16px'}>
-                            Newest listings
-                        </Typography>
-                        <div className={styles.listingCardContainer}>
-                            {homes.map((home) => (
-                                <AssetCard
-                                    imgData={home.image_url[0]}
-                                    imgAlt="Placeholder Image"
-                                    date="4 Feb, 2024"
-                                    price={home.price.toString()}
-                                    numberOfBedrooms={home.bedrooms}
-                                    numberOfBaths={home.bathrooms}
-                                    numberOfSqft={home.square_feet.toString()}
-                                    address={home.address}
-                                    key={home.id}
-                                />
-                            ))}
+                        {/* NextJs'way to write css */}
+                        <style jsx>
+                            {`#mapContainer{
+                                width: 50%;
+                            }
+                            @media (max-width: 1502px) {
+                                #mapContainer{
+                                    width: 70%;
+                                }
+                            }
+                            @media (max-width: 800px) {
+                                #mapContainer{
+                                display: ${mapDisplayString};
+                                width: 100%;
+                                }
+                            }
+                            @media (max-width: 428px) {
+                                #mapContainer{
+                                display: ${mapDisplayString};
+                                width: 100%;
+                                }
+                            }
+                            `}
+                        </style>
                         </div>
-                    </div> */}
+                        
+                    {/* </MapContainer> */}
+                    
                     <HomeListing onListButton={!isMapButtonActive}/>
                 </div>
             </APIProvider>
