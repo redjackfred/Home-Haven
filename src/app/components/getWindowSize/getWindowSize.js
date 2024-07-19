@@ -16,7 +16,6 @@ function getWindowSize() {
 
 export default function GetWindowSize() {
     let [windowSize, setWindowSize] = useState(getWindowSize());
-
     useEffect(()=>{
         function resizing() {
             setWindowSize(getWindowSize());
@@ -25,6 +24,6 @@ export default function GetWindowSize() {
         window.addEventListener('resize', resizing);
         return () =>window.removeEventListener('reset',resizing);
     }, []);
-
+    
     return windowSize;
 }

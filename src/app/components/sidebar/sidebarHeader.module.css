@@ -136,42 +136,6 @@
 }
 
 
-/*animation pop up navigation list */
-/* .menuList{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: -600px;
-    width: 100%;
-    align-items: center;
-    transition: all 0.3s;
-    background-color: #EFFFFC;
-    height: 600px;
-    box-shadow: 0px 4px 4px #00000030;
-} */
-/* .menuListFindhomes{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: -600px;
-    width: 100%;
-    align-items: center;
-    transition: all 0.3s ;
-    background-color: #EFFFFC;
-    height: 500px;
-    box-shadow: 0px 4px 4px #00000030;
-    left:-33.29px;
-
-} */
-
-/* .active{
-    position: absolute;
-    z-index: 50;
-    top:0;
-    padding-left: -60px;
-
-} */
-
 .list{
     display: flex;
     list-style: none;
@@ -243,7 +207,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .menu div{
         width: 21.43px;
         height: 2px;
@@ -271,20 +235,5 @@
     .logo{
         padding-top: 26.25px;
     }
-    /* .menuList{
-        top:-500px;
-        height: 500px;
-    } */
-    /* .menuListFindhomes{
-        top:-520px;
-        height: 500px;
-        margin-top: -10px;
-        width: var(--len-width);
-    } */
-
-    /* .active{
-        top:0px;
-    } */
-
 }   
 

@@ -1,0 +1,25 @@
+
+
+.listingCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Gap between cards */
+    padding: 16px;
+    overflow: hidden;
+    height: calc(100% - 74px);
+    position: absolute;
+    z-index: 0;
+    
+}
+
+.listingList{
+    position: relative;
+}
+
+
+@media (max-width: 430px) {
+
+    .listingCardContainer {
+        justify-content: center;
+    }
+}

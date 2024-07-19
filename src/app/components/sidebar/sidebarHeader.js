@@ -15,6 +15,8 @@ export default function SidebarHeader({findhomes}) {
     const menuRef = useRef(null);
     const screensize = useMediaQuery(json2mq({minWidth:1200}));
 
+    const [isload, setIsload] = useState(false);
+
     const links = [
         {href: '/findhomes', label:'Homes'},
         { href: '/agents', label: 'Agents' },
@@ -26,14 +28,14 @@ export default function SidebarHeader({findhomes}) {
     const{width, height} = windowsize();
     //The css below only take pixel value.
     const widthPx = typeof width === 'number' ? `${width}px` : width;
-
+    console.log(width);
     const ActiveStyles = css`
         position: absolute;
         z-index: 50;
         top:0;
         padding-left: -60px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 430px) {
             top:0;
         }
         
@@ -43,7 +45,7 @@ export default function SidebarHeader({findhomes}) {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: -6000px;
+        top: -600px;
         width: 100%;
         align-items: center;
         transition: all 0.4s ease-in-out;
@@ -51,7 +53,7 @@ export default function SidebarHeader({findhomes}) {
         height: 600px;
         box-shadow: 0px 4px 4px #00000030;
 
-        @media (max-width: 400px) {
+        @media (max-width: 430px) {
             top:-500px;
             height: 500px;
         }
@@ -62,7 +64,7 @@ export default function SidebarHeader({findhomes}) {
 const MenuListFindhomes = styled(MenuList)`
     left:-33.29px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 430px) {
         top:-520px;
         height: 500px;
         margin-top: -10px;
@@ -102,45 +104,53 @@ const MenuListFindhomes = styled(MenuList)`
         }
     }, [screensize])
 
+    useEffect(() => {
+        setTimeout(()=>{
+            setIsload(true);
+        }, 1000);
+    },[]);
+
     const MenuComponent = findhomes ? MenuListFindhomes : MenuList;
     return (        
         <header>
             <nav className={headerStyll.nav}>
                 <div className={headerStyll.navMenu}>
                     <div ref={menuRef} onClick={handleClick} className={`${findhomes ? headerStyll.menuFindhomes: headerStyll.menu} ${isOpen ? headerStyll.open : ""}`}>
-                        {/* this is the setup for the navigation bar */}
+                        {/* this is the setup for the navigation bar. The hamburger icon*/}
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                 </div>
-                {/* The logo setup for the small screen */}
-                <MenuComponent isActive={isOpen}>
-                    <Link href="/">
-                        <div className={headerStyll.logo}>
-                            <Image src="/image/header/logo.png" 
-                                alt="Home Haven Logo"                           
-                                width={32}
-                                height={32} 
-                                className={headerStyll.image}/>
-                            <Typography variant="h5" className={headerStyll.text}>
-                                Home Haven
-                            </Typography> 
-                        </div>
-                    </Link>
-                    {/* Navigation menu */}
-                    <ul className={headerStyll.list}>
-                     {links.map(({href, label})=>(
-                        <li key = {href} onClick={selectNav} className={isSelect? headerStyll.select : headerStyll.navText}>
-                           <Link  href={href} > {
-                                <Typography variant="h5">
-                                {label}
-                                </Typography>
-                           }</Link>
-                       </li>
-                   ))}
-                </ul>
-                </MenuComponent>
+                {/* The logo setup for the small screen. Isload is set to delay the following component loading too fast, which is 
+                Unwanted shows on the website. It is delay for about 1s*/}
+                {isload ? 
+                    <MenuComponent isActive={isOpen}>
+                        <Link href="/">
+                            <div className={headerStyll.logo}>
+                                <Image src="/image/header/logo.png" 
+                                    alt="Home Haven Logo"                           
+                                    width={32}
+                                    height={32} 
+                                    className={headerStyll.image}/>
+                                <Typography variant="h5" className={headerStyll.text}>
+                                    Home Haven
+                                </Typography> 
+                            </div>
+                        </Link>
+                        {/* Navigation menu */}
+                        <ul className={headerStyll.list}>
+                        {links.map(({href, label})=>(
+                            <li key = {href} onClick={selectNav} className={isSelect? headerStyll.select : headerStyll.navText}>
+                            <Link  href={href} > {
+                                    <Typography variant="h5">
+                                    {label}
+                                    </Typography>
+                            }</Link>
+                        </li>
+                    ))}
+                    </ul>
+                    </MenuComponent> : ""}
             </nav>
            
         </header>

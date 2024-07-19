@@ -49,15 +49,16 @@
     height: 100%;
 }
 
-.mapContainer {   
-    width: 50%;
-}
 
-.listingsContainer{
+/* .listingsContainer{
     box-shadow: -5px 0px 10px rgba(0.5, 0.5, 0.5, 0.3);
     width: 50%;
     z-index: 1;
-}
+} */
+ .mapContainer {     
+        width: 50%;
+        z-index: 0;
+    }
 
 .logo{
     margin-left: 7.29px;
@@ -68,40 +69,39 @@
     .mapContainer {     
         width: 70%;
     }
-    
-    .listingsContainer{    
+     
+    /* .listingsContainer{    
         width: 30%;    
         min-width: 372px;
-    }
+    } */
 }
 
 @media (max-width: 1200px) {
     .container {
         height: 100vh;
     }
-    /* .searchContainer{
-        display: none;
-    } */
-    /* .filterButtonContainer{  
-        display: none;
-    }   */
 
 }
 
 @media (max-width: 800px) {
     .mapContainer {     
         width: 100%;
+        /* display: none; */
     }
     
-    .listingsContainer{   
+    /* .listingsContainer{   
         display: none;  
-    }
+    } */
 
     .filterButtonContainer{  
         display: none;
     }   
 }
-@media (max-width: 400px) {
+
+@media (max-width: 430px) {
+    /* .mapContainer{
+        display: none;
+    } */
     .searchContainer{
         display: flex;
         align-items: center;
@@ -114,7 +114,7 @@
     }  
 }
 
-@media (min-width: 401px) {
+@media (min-width: 431px) {
     .logo{
         display: none;
     }
@@ -124,18 +124,18 @@
     
 }
 
-.listingCardContainer {
+/* .listingCardContainer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px; /* Gap between cards */
-    padding: 16px;
+    flex-wrap: wrap; */
+    /* gap: 16px; Gap between cards */
+    /* padding: 16px;
     overflow: hidden;
     height: calc(100% - 74px);
-}
+} */
 
-.listingList{
+/* .listingList{
     position: relative;
-    /* padding-left: 60px;    
-    margin-top: 40px; */
-    /* margin-bottom: 24px;    */
-}
+    padding-left: 60px;    
+    margin-top: 40px;
+    margin-bottom: 24px;   
+} */
