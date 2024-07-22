@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.input { 
+    height: 48px;
+    flex-basis: 350px;
+    padding: 0 1rem;
+    border: 1px solid #14B49C; 
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.focus{
+    outline: none !important;
+    border-top: 1px solid #1477b4;
+    border-right: 1px solid #1477b4;
+    border-bottom: 1px solid #1477b4;   
+    border-left: 1px solid #14B49C;   
+    box-shadow: 0 0 3px #719ECE;
+}
+
+.input:focus {
+    outline: none !important;
+    border:1px solid #1477b4;
+    box-shadow: 0 0 3px #719ECE;   
+}
+
+.icon {
+    color: white;
+    background-color: #14B49C;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;        
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}

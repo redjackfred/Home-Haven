@@ -78,8 +78,8 @@ export default function SearchBox({displayBorder}) {
   return (        
       <div className={styles.container}>
           {displayBorder ? (
-            <OutlinedInputComponent>
-              <form>
+            <form>
+            <OutlinedInputComponent>              
                 <input type="text" placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Enter an address"} />
                 <Link href="#">
                   <Image src="/image/Vector.png" 
@@ -88,8 +88,9 @@ export default function SearchBox({displayBorder}) {
                     alt="search icon"
                   ></Image>
                 </Link>
-              </form>
+              
             </OutlinedInputComponent>
+            </form>
           ) : (
             <Input className={styles.inputTxt} placeholder={matches ? "Enter an address, neighborhood, city, or ZIP code" : "Address, neighborhood, city, or ZIP"} disableUnderline />       
           )} 

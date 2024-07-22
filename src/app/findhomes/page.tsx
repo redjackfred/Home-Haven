@@ -14,6 +14,7 @@ import ToggleButtons from "../components/toggleComponents/toggleButton";
 import HomeListing from "../components/homeListing/homeListing";
 import windowsize from "../components/getWindowSize/getWindowSize";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 type Poi = { key: string, location: google.maps.LatLngLiteral }
 const locations: Poi[] = [
     { key: 'paintedLadies', location: { lat: 37.77620759443369, lng: -122.43277996388103 } },
@@ -107,8 +108,8 @@ export default function FindHomes() {
     
     // console.log(isMapButtonActive);
     return (
-        <div className={styles.container}>          
-            <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>
+        <div className={styles.container}>    
+            <APIProvider apiKey={"AIzaSyCIm_MVTHuuOneXJhD16L4NZ2TOWdew07o"} onLoad={() => console.log('Maps API has loaded.')} libraries={['marker']}>         
                 <div className={styles.searchFilterContainer}>
                     {isload ? 
                     <div className={styles.searchContainer}>
@@ -120,7 +121,7 @@ export default function FindHomes() {
                                 height={32}
                                 className={styles.logo}
                             /> 
-                        </Link>
+                        </Link>                       
                         <SearchBox displayBorder/>
                         <Link href="/signIn" className={styles.signIn}>
                             <Typography variant="subtitle2">
