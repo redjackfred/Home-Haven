@@ -28,7 +28,7 @@ export default function Sell() {
   const filteredHomes = homes.filter((home) => {   
     const numericQuery = parseFloat(searchQuery);
     const isNumeric = !isNaN(numericQuery);   
-
+    
     if(searchQuery){  
          // If the search query is numeric, check numerical fields  
         if (isNumeric) {  
