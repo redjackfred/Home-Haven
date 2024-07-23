@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NewSearchBox from "../components/searchBox/newSearchBox";
 import AssetCard from "../components/assetCard/assetCard";
 import styles from "./page.module.css";
@@ -65,9 +65,7 @@ export default function Sell() {
               />
             ))
           ) : (
-            <Suspense>
             <p>No homes found for the query: {searchQuery}</p>
-            </Suspense>
           )}
         </ul>
       </div>
