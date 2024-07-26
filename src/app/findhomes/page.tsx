@@ -89,17 +89,7 @@ export default function FindHomes() {
             width: "70%",
         }
     }
-
-
-    // useEffect(()=>{
-    //     if (width > 800) {
-    //         setIsMapButtonActive(true);
-    //         console.log("enter");
-    //     }else{
-    //         setIsMapButtonActive(true);
-    //         console.log("no");
-    //     }
-    // }, [width])
+ 
     
     let mapDisplayString = "";
     if(!isMapButtonActive) {
@@ -144,11 +134,7 @@ export default function FindHomes() {
                     <FilterButtonContainer>
                         {isload? 
                             <FilterButton title="Filters" items={["Price", "Beds & Baths", "Home Type", "More"]} /> : ""}
-                    </FilterButtonContainer>
-                       
-                    
-                    {/* <MapContainer> */}
-                        {/* <div className="mapContainer" style={newStyle.mapContainer}>  */}
+                    </FilterButtonContainer>      
                         <div id="mapContainer" > 
                         <Map 
                             mapId={'bf51a910020fa25a'}
@@ -156,14 +142,7 @@ export default function FindHomes() {
                             defaultCenter={{ lat: lattitude, lng: longitude }}
                             gestureHandling={'greedy'}
                             disableDefaultUI>
-                            <PoiMarkers pois={locations}/>
-                            {/* advanced marker with html-content */}
-                            {/* <CustomMarker lattidue={37.796338623365684} longitude={-122.44773195354642} title="This is a title" image="/image/houses/House1.png" />            
-                            <CustomMarker lattidue={37.796338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House2.png" />     
-                            <CustomMarker lattidue={37.746338623365684} longitude={-122.41773195354642} title="This is a title" image="/image/houses/House3.png" />     
-                            <CustomMarker lattidue={37.756338623365684} longitude={-122.42773195354642} title="This is a title" image="/image/houses/House4.png" />   
-                            <CustomMarker lattidue={37.766338623365684} longitude={-122.40773195354642} title="This is a title" image="/image/houses/House5.png" />   
-                            <CustomMarker lattidue={37.746338623365684} longitude={-122.39773195354642} title="This is a title" image="/image/houses/House6.png" />    */}
+                            <PoiMarkers pois={locations}/>                           
                         </Map>
                         {/* NextJs'way to write css */}
                         </div>
@@ -190,7 +169,7 @@ export default function FindHomes() {
                             }
                             `}
                         </style>
-                    {/* </MapContainer> */}
+               
                     
                     <HomeListing onListButton={!isMapButtonActive}/>
                 </div>

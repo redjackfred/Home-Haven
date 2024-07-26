@@ -1,0 +1,625 @@
+[  
+  {      
+    "name": "Modern Apartment",  
+    "address": "123 Main St",  
+    "city": "San Francisco",  
+    "zip_code": "94101",  
+    "price": 1200000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1300,  
+    "lot_size": 0,  
+    "year_built": 2015,  
+    "description": "A beautiful modern apartment with city views.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/73f8b5d3f8ac8b2e7b1e2f8173e3b516-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/67054d28af5554f77956fef53e1d7577-cc_ft_384.webp", "https://photos.zillowstatic.com/fp/b66855af8afa495a8e09b77c7b24e902-cc_ft_384.webp", "https://photos.zillowstatic.com/fp/20f45dd24ae25725b80e39b5e7cd9ee9-cc_ft_384.webp"]  
+  },  
+  {      
+    "name": "Cozy Cottage",  
+    "address": "456 Oak St",  
+    "city": "San Francisco",  
+    "zip_code": "94102",  
+    "price": 850000,  
+    "bedrooms": 2,  
+    "bathrooms": 1,  
+    "square_feet": 900,  
+    "lot_size": 1200,  
+    "year_built": 1920,  
+    "description": "A quaint cottage with a charming backyard.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/0d20dd52a3909426d2220812cb2f98fb-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/3286d175af875bb1c03ca927bbca05eb-cc_ft_384.webp","https://photos.zillowstatic.com/fp/df4c9fc57e39649c78bf0bf41d32a15e-cc_ft_384.webp"]  
+  },  
+  {      
+    "name": "Luxury Condo",  
+    "address": "789 Pine St",  
+    "city": "San Francisco",  
+    "zip_code": "94103",  
+    "price": 2300000,  
+    "bedrooms": 3,  
+    "bathrooms": 2.5,  
+    "square_feet": 1800,  
+    "lot_size": 0,  
+    "year_built": 2018,  
+    "description": "Sleek condo in the heart of the city with high-end finishes.",  
+    "image_url": ["http://example.com/images/3a.jpg", "http://example.com/images/3b.jpg"]  
+  },  
+  {    
+    "name": "Family Villa",  
+    "address": "101 Maple St",  
+    "city": "San Francisco",  
+    "zip_code": "94104",  
+    "price": 1800000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2500,  
+    "lot_size": 3000,  
+    "year_built": 2005,  
+    "description": "Spacious villa with a large garden and children's play area.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/30ab49fc649fefc82a283b07ace88281-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/c582ce4a6f22f47c0aed71a8d1429d19-cc_ft_384.webp","https://photos.zillowstatic.com/fp/16691174c77a50a613ad58009ed9806b-cc_ft_384.webp"]  
+  },  
+  {    
+    "name": "Luxury Penthouse",  
+    "address": "1300 Market St",  
+    "city": "San Francisco",  
+    "zip_code": "94102",  
+    "price": 3500000,  
+    "bedrooms": 3,  
+    "bathrooms": 3.5,  
+    "square_feet": 2500,  
+    "lot_size": 0,  
+    "year_built": 2018,  
+    "description": "A breathtaking penthouse with panoramic views and smart home technology.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/750c0cfb22e27558d3ae96e1b0d149b6-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/c07c69b5bfdb0a9e1c346be513c672cc-cc_ft_384.webp","https://photos.zillowstatic.com/fp/f191788fff64b70b50f34e6ea455f3b6-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Charming Bungalow",  
+    "address": "200 Birch St",  
+    "city": "San Francisco",  
+    "zip_code": "94105",  
+    "price": 950000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 1200,  
+    "lot_size": 1500,  
+    "year_built": 1940,  
+    "description": "Charming bungalow with vintage accents and a modern touch.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/5b8121bb2b29b29edfc71e87249c24b9-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/5de140792c6431b0afbf5a345946bd23-cc_ft_384.webp","https://photos.zillowstatic.com/fp/cb94141b7a38d1ede44946eddac35c34-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Elegant Townhouse",  
+    "address": "300 Cedar St",  
+    "city": "San Francisco",  
+    "zip_code": "94106",  
+    "price": 2100000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 1700,  
+    "lot_size": 600,  
+    "year_built": 2017,  
+    "description": "Luxurious townhouse with state-of-the-art amenities.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/d1a3497a3f3378e3b62d9bd3acc965fb-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/38760a81fe705d9e072ef9221a340030-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Seaside Retreat",  
+    "address": "400 Ocean Ave",  
+    "city": "San Francisco",  
+    "zip_code": "94107",  
+    "price": 2800000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 3100,  
+    "lot_size": 4000,  
+    "year_built": 2010,  
+    "description": "Stunning seaside retreat with ocean views.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/eac2335323b7870ab778743998316b87-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/2b3b92c79eb091acd32d6fdcca64b858-cc_ft_384.webp"]  
+  },  
+  {    
+    "name": "Urban Loft",  
+    "address": "500 Tech St",  
+    "city": "San Francisco",  
+    "zip_code": "94108",  
+    "price": 1400000,  
+    "bedrooms": 1,  
+    "bathrooms": 1,  
+    "square_feet": 1050,  
+    "lot_size": 0,  
+    "year_built": 2016,  
+    "description": "Modern urban loft in a vibrant neighborhood.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/7152c105c5f17fdebbd2424067a312f8-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/a7423c601fa521a79d75195cefd8e7b8-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Contemporary Home",  
+    "address": "600 Sunset Blvd",  
+    "city": "San Francisco",  
+    "zip_code": "94109",  
+    "price": 1500000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 1600,  
+    "lot_size": 2000,  
+    "year_built": 2019,  
+    "description": "A beautiful contemporary home with a spacious layout.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/feb6554842a629b17a665e55bc93651f-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/9baae4e14228bd86c4f6b2052acdb22e-cc_ft_384.webp"]  
+  },  
+  {    
+    "name": "Spacious Ranch",  
+    "address": "700 Green St",  
+    "city": "San Francisco",  
+    "zip_code": "94110",  
+    "price": 2000000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2500,  
+    "lot_size": 5000,  
+    "year_built": 2003,  
+    "description": "Ample space for family and friends in this ranch-style home.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/fdfc0f1738f3f5ad6b276414e7d7cf59-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/771a4fd201c8376fef96d0d0df7daaed-cc_ft_768.webp"]  
+  },  
+  {      
+    "name": "Art Deco Gem",  
+    "address": "800 River St",  
+    "city": "San Francisco",  
+    "zip_code": "94111",  
+    "price": 1750000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 2100,  
+    "lot_size": 1800,  
+    "year_built": 1938,  
+    "description": "Beautifully updated Art Deco home near parks and shops.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/b12703d5340f4912bce01cbd01beb668-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/401db2848b99e5f6b528aaee8eff873e-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Historic Victorian",  
+    "address": "900 Lighthouse Rd",  
+    "city": "San Francisco",  
+    "zip_code": "94112",  
+    "price": 2250000,  
+    "bedrooms": 5,  
+    "bathrooms": 3.5,  
+    "square_feet": 3200,  
+    "lot_size": 2500,  
+    "year_built": 1890,  
+    "description": "A stunning Victorian with preserved historical features.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/68a0780a30ef27ec73eb057c6854c6a7-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/2ee8f9e28bd9548e9492fd96e800b81c-cc_ft_384.webp"]  
+  },  
+  {      
+    "name": "Coastal Escape",  
+    "address": "100 Beach St",  
+    "city": "San Francisco",  
+    "zip_code": "94113",  
+    "price": 3000000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2900,  
+    "lot_size": 0,  
+    "year_built": 2011,  
+    "description": "Experience coastal living with breathtaking views.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/82c5d5bbbc71dbc7044b035567b2cc0f-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/015f7dd66546240fb4983e89a1e8caca-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Stylish Studio",  
+    "address": "1100 Art St",  
+    "city": "San Francisco",  
+    "zip_code": "94114",  
+    "price": 700000,  
+    "bedrooms": 0,  
+    "bathrooms": 1,  
+    "square_feet": 600,  
+    "lot_size": 0,  
+    "year_built": 2020,  
+    "description": "Chic studio perfect for urban living.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/e873717af63779264db4ba5e5ec98764-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/d8a009d068834492e184fd4e140b0d38-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Modern Farmhouse",  
+    "address": "1200 Harvest Ln",  
+    "city": "San Francisco",  
+    "zip_code": "94101",  
+    "price": 1900000,  
+    "bedrooms": 4,  
+    "bathrooms": 2.5,  
+    "square_feet": 2200,  
+    "lot_size": 3500,  
+    "year_built": 2017,  
+    "description": "A lovely modern farmhouse with traditional warmth.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/0e35d300a9826bfd5397e029d3615c79-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/1f78501c80142f3a151ee28038f54b76-cc_ft_384.webp"]  
+  },  
+  {     
+    "name": "Renovated Loft",  
+    "address": "1300 Factory St",  
+    "city": "San Francisco",  
+    "zip_code": "94102",  
+    "price": 1750000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1400,  
+    "lot_size": 0,  
+    "year_built": 2015,  
+    "description": "An urban loft with sleek finishes and a vibrant atmosphere.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/00f2412e2366e9e7ebb626b8c7d1312a-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/a136382d68876288712d6b094d35491d-cc_ft_384.webp"]  
+  },  
+  {  
+    "name": "Charming Cape Cod",  
+    "address": "1400 Harbor St",  
+    "city": "San Francisco",  
+    "zip_code": "94103",  
+    "price": 1600000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 2000,  
+    "lot_size": 1800,  
+    "year_built": 1980,  
+    "description": "A charming Cape Cod home with a cozy feel.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/0e40277c63f1e87e87a6fcb903a39f35-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/4b3d8dc8c7a837074b7ad7fc4deb218e-cc_ft_384.webp"]  
+  },  
+  {  
+    "name": "Modern Minimalist",  
+    "address": "1500 Style St",  
+    "city": "San Francisco",  
+    "zip_code": "94107",  
+    "price": 2400000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 2600,  
+    "lot_size": 0,  
+    "year_built": 2021,  
+    "description": "Minimalist home with an elegant design and open spaces.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/cbe3e8a7d9ebb74b20a6c8a3b1ba3578-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/2a053e7beded876a3581957732d58540-cc_ft_384.webp"]  
+  },  
+  {  
+    "name": "Eclectic Victorian",  
+    "address": "1600 Theme St",  
+    "city": "San Francisco",  
+    "zip_code": "94106",  
+    "price": 2200000,  
+    "bedrooms": 5,  
+    "bathrooms": 4,  
+    "square_feet": 3000,  
+    "lot_size": 2500,  
+    "year_built": 1895,  
+    "description": "An eclectic Victorian home blending classic and modern styles.",  
+    "image_url": ["https://photos.zillowstatic.com/fp/f7f0bbcafc4885ff5b402bc1aedce432-cc_ft_768.webp", "https://photos.zillowstatic.com/fp/7459bcf96883ebe4f431bb3c9fce33d3-cc_ft_384.webp"]  
+  },
+  {  
+    "name": "Charming Craftsman",  
+    "address": "2000 Maple Ave",  
+    "city": "San Francisco",  
+    "zip_code": "94107",  
+    "price": 1650000,  
+    "bedrooms": 3,  
+    "bathrooms": 2,  
+    "square_feet": 2100,  
+    "lot_size": 1800,  
+    "year_built": 1920,  
+    "description": "A beautifully restored Craftsman-style home with character and charm.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/546254cd7dd70eff80dfee8d6e6e1e94-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/dd5593c2e9a6ea4474a171085224e396-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Modern Loft",  
+    "address": "2100 Factory St",  
+    "city": "San Francisco",  
+    "zip_code": "94111",  
+    "price": 2800000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1500,  
+    "lot_size": 0,  
+    "year_built": 2015,  
+    "description": "An open-concept modern loft with stunning city views and luxurious finishes.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/d577bfb5ba75542c4fac130af10272f0-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/1ce098d1020be71491deabef2e628679-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Classic Edwardian",  
+    "address": "2200 Victorian Rd",  
+    "city": "San Francisco",  
+    "zip_code": "94102",  
+    "price": 1900000,  
+    "bedrooms": 4,  
+    "bathrooms": 2,  
+    "square_feet": 2600,  
+    "lot_size": 2000,  
+    "year_built": 1905,  
+    "description": "A classic Edwardian home with period details and modern upgrades.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/d4cd1e181a92c93c4891fd9f4751237b-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/238b8f9ebe659b049b05ba51ff8e5f27-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Stylish Condo",  
+    "address": "2300 Bay St",  
+    "city": "San Francisco",  
+    "zip_code": "94123",  
+    "price": 1500000,  
+    "bedrooms": 2,  
+    "bathrooms": 1,  
+    "square_feet": 1000,  
+    "lot_size": 0,  
+    "year_built": 2010,  
+    "description": "A stylish condo with modern amenities and a prime location near the waterfront.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/b10b17af1e975688e5fa529f246b5667-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/93a77d019867ca98e5b86ca157c3a4ad-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Quaint Bungalow",  
+    "address": "2400 Rose St",  
+    "city": "San Francisco",  
+    "zip_code": "94122",  
+    "price": 1350000,  
+    "bedrooms": 3,  
+    "bathrooms": 1,  
+    "square_feet": 1200,  
+    "lot_size": 1200,  
+    "year_built": 1940,  
+    "description": "A quaint bungalow with a cozy yard and a friendly neighborhood vibe.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/1307dfe85c3f135eb04ffb66e81c2fea-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/a370b05e4cc89930d2438ed63aadf541-cc_ft_384.webp"  
+    ]  
+  }  
+
+
+  ,
+  {  
+    "name": "Stylish Condo",  
+    "address": "1501 Market St",  
+    "city": "San Francisco",  
+    "zip_code": "94103",  
+    "price": 895000,  
+    "bedrooms": 1,  
+    "bathrooms": 1,  
+    "square_feet": 750,  
+    "lot_size": null,  
+    "year_built": 2015,  
+    "description": "Modern condo in the heart of the city, steps away from shopping and dining.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/6afbc3b09656a8cdec8c532f55661469-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/f9ec27001e1d518e1f04686240447038-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Victorian Charm",  
+    "address": "815 Hayes St",  
+    "city": "San Francisco",  
+    "zip_code": "94117",  
+    "price": 2275000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2200,  
+    "lot_size": 1500,  
+    "year_built": 1890,  
+    "description": "A beautifully restored Victorian with original details and modern updates.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/59b63d59c9773d7c7721a1f9fc2c152a-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/ccd35e975f0288ca228f91f300f1dd72-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Modern Marina Apartment",  
+    "address": "2342 Beach St",  
+    "city": "San Francisco",  
+    "zip_code": "94123",  
+    "price": 1750000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1200,  
+    "lot_size": null,  
+    "year_built": 2010,  
+    "description": "Stunning views of the Golden Gate Bridge from this modern apartment in the Marina.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/7f81806cbeb241269c1d7fee09cc9d92-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/6ce176371eb43574f8b627a0e4d69c27-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Spacious Family Home",  
+    "address": "5400 19th Ave",  
+    "city": "San Francisco",  
+    "zip_code": "94132",  
+    "price": 1595000,  
+    "bedrooms": 5,  
+    "bathrooms": 2,  
+    "square_feet": 2500,  
+    "lot_size": 3000,  
+    "year_built": 1965,  
+    "description": "Generously sized family home with a large backyard and plenty of space for entertaining.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/fc1bc8a58546fd318fe102980a84a7b6-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/2ebcae8a3053978619f16ae24dfbb56e-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Renovated Loft",  
+    "address": "2000 Mission St",  
+    "city": "San Francisco",  
+    "zip_code": "94110",  
+    "price": 1320000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1800,  
+    "lot_size": null,  
+    "year_built": 1920,  
+    "description": "An urban loft that combines the charm of historic architecture with modern amenities.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/066b377450472b768697aaa3b38e8da8-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/436c92af95bdee2383538864f2533aaf-cc_ft_384.webp"  
+    ]  
+  }  ,
+  {  
+    "name": "Stunning Hillside Retreat",  
+    "address": "4321 Jones St",  
+    "city": "San Francisco",  
+    "zip_code": "94124",  
+    "price": 2895000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 3000,  
+    "lot_size": 6000,  
+    "year_built": 2015,  
+    "description": "Modern design meets nature in this stunning hillside home with breathtaking views.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/b560d211edcb6b4a731fd9ab87369fbb-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/b827de886e6f1e7611b3f177d0ffb1ae-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Charming Cottage",  
+    "address": "1835 10th Ave",  
+    "city": "San Francisco",  
+    "zip_code": "94122",  
+    "price": 1250000,  
+    "bedrooms": 2,  
+    "bathrooms": 1,  
+    "square_feet": 950,  
+    "lot_size": 1600,  
+    "year_built": 1925,  
+    "description": "A cozy cottage in the heart of the city with a lovely garden space.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/ae4b5e6fb588b3c05eab3a06a6722f4a-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/1ddc2ffb3043648758e0dee08d92e9e7-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Luxury Condo with Views",  
+    "address": "25 Balthazar Way",  
+    "city": "San Francisco",  
+    "zip_code": "94107",  
+    "price": 3675000,  
+    "bedrooms": 3,  
+    "bathrooms": 2.5,  
+    "square_feet": 2300,  
+    "lot_size": null,  
+    "year_built": 2018,  
+    "description": "Enjoy breathtaking views of the Bay Bridge from this luxurious condo.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/1058281a99f7bf1a4b0b390f9203e559-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/bf342bb0bf4fe494e8225b0b55435ac9-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Contemporary Family Home",  
+    "address": "1459 El Camino Del Mar",  
+    "city": "San Francisco",  
+    "zip_code": "94121",  
+    "price": 2550000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2800,  
+    "lot_size": 5000,  
+    "year_built": 1980,  
+    "description": "Spacious family home with modern finishes and a large backyard.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/13de4e5aed310c170b042a39168236cd-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/b7f9ffd8fe44edea4a12b964daddaf32-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Elegant Flat",  
+    "address": "888 Market St",  
+    "city": "San Francisco",  
+    "zip_code": "94102",  
+    "price": 1450000,  
+    "bedrooms": 2,  
+    "bathrooms": 2,  
+    "square_feet": 1100,  
+    "lot_size": null,  
+    "year_built": 1910,  
+    "description": "A beautifully appointed flat located in a historic building near Union Square.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/40566d8dec75fcbb7891ce64e2a7498f-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/843a04571080ecfb64d8a4eef088ee69-cc_ft_384.webp"  
+    ]  
+  }  ,
+  {  
+    "name": "Spacious Modern Home",  
+    "address": "2400 Pacific Ave",  
+    "city": "San Francisco",  
+    "zip_code": "94115",  
+    "price": 3500000,  
+    "bedrooms": 5,  
+    "bathrooms": 4,  
+    "square_feet": 3500,  
+    "lot_size": 7000,  
+    "year_built": 2016,  
+    "description": "This spacious modern home offers an open floor plan and luxury finishes throughout.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/07697cbb5a5422cbc08bb07c0a9a832d-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/93f0344f78e3c65b8c5cca651ccba986-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Classic Victorian",  
+    "address": "1234 Haight St",  
+    "city": "San Francisco",  
+    "zip_code": "94117",  
+    "price": 2900000,  
+    "bedrooms": 4,  
+    "bathrooms": 3,  
+    "square_feet": 2500,  
+    "lot_size": 3200,  
+    "year_built": 1890,  
+    "description": "A beautifully restored Victorian home with charming original details.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/fde9dd61523baa0d931811267ac88681-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/5743ee6e1124f6a236e04560b72d1b8c-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Stylish Penthouse",  
+    "address": "300 Spear St",  
+    "city": "San Francisco",  
+    "zip_code": "94105",  
+    "price": 4500000,  
+    "bedrooms": 3,  
+    "bathrooms": 3,  
+    "square_feet": 2800,  
+    "lot_size": null,  
+    "year_built": 2020,  
+    "description": "Experience luxury living in this stylish penthouse with panoramic city views.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/cbe3e8a7d9ebb74b20a6c8a3b1ba3578-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/be9c30a700d2aea89753b99e62515009-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Chic Urban Loft",  
+    "address": "400 Brannan St",  
+    "city": "San Francisco",  
+    "zip_code": "94107",  
+    "price": 1750000,  
+    "bedrooms": 1,  
+    "bathrooms": 1,  
+    "square_feet": 1200,  
+    "lot_size": null,  
+    "year_built": 1995,  
+    "description": "A chic urban loft with high ceilings and a great location in SoMa.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/385f871f4958534031b12a296c8de813-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/c35d0bf86fff646f4c8c4e6449adebda-cc_ft_384.webp"  
+    ]  
+  },  
+  {  
+    "name": "Luxe Retreat",  
+    "address": "477 Lake St",  
+    "city": "San Francisco",  
+    "zip_code": "94118",  
+    "price": 5100000,  
+    "bedrooms": 5,  
+    "bathrooms": 3.5,  
+    "square_feet": 4000,  
+    "lot_size": 8000,  
+    "year_built": 2019,  
+    "description": "A luxurious retreat featuring fine craftsmanship and serene outdoor spaces.",  
+    "image_url": [  
+      "https://photos.zillowstatic.com/fp/dd39068e6c87968dd6380d5c769404c1-cc_ft_768.webp",  
+      "https://photos.zillowstatic.com/fp/d37e356e30ee378d27e494482135c50e-cc_ft_384.webp"  
+    ]  
+  }  
+]

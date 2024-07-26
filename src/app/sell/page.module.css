@@ -50,3 +50,10 @@
     justify-content: center;
     margin-top: 2rem;
 }
+
+.noHome {
+  width: 350px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
