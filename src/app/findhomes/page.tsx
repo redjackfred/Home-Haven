@@ -33,11 +33,12 @@ const locations: Poi[] = [
 
 
 const SignIn = styled.div`
-    display: flex;
+    /* display: flex; */
     align-items: center;
     color : #14B49C;
     margin-left: 8px;
     width: 44px;
+    right: 24px;
 `;
 
 
@@ -89,7 +90,6 @@ export default function FindHomes() {
             width: "70%",
         }
     }
- 
     
     let mapDisplayString = "";
     if(!isMapButtonActive) {
