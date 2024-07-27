@@ -14,7 +14,7 @@
     width: 100%; 
 }
 .Newlisting{
-    margin-top: 40px;
+    margin-top: 10px;
 }
 .listingList{
     position: relative;
@@ -24,14 +24,16 @@
     overflow: scroll;
 }
 
-@media (max-width: 450px){
+@media (max-width: 430px){
     .listingList{
         position: relative; 
         padding-left: 0px;  
-        /* overflow-y: scroll; */
+       
     }
     .newestListings {      
-        align-items: center; 
+        align-items: center;
+        height: 380px;
+         
     }   
     .title{   
         padding-left: 24px;
