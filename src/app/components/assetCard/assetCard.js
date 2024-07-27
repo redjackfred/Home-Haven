@@ -25,7 +25,9 @@ export default function AssetCard({
     numberOfBedrooms, 
     numberOfBaths, 
     numberOfSqft, 
-    address
+    address,
+    city,
+    zipCode,
 }) {
     const [isFavorite, setIsFavorite] = useState(false);
     const toggleFavorite = () => {
@@ -68,7 +70,7 @@ export default function AssetCard({
                 <span className={styles.number}>{numberOfSqft} </span>
                 <span>sqft</span>
             </div>
-            <div className={styles.address}>{address}</div>
+            <div className={styles.address}>{`${address}, ${city}, ${zipCode}`}</div>
         </div>
         
     </div>

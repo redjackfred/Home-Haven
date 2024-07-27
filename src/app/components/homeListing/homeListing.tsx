@@ -16,7 +16,9 @@ type listing = {
     numberOfBedrooms: number,
     numberOfBaths: number,
     numberOfSqft: string,
-    address: string
+    address: string,
+    city: string,
+    zipCode: string
 };
 
 const listings: listing[] = [];
@@ -30,7 +32,9 @@ for (let i = 0; i < 8; i++) {
         numberOfBedrooms: 3,
         numberOfBaths: 2,
         numberOfSqft: "1,568",
-        address: "22055 White Stone Road, Marysville OH"
+        address: "22055 White Stone Road,",
+        city:"Marysville OH",
+        zipCode:"12345"
     });
 }
 
@@ -62,7 +66,7 @@ export default function HomeListing({onListButton}) {
         box-shadow: 5px 0px 10px rgba(0.5, 0.5, 0.5, 0.3);
         width: 50%;
         z-index: 1;
-        
+      
 
         @media (max-width: 1502px) {
             width: 30%;    
@@ -116,7 +120,8 @@ export default function HomeListing({onListButton}) {
                     </Typography>
                 </NewListDisplay> : ""
             }
-            <div className={styles.listingCardContainer}>
+            
+                <div className={styles.listingCardContainer}>
                 {homes.map((home) => (
                     <AssetCard
                         imgData={home.image_url[0]}
@@ -127,10 +132,13 @@ export default function HomeListing({onListButton}) {
                         numberOfBaths={home.bathrooms}
                         numberOfSqft={home.square_feet.toString()}
                         address={home.address}
+                        city={home.city.toString()}
+                        zipCode={home.zip_code.toString()}
                         key={home.id}
                     />
                 ))}
             </div>
+    
         </ListingsContainer>
     )
 }

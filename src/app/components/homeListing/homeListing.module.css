@@ -1,19 +1,18 @@
-
-
 .listingCardContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 16px; /* Gap between cards */
-    padding: 16px;
-    overflow: hidden;
-    height: calc(100% - 74px);
     position: absolute;
-    z-index: 0;
-    
+    height: calc(100% - 74px);
+    padding: 16px;
+    /* z-index: 1; */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .listingList{
     position: relative;
+    
 }
 
 
@@ -21,5 +20,6 @@
 
     .listingCardContainer {
         justify-content: center;
+        height: 85%;
     }
 }

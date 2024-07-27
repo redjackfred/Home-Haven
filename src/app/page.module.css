@@ -1,7 +1,9 @@
 .newestListings {
     display: flex;
     flex-direction: column;  
-    justify-content: space-around;    
+    justify-content: space-around;  
+    height: 500px;  
+    overflow: hidden;
 }
 
 .title{    
@@ -11,18 +13,22 @@
     /* margin-bottom: 24px;     */
     width: 100%; 
 }
-
+.Newlisting{
+    margin-top: 40px;
+}
 .listingList{
     position: relative;
     padding-left: 60px;    
-    margin-top: 40px;
+    /* margin-top: 40px; */
     /* margin-bottom: 24px;    */
+    overflow: scroll;
 }
 
 @media (max-width: 450px){
     .listingList{
         position: relative; 
         padding-left: 0px;  
+        /* overflow-y: scroll; */
     }
     .newestListings {      
         align-items: center; 
