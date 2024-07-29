@@ -184,6 +184,8 @@ export default function HomeListing({
             numberOfSqft={home.square_feet.toString()}
             address={home.address}
             key={home._id}
+            zipCode={home.zip_code}
+            city={home.city}
           />
         ))}
       </div>
