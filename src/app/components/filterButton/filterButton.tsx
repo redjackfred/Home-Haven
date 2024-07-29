@@ -26,7 +26,7 @@ export default function FilterButton({
   
   return (
     <FormControl sx={max430 ? { m: 0, width: 104, maxHeight: 48, height: 39}: {m: 0, width: 140, maxHeight: 48, height: 48}}>
-      <InputLabel id="select-label"  sx={max430?{m:-0.8, ml:0.3, color:"#0B3650"}: {color:"#0B3650"}}>
+      <InputLabel id="select-label"  sx={max430?{m:-0.8, ml:0.3, color:"#0B3650"}: {}}>
         <Typography variant='subtitle2'>
           {title}
         </Typography>

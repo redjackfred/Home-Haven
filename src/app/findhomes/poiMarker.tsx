@@ -105,7 +105,9 @@ export default function PoiMarkers(props: { pois: Poi[] }) {
                   numberOfBedrooms="3"
                   numberOfBaths="2"
                   numberOfSqft="1,568"
-                  address="22055 White Stone Road, Marysville OH"
+                  address="22055 White Stone Road, "
+                  city="Marysville OH"
+                  zipCode="12345"
                 />
               </InfoWindow>              
             </div>

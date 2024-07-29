@@ -29,7 +29,7 @@ export default function ListingList() {
     <Stack
       direction={matches ? "column" : "row"}
       spacing={5}
-      sx={{ overflow: "hidden" }}
+      // sx={{ overflow: "hidden" }}
     >
       {homes.map((home) => (
         <ListItem
@@ -44,7 +44,9 @@ export default function ListingList() {
             numberOfBedrooms={home.bedrooms}
             numberOfBaths={home.bathrooms}
             numberOfSqft={home.square_feet.toString()}
-            address={home.address}            
+            address={home.address}  
+            city={home.city}
+            zipCode={home.zip_code}          
           />
         </ListItem>
       ))}    
