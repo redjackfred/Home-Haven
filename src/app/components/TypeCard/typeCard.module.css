@@ -163,29 +163,39 @@
 
 
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .container{
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
-        row-gap: 20px;
+        row-gap: 10px;
+        height: 340px;
+        overflow-y: scroll;
+        padding-top: 10px; */
+        display: none;
     }
     .findHome{
         max-width: 400px;
-        height: 400px;
+        height: 340px;
      }
  
      .sellHome {
         max-width: 400px;
-        height: 450px;
+        height: 340px;
      }
  
      .findAgent {
         max-width: 400px;
-        height: 372px;
+        height: 340px;
      }
      .description{
-        height: 84px;
+        height: 80px;
         width: 329px;
      }
+     .header {
+        margin-bottom:0;
+    }
+    .HowCanWeHelp{
+        display: none;
+    }
  }
