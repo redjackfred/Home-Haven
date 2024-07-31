@@ -28,7 +28,8 @@ export default function Offer({ home }: { home: HomeType }) {
       )}
       <div className={styles.offerAmount}>
         <p>offer amount</p>
-        <h1>
+        <br/>
+        <h2>
           $
           <input
             type="text"
@@ -44,20 +45,13 @@ export default function Offer({ home }: { home: HomeType }) {
               }
             }}
           />
-        </h1>
+        </h2>
       </div>
-      <hr
-        style={{
-          width: "100%",
-          height: "1px",
-          backgroundColor: "black",
-          margin: "20px 0",
-        }}
-      />
+      <hr className={styles.divider} />         
       <div className={styles.buttonContainer}>
-        <button onClick={() => setOfferPrice(7500)}>$7,500</button>
-        <button onClick={() => setOfferPrice(8200)}>$8,200</button>
-        <button onClick={() => setOfferPrice(9000)}>$9,000</button>
+        <button className={styles.offerButton} onClick={() => setOfferPrice(7500)}>$7,500</button>
+        <button className={styles.offerButton} onClick={() => setOfferPrice(8200)}>$8,200</button>
+        <button className={styles.offerButton} onClick={() => setOfferPrice(9000)}>$9,000</button>
       </div>
 
       <TextField
@@ -65,13 +59,13 @@ export default function Offer({ home }: { home: HomeType }) {
         label="Message"
         placeholder="Add a message to your proposal"
         multiline
-        maxRows={4}
+        rows={2}
         fullWidth
         margin="normal"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <button>Submit Offer</button>
+      <button className={styles.submitButton}>Submit Offer</button>
     </div>
   );
 }
