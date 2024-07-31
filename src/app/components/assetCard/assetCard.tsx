@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./assetCard.module.css";
 import { Typography } from "@mui/material";
+import { Popup } from "../popup/popup";
 
 function addCommas(nStr) {
   nStr += "";
@@ -42,6 +43,12 @@ export default function AssetCard({
   recommended?: boolean;
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
   };
@@ -94,7 +101,8 @@ export default function AssetCard({
           className={styles.address}
         >{`${address}, ${city}, ${zipCode}`}</div>
       </div>
-      {recommended && <button className={styles.button}>Submit offer</button>}
+      {recommended && <button onClick={togglePopup} className={styles.button}>Submit offer</button>}
+      {isPopupOpen && <Popup togglePopup={togglePopup}/>}
     </div>
   );
 }

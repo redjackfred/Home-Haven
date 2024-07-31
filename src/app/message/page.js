@@ -21,8 +21,8 @@ export default function Message() {
 
   return (
     <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>    
-      <h1>Message Page</h1>
-      <Offer home={homes[23]} />
+      {/* <h1>Message Page</h1> */}
+      <Offer home={homes[0]} />
     </div>
   );
 }
