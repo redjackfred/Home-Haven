@@ -10,6 +10,18 @@
     z-index: 10;
 }
 
+.containerRecommended{
+    position: relative;
+    width: 345px;
+    height: 382px;
+    border-radius: 16px;
+    box-shadow: 0 0.9px 2px rgba(0.5, 0.5, 0.5, 0.3);
+    font-family: Roboto;
+    overflow: hidden;
+    background-color: white;
+    z-index: 10;
+}
+
 .container *{
     overflow: hidden;
 }
@@ -75,4 +87,36 @@
     font-size: 12px;
     line-height: 166%;
     letter-spacing: 0.4px;
+}
+
+.button{
+    position: relative;
+    width: 313px;
+    height: 40px;
+    background-color: inherit;
+    color: #14B49C;
+    border: 1px solid #14B49C;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    left: 16px;
+    top: 0px;
+}
+
+.recommendedIcon{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 120px;
+    height: 28px;
+    background-color: #14B49C;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px; 
 }

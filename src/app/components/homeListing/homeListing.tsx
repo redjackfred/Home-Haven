@@ -173,7 +173,7 @@ export default function HomeListing({
         ""
       )}
       <div className={styles.listingCardContainer}>
-        {filteredHomesByFilter.map((home) => (
+        {filteredHomesByFilter.map((home, index) => (
           <AssetCard
             imgData={home.image_url[0]}
             imgAlt="Placeholder Image"
@@ -186,6 +186,7 @@ export default function HomeListing({
             key={home._id}
             zipCode={home.zip_code}
             city={home.city}
+            recommended={index === 0 && true}
           />
         ))}
       </div>
