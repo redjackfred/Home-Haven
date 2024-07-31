@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  width: 390px;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFFFFC;
+  padding: 24px;
+}
+
+.offerAmount {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFFFFC;
+}
+
+.offerInput {
+  font-size: 40px;
+  text-align: center;
+  width: 100px;
+  border: none;
+  background-color: #EFFFFC;
+}
+
+.offerInput::-webkit-outer-spin-button,
+.offerInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.offerInput:focus {
+  outline: none;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #EFFFFC;
+}
