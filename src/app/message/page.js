@@ -20,7 +20,7 @@ export default function Message() {
   }, []);
 
   return (
-    <div>    
+    <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>    
       <h1>Message Page</h1>
       <Offer home={homes[23]} />
     </div>
