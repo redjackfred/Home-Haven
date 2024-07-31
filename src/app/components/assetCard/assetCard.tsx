@@ -33,8 +33,8 @@ export default function AssetCard({
   imgAlt: string;
   date: string;
   price: string;
-  numberOfBedrooms: number;
-  numberOfBaths: number;
+  numberOfBedrooms: string;
+  numberOfBaths: string;
   numberOfSqft: string;
   address: string;
   city: string;
