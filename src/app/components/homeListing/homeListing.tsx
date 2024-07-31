@@ -179,8 +179,8 @@ export default function HomeListing({
             imgAlt="Placeholder Image"
             date="4 Feb, 2024"
             price={home.price.toString()}
-            numberOfBedrooms={home.bedrooms}
-            numberOfBaths={home.bathrooms}
+            numberOfBedrooms={home.bedrooms.toString()}
+            numberOfBaths={home.bathrooms.toString()}
             numberOfSqft={home.square_feet.toString()}
             address={home.address}
             key={home._id}
