@@ -9,6 +9,11 @@ import { Skeleton } from "@mui/material";
 export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit?: () => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   return (
     <div className={styles.container}>
@@ -25,6 +30,7 @@ export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit?: (
           key={home._id}
           zipCode={home.zip_code}
           city={home.city}
+          togglePopup={togglePopup}
         />        
       ) : <Skeleton variant="rounded" width={345} height={328}/>}
       <div className={styles.offerAmount}>
