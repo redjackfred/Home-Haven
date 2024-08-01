@@ -194,38 +194,14 @@ export default function FindHomes() {
             <FilterButton
               title="Beds"
               name="Beds"
-              items={[
-                "",
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-              ]}
+              items={["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
               values={filterValues}
               onSelectionChange={handleFilterButtonClick}
             />
             <FilterButton
               title="Baths"
               name="Baths"
-              items={[
-                "",
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-              ]}
+              items={["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
               values={filterValues}
               onSelectionChange={handleFilterButtonClick}
             />
@@ -317,7 +293,10 @@ export default function FindHomes() {
               }
             `}
           </style>
-          <HomeListing onListButton={!isMapButtonActive} filterValues={filterValues}/>
+          <HomeListing
+            onListButton={!isMapButtonActive}
+            filterValues={filterValues}
+          />
         </div>
       </APIProvider>
     </div>

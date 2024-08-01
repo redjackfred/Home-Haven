@@ -4,14 +4,15 @@ import AssetCard from "../assetCard/assetCard";
 import { HomeType } from "@/app/utils/data";
 import { TextField } from "@mui/material";
 import styles from "./Offer.module.css";
+import { Skeleton } from "@mui/material";
 
-export default function Offer({ home }: { home: HomeType }) {
+export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit: () => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
 
   return (
     <div className={styles.container}>
-      {home && (
+      {home ? (       
         <AssetCard
           imgData={home.image_url[0]}
           imgAlt="Placeholder Image"
@@ -24,8 +25,8 @@ export default function Offer({ home }: { home: HomeType }) {
           key={home._id}
           zipCode={home.zip_code}
           city={home.city}
-        />
-      )}
+        />        
+      ) : <Skeleton variant="rounded" width={345} height={328}/>}
       <div className={styles.offerAmount}>
         <p>offer amount</p>
         <br/>
@@ -65,7 +66,7 @@ export default function Offer({ home }: { home: HomeType }) {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <button className={styles.submitButton}>Submit Offer</button>
+      <button className={styles.submitButton} onClick={onSubmit}>Submit Offer</button>
     </div>
   );
 }
