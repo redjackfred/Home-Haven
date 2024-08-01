@@ -8,6 +8,7 @@ import styled, { css } from "styled-components";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import json2mq from "json2mq";
 import { useSearchParams } from "next/navigation";
+import { Popup } from "../popup/popup";
 
 type listing = {
   imgData: string;
@@ -48,6 +49,11 @@ export default function HomeListing({
   const [isload, setIsload] = useState(false);
   const searchParams = useSearchParams();
   const searchQuery = searchParams && searchParams.get("q");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   const getHomes = async () => {
     try {
@@ -163,6 +169,7 @@ export default function HomeListing({
 
   return (
     <ListingsContainer>
+      
       {isload ? (
         <NewListDisplay>
           <Typography variant={max428 ? "h6" : "h4"}>
@@ -174,6 +181,7 @@ export default function HomeListing({
       )}
       <div className={styles.listingCardContainer}>
         {filteredHomesByFilter.map((home, index) => (
+          
           <AssetCard
             imgData={home.image_url[0]}
             imgAlt="Placeholder Image"
@@ -187,8 +195,11 @@ export default function HomeListing({
             zipCode={home.zip_code}
             city={home.city}
             recommended={index === 0 && true}
+            togglePopup={togglePopup}
           />
+          
         ))}
+        {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={homes[0]}/>}
       </div>
     </ListingsContainer>
   );
