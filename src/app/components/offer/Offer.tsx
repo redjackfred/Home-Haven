@@ -6,7 +6,7 @@ import { TextField } from "@mui/material";
 import styles from "./Offer.module.css";
 import { Skeleton } from "@mui/material";
 
-export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit: () => void }) {
+export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit?: () => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
 
