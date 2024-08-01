@@ -36,7 +36,7 @@ export default function ListingList() {
       {homes.slice(0,3).map((home) => (
         <ListItem
         key={home.id}
-          sx={{ width: "400px", height: "332px", paddingLeft:4, margin: 0 }}
+          sx={{ width: "400px", height: "332px", paddingLeft:0, margin: 0 }}
         >
           <AssetCard
             imgData={home.image_url[0]}
@@ -48,13 +48,14 @@ export default function ListingList() {
             numberOfSqft={home.square_feet.toString()}
             address={home.address}  
             city={home.city}
-            zipCode={home.zip_code}          
+            zipCode={home.zip_code}   
+            togglePopup={null}       
           />
         </ListItem>
       ))}  </>: <>{homes.map((home) => (
         <ListItem
         key={home.id}
-          sx={{ width: "400px", height: "332px", paddingLeft:4, margin: 0 }}
+          sx={{ width: "345px", height: "332px", padding:0, margin: 0 }}
         >
           <AssetCard
             imgData={home.image_url[0]}
@@ -66,7 +67,8 @@ export default function ListingList() {
             numberOfSqft={home.square_feet.toString()}
             address={home.address}  
             city={home.city}
-            zipCode={home.zip_code}          
+            zipCode={home.zip_code}  
+            togglePopup={null}        
           />
         </ListItem>
       ))} </>}

@@ -8,9 +8,14 @@ import styles from "./Offer.module.css";
 export default function Offer({ home }: { home: HomeType }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       {home && (
         <AssetCard
           imgData={home.image_url[0]}
@@ -24,6 +29,7 @@ export default function Offer({ home }: { home: HomeType }) {
           key={home._id}
           zipCode={home.zip_code}
           city={home.city}
+          togglePopup={togglePopup}
         />
       )}
       <div className={styles.offerAmount}>

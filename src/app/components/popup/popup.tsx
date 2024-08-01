@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import React, { useEffect, useRef } from 'react';
-import Offer from '../../message/page'
+import Offer from '../offer/Offer';
+import { HomeType } from '@/app/utils/data';
+
 
 type PopupProps = {
-    togglePopup: () => void;
+  togglePopup: () => void;
+  homeInfo: HomeType;
 }
+
+
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -27,7 +32,7 @@ const PopupCard = styled.div`
 
 
 
-export const Popup = ({togglePopup} :PopupProps) => {
+export const Popup = ({togglePopup, homeInfo} :PopupProps) => {
     const popupRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -45,7 +50,7 @@ export const Popup = ({togglePopup} :PopupProps) => {
     return(
         <Overlay>
         <PopupCard ref={popupRef}>
-            <Offer></Offer>
+            <Offer home={homeInfo}></Offer>
         </PopupCard>
       </Overlay>
     )

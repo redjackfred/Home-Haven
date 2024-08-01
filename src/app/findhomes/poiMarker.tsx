@@ -108,6 +108,7 @@ export default function PoiMarkers(props: { pois: Poi[] }) {
                   address="22055 White Stone Road, "
                   city="Marysville OH"
                   zipCode="12345"
+                  togglePopup={null}
                 />
               </InfoWindow>              
             </div>

@@ -43,14 +43,14 @@ export default function Home() {
             </Typography>         
           </div>
           <div className={styles.listingList}>
-            <ListingList/>    
-            <div className={styles.howCanWeHelp}>
+            <ListingList/>     
+          </div>
+          <div className={styles.howCanWeHelp}>
               <HowCanWeHelp/>
             </div>
             <div className={styles.title}>
               <TypeCard />
-          </div>           
-          </div>
+          </div> 
         </div>
         
       
