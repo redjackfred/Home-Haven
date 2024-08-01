@@ -29,6 +29,7 @@ export default function AssetCard({
   zipCode,
   recommended,
   togglePopup,
+  isSubmit,
 }: {
   imgData: string;
   imgAlt: string;
@@ -41,7 +42,8 @@ export default function AssetCard({
   city: string;
   zipCode: string;
   recommended?: boolean;
-  togglePopup: () => void;
+  togglePopup?: () => void;
+  isSubmit?: boolean;
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
   
@@ -98,7 +100,7 @@ export default function AssetCard({
           className={styles.address}
         >{`${address}, ${city}, ${zipCode}`}</div>
       </div>
-      {recommended && <button onClick={togglePopup} className={styles.button}>Submit offer</button>}
+      {recommended && <button onClick={togglePopup} className={isSubmit ? styles.buttonSubmitted : styles.button}>{isSubmit? "Offer Submitted" : "Submit offer"}</button>}
     </div>
   );
 }

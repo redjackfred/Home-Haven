@@ -50,6 +50,14 @@ export default function HomeListing({
   const searchParams = useSearchParams();
   const searchQuery = searchParams && searchParams.get("q");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [submitHomeIDs, setSubmitHomeIDs] = useState([]);
+
+  function handleSubmit(){
+    if(!submitHomeIDs.includes(filteredHomesByFilter[0]._id)){
+      setSubmitHomeIDs([...submitHomeIDs, filteredHomesByFilter[0]._id]);
+    }
+    setIsPopupOpen(!isPopupOpen);
+  }
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -194,12 +202,13 @@ export default function HomeListing({
             key={home._id}
             zipCode={home.zip_code}
             city={home.city}
-            recommended={index === 0 && true}
+            recommended={index <= 0 && true}
             togglePopup={togglePopup}
+            isSubmit={submitHomeIDs.includes(home._id)}
           />
           
         ))}
-        {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={homes[0]}/>}
+        {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={filteredHomesByFilter[0]} onSubmit={handleSubmit}/>}
       </div>
     </ListingsContainer>
   );

@@ -108,6 +108,22 @@
       }
 }
 
+.buttonSubmitted{
+    position: relative;
+    width: 313px;
+    height: 40px;
+    background-color: inherit;
+    color: #809793;
+    border: 1px solid #809793;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    left: 16px;
+    top: 0px;  
+    pointer-events: none;
+}
+
 .recommendedIcon{
     position: absolute;
     top: 4px;
