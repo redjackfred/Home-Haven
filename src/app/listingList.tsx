@@ -48,7 +48,8 @@ export default function ListingList() {
             numberOfSqft={home.square_feet.toString()}
             address={home.address}  
             city={home.city}
-            zipCode={home.zip_code}          
+            zipCode={home.zip_code}   
+            togglePopup={null}       
           />
         </ListItem>
       ))}  </>: <>{homes.map((home) => (
@@ -66,7 +67,8 @@ export default function ListingList() {
             numberOfSqft={home.square_feet.toString()}
             address={home.address}  
             city={home.city}
-            zipCode={home.zip_code}          
+            zipCode={home.zip_code}  
+            togglePopup={null}        
           />
         </ListItem>
       ))} </>}
