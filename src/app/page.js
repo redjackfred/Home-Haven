@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div>
       {isload ? 
-      <div>           
+      <div className={styles.container}>           
         <TopRegion/>
         <div className={styles.newestListings}>
           <div className={styles.Newlisting}>
@@ -43,16 +43,16 @@ export default function Home() {
             </Typography>         
           </div>
           <div className={styles.listingList}>
-            <ListingList/>          
+            <ListingList/>    
+            <div className={styles.howCanWeHelp}>
+              <HowCanWeHelp/>
+            </div>
+            <div className={styles.title}>
+              <TypeCard />
+          </div>           
           </div>
         </div>
-      
-        <div className={styles.howCanWeHelp}>
-          <div className={styles.title}>
-            <HowCanWeHelp/>
-            <TypeCard />
-          </div>        
-        </div>
+        
       
     </div>:""}  
   </div>

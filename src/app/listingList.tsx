@@ -25,16 +25,18 @@ export default function ListingList() {
       getHomes();
   }, []);
 
+
   return (
     <Stack
       direction={matches ? "column" : "row"}
       spacing={5}
       // sx={{ overflow: "hidden" }}
     >
-      {homes.map((home) => (
+      {matches?<> 
+      {homes.slice(0,3).map((home) => (
         <ListItem
         key={home.id}
-          sx={{ width: "345px", height: "332px", padding: 0, margin: 0 }}
+          sx={{ width: "400px", height: "332px", paddingLeft:4, margin: 0 }}
         >
           <AssetCard
             imgData={home.image_url[0]}
@@ -49,7 +51,25 @@ export default function ListingList() {
             zipCode={home.zip_code}          
           />
         </ListItem>
-      ))}    
+      ))}  </>: <>{homes.map((home) => (
+        <ListItem
+        key={home.id}
+          sx={{ width: "400px", height: "332px", paddingLeft:4, margin: 0 }}
+        >
+          <AssetCard
+            imgData={home.image_url[0]}
+            imgAlt="Placeholder Image"
+            date="4 Feb, 2024"
+            price={home.price.toString()}
+            numberOfBedrooms={home.bedrooms.toString()}
+            numberOfBaths={home.bathrooms.toString()}
+            numberOfSqft={home.square_feet.toString()}
+            address={home.address}  
+            city={home.city}
+            zipCode={home.zip_code}          
+          />
+        </ListItem>
+      ))} </>}
     </Stack>
   );
 }

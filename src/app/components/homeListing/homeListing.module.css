@@ -5,7 +5,7 @@
     position: absolute;
     height: calc(100% - 74px);
     padding: 16px;
-    /* z-index: 1; */
+    z-index: 0;
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
