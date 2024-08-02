@@ -23,3 +23,16 @@
         height: 85%;
     }
 }
+
+.showOffer{
+    display: flex;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}

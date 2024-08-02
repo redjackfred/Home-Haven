@@ -6,7 +6,7 @@ import { TextField } from "@mui/material";
 import styles from "./Offer.module.css";
 import { Skeleton } from "@mui/material";
 
-export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit?: () => void }) {
+export default function Offer({ home, onSubmit, onClick }: { home: HomeType, onSubmit?: () => void, onClick?: (e: React.MouseEvent<HTMLDivElement>) => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -15,7 +15,7 @@ export default function Offer({ home, onSubmit }: { home: HomeType, onSubmit?: (
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={onClick}>
       {home ? (       
         <AssetCard
           imgData={home.image_url[0]}

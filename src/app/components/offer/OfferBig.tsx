@@ -1,19 +1,38 @@
+"use client";
 import { Typography } from "@mui/material";
 import styles from "./OfferBig.module.css";
 import RatingTag from "./RatingTag";
 import { HomeType } from "@/app/utils/data";
-import {svgs} from "@/app/utils/icons";
+import { svgs } from "@/app/utils/icons";
+import { useState } from "react";
+import Offer from "./Offer";
 
-export default function OfferBig({ home }: { home: HomeType }) {
+export default function OfferBig({
+  home,
+  onSubmit,
+  onClick,
+}: {
+  home: HomeType;
+  onSubmit?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+}) {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.pictures}>        
+    <div className={styles.container} onClick={onClick}>
+      {showPopup && (
+        <div className={styles.showOffer} onClick={()=>setShowPopup(false)}>
+          <Offer home={home} onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}/>
+        </div>
+      )}
+
+      <div className={styles.pictures}>
         <img
           src={home.image_url[0]}
           alt="House"
           className={styles.mainPicture}
         />
-        
+
         {home.image_url.map((url, index) => {
           if (index > 0 && index < 5) {
             return <img src={url} alt="House" className={styles.picture} />;
@@ -54,7 +73,10 @@ export default function OfferBig({ home }: { home: HomeType }) {
             <Typography variant="h5">sqft</Typography>
           </div>
         </div>
-        <button className={styles.infoButton}>
+        <button
+          className={styles.infoButton}
+          onClick={() => setShowPopup(true)}
+        >
           <Typography variant="h5">Submit offer</Typography>
         </button>
         <div className={styles.estimation}>
@@ -90,12 +112,12 @@ export default function OfferBig({ home }: { home: HomeType }) {
               <span className="fa fa-star"></span>
             </Typography>
             <div className={styles.tags}>
-              <RatingTag text="Good Neighborhood" svg={svgs[0]}/>
-              <RatingTag text="Priced to sell" svg={svgs[1]}/>
-              <RatingTag text="Portfolio match" svg={svgs[2]}/>
-              <RatingTag text="Excellent schools" svg={svgs[2]}/>
-              <RatingTag text="Example tag" svg={svgs[2]}/>
-              <RatingTag text="Example tag" svg={svgs[2]}/>
+              <RatingTag text="Good Neighbor" svg={svgs[0]} />
+              <RatingTag text="Priced to sell" svg={svgs[1]} />
+              <RatingTag text="Portfolio match" svg={svgs[2]} />
+              <RatingTag text="Excellent schools" svg={svgs[2]} />
+              <RatingTag text="Example tag" svg={svgs[2]} />
+              <RatingTag text="Example tag" svg={svgs[2]} />
             </div>
           </div>
           <div className={styles.summary}>

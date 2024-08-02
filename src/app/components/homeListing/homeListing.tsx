@@ -9,6 +9,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import json2mq from "json2mq";
 import { useSearchParams } from "next/navigation";
 import { Popup } from "../popup/popup";
+import OfferBig from "../offer/OfferBig";
 
 type listing = {
   imgData: string;
@@ -51,6 +52,7 @@ export default function HomeListing({
   const searchQuery = searchParams && searchParams.get("q");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [submitHomeIDs, setSubmitHomeIDs] = useState([]);
+  const [ID, setID] = useState(null);
 
   function handleSubmit(){
     if(!submitHomeIDs.includes(filteredHomesByFilter[0]._id)){
@@ -59,9 +61,11 @@ export default function HomeListing({
     setIsPopupOpen(!isPopupOpen);
   }
 
-  const togglePopup = () => {
+  function handleAssetCardClick(_id){
+    setID(_id);
     setIsPopupOpen(!isPopupOpen);
-  };
+  }
+ 
 
   const getHomes = async () => {
     try {
@@ -154,6 +158,8 @@ export default function HomeListing({
     return homes;
   });
 
+  const targetHome = filteredHomes.find((home) => home._id === ID);
+
   const filteredHomesByFilter = filteredHomes.filter((home) => {
     // Parse the Price filter values
     let priceInRange = true;
@@ -202,13 +208,18 @@ export default function HomeListing({
             key={home._id}
             zipCode={home.zip_code}
             city={home.city}
-            recommended={index <= 0 && true}
-            togglePopup={togglePopup}
+            recommended={index <= 0 && true}          
             isSubmit={submitHomeIDs.includes(home._id)}
+            onClick={() => handleAssetCardClick(home._id)}            
           />
           
         ))}
-        {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={filteredHomesByFilter[0]} onSubmit={handleSubmit}/>}
+        {isPopupOpen && 
+        <div className={styles.showOffer} onClick={()=>setIsPopupOpen(false)}>
+          <OfferBig home={targetHome} onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}/>
+        </div>}
+  
+        {/* {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={filteredHomesByFilter[0]} onSubmit={handleSubmit}/>} */}
       </div>
     </ListingsContainer>
   );
