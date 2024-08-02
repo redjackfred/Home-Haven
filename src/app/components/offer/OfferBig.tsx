@@ -1,16 +1,30 @@
 import { Typography } from "@mui/material";
 import styles from "./OfferBig.module.css";
-import RatingTag from "./ratingTag";
+import RatingTag from "./RatingTag";
+import { HomeType } from "@/app/utils/data";
+import {svgs} from "@/app/utils/icons";
 
-export default function OfferBig() {
+export default function OfferBig({ home }: { home: HomeType }) {
   return (
     <div className={styles.container}>
-      <div className={styles.pictures}></div>
+      <div className={styles.pictures}>        
+        <img
+          src={home.image_url[0]}
+          alt="House"
+          className={styles.mainPicture}
+        />
+        
+        {home.image_url.map((url, index) => {
+          if (index > 0 && index < 5) {
+            return <img src={url} alt="House" className={styles.picture} />;
+          }
+        })}
+      </div>
 
       <div className={styles.info}>
         <div className={styles.price}>
-          <Typography variant="h3" sx={{ fontWeight: "600" }}>
-            $1,200,000
+          <Typography variant="h3" sx={{ fontWeight: "500" }}>
+            $1,561,000
           </Typography>
         </div>
         <div className={styles.address}>
@@ -41,10 +55,12 @@ export default function OfferBig() {
           </div>
         </div>
         <button className={styles.infoButton}>
-            <Typography variant="h5">Submit offer</Typography>
+          <Typography variant="h5">Submit offer</Typography>
         </button>
         <div className={styles.estimation}>
-            <Typography variant="h5" sx={{fontWeight: "600"}}>Est: $3,287,567</Typography>
+          <Typography variant="h5" sx={{ fontWeight: "600" }}>
+            Est: $8,200
+          </Typography>
         </div>
       </div>
 
@@ -54,32 +70,32 @@ export default function OfferBig() {
           <div className={styles.rating}>
             <Typography variant="h5" sx={{ fontWeight: "600" }}>
               Rating
-              <div style={{ display: "inline-block", width: "20px" }}></div>
+              <div style={{ display: "inline-block", width: "40px" }}></div>
               <span
                 className="fa fa-star"
-                style={{ color: "#14B49C", width: "30px" }}
+                style={{ color: "#14B49C", width: "45px" }}
               ></span>
               <span
                 className="fa fa-star"
-                style={{ color: "#14B49C", width: "30px" }}
+                style={{ color: "#14B49C", width: "45px" }}
               ></span>
               <span
                 className="fa fa-star"
-                style={{ color: "#14B49C", width: "30px" }}
+                style={{ color: "#14B49C", width: "45px" }}
               ></span>
               <span
                 className="fa fa-star"
-                style={{ color: "#14B49C", width: "30px" }}
+                style={{ color: "#14B49C", width: "45px" }}
               ></span>
               <span className="fa fa-star"></span>
             </Typography>
             <div className={styles.tags}>
-              <RatingTag text="Professionalism" />
-              <RatingTag text="Communication" />
-              <RatingTag text="Expertise" />
-              <RatingTag text="Negotiation" />
-              <RatingTag text="Market Knowledge" />
-              <RatingTag text="Responsiveness" />
+              <RatingTag text="Good Neighborhood" svg={svgs[0]}/>
+              <RatingTag text="Priced to sell" svg={svgs[1]}/>
+              <RatingTag text="Portfolio match" svg={svgs[2]}/>
+              <RatingTag text="Excellent schools" svg={svgs[2]}/>
+              <RatingTag text="Example tag" svg={svgs[2]}/>
+              <RatingTag text="Example tag" svg={svgs[2]}/>
             </div>
           </div>
           <div className={styles.summary}>
