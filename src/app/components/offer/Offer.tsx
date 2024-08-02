@@ -6,12 +6,12 @@ import { TextField } from "@mui/material";
 import styles from "./Offer.module.css";
 import { Skeleton } from "@mui/material";
 
-export default function Offer({ home, onSubmit, onClick }: { home: HomeType, onSubmit?: () => void, onClick?: (e: React.MouseEvent<HTMLDivElement>) => void }) {
+export default function Offer({ home, onSubmit, onClick }: { home: HomeType, onSubmit?: (number) => void, onClick?: (e: React.MouseEvent<HTMLDivElement>) => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
 
   function handleClick(){   
-    onSubmit();
+    onSubmit(home._id);
   }
 
   return (

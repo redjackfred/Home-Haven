@@ -13,7 +13,7 @@ export default function OfferBig({
   onClick,
 }: {
   home: HomeType;
-  onSubmit?: () => void;
+  onSubmit?: (number) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   const [showPopup, setShowPopup] = useState(false);

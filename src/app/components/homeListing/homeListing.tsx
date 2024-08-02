@@ -54,9 +54,9 @@ export default function HomeListing({
   const [submitHomeIDs, setSubmitHomeIDs] = useState([]);
   const [ID, setID] = useState(null);
 
-  function handleSubmit(){
-    if(!submitHomeIDs.includes(filteredHomesByFilter[0]._id)){
-      setSubmitHomeIDs([...submitHomeIDs, filteredHomesByFilter[0]._id]);
+  function handleSubmit(_id){
+    if(!submitHomeIDs.includes(_id)){
+      setSubmitHomeIDs([...submitHomeIDs, _id]);
     }
     setIsPopupOpen(!isPopupOpen);
   }
@@ -208,7 +208,7 @@ export default function HomeListing({
             key={home._id}
             zipCode={home.zip_code}
             city={home.city}
-            recommended={index <= 0 && true}          
+            recommended={index <= 2 && true}          
             isSubmit={submitHomeIDs.includes(home._id)}
             onClick={() => handleAssetCardClick(home._id)}            
           />
