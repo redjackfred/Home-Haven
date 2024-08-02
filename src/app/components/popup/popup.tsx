@@ -7,6 +7,7 @@ import { HomeType } from '@/app/utils/data';
 type PopupProps = {
   togglePopup: () => void;
   homeInfo: HomeType;
+  onSubmit?: () => void;
 }
 
 
@@ -25,14 +26,14 @@ const Overlay = styled.div`
 
 const PopupCard = styled.div`
   background: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 0px;
+  border-radius: 24px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 
 
-export const Popup = ({togglePopup, homeInfo} :PopupProps) => {
+export const Popup = ({togglePopup, homeInfo, onSubmit} :PopupProps) => {
     const popupRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -50,7 +51,7 @@ export const Popup = ({togglePopup, homeInfo} :PopupProps) => {
     return(
         <Overlay>
         <PopupCard ref={popupRef}>
-            <Offer home={homeInfo}></Offer>
+            <Offer home={homeInfo} onSubmit={onSubmit}></Offer>
         </PopupCard>
       </Overlay>
     )

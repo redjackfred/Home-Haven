@@ -4,19 +4,19 @@ import AssetCard from "../assetCard/assetCard";
 import { HomeType } from "@/app/utils/data";
 import { TextField } from "@mui/material";
 import styles from "./Offer.module.css";
+import { Skeleton } from "@mui/material";
 
-export default function Offer({ home }: { home: HomeType }) {
+export default function Offer({ home, onSubmit, onClick }: { home: HomeType, onSubmit?: (number) => void, onClick?: (e: React.MouseEvent<HTMLDivElement>) => void }) {
   const [offerPrice, setOfferPrice] = useState(0);
   const [message, setMessage] = useState("");
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
+  function handleClick(){   
+    onSubmit(home._id);
+  }
 
   return (
-    <div className={styles.container} >
-      {home && (
+    <div className={styles.container} onClick={onClick}>
+      {home ? (       
         <AssetCard
           imgData={home.image_url[0]}
           imgAlt="Placeholder Image"
@@ -28,10 +28,9 @@ export default function Offer({ home }: { home: HomeType }) {
           address={home.address}
           key={home._id}
           zipCode={home.zip_code}
-          city={home.city}
-          togglePopup={togglePopup}
-        />
-      )}
+          city={home.city}         
+        />        
+      ) : <Skeleton variant="rounded" width={345} height={328}/>}
       <div className={styles.offerAmount}>
         <p>offer amount</p>
         <br/>
@@ -71,7 +70,7 @@ export default function Offer({ home }: { home: HomeType }) {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <button className={styles.submitButton}>Submit Offer</button>
+      <button className={styles.submitButton} onClick={handleClick}>Submit Offer</button>
     </div>
   );
 }
