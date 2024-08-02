@@ -1,9 +1,10 @@
-import SidebarHeader from "../components/sidebar/sidebarHeader";
+import OfferBig from "../components/offer/OfferBig";
 
 export default function Buy() {
     return (
         <>
-            <p>Buy Page</p>
+            <h1>Buy Page</h1>
+           <OfferBig />
         </>
     );
 }

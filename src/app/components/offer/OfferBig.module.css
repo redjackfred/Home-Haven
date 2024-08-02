@@ -1,0 +1,149 @@
+.container {
+    display: block;
+    width: 1262px;
+    height: 1440px;   
+    align-items: center;
+    background-color: #effffc;
+    padding: 40px 30px 30px 30px;   
+  }
+
+.pictures{
+    display:grid;
+    width: 100%;
+    height: 530px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    background-color: aquamarine;
+}
+
+.info{
+    display: grid;
+    width: 100%;
+    height: 128px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    margin-top: 32px;
+    margin-bottom: 40px;
+    gap: 16px;
+}
+
+.price{
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;    
+    align-items: center;
+}
+
+.address{
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-items: center;
+}
+
+.details{
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.beds{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.baths{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.sqft{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.detailsTitle{
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;   
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.infoButton{
+    display: block;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #14B49C;
+    border: none;
+    border-radius: 8px;
+    color: white; 
+}
+
+.estimation{
+    display: flex;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #14B49C;
+    color: #14B49C;
+    border-radius: 8px;
+}
+
+
+.agentReport{
+    display: block;
+    width: 100%;  
+    padding: 24px;
+    background-color: #ADADAD40;
+}
+
+.report{
+    display: block;
+    width: 100%;  
+}
+
+.rating{
+    display: block;
+    width: 100%;   
+}
+
+.summary{
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.lists{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-left: 24px;
+    font-size: 20px;
+    margin-top: 16px;
+    line-height: 35px;
+}
+
+.tags{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
