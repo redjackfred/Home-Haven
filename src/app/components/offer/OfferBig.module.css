@@ -94,8 +94,7 @@
 
 .beds{
     grid-column-start: 1;
-    grid-column-end: 2;  
-    color: #000000B2;  
+    grid-column-end: 2;    
 }
 .baths{
     grid-column-start: 2;

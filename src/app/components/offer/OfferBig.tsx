@@ -43,23 +43,27 @@ export default function OfferBig({
       <div className={styles.info}>
         <div className={styles.price}>
           <Typography variant="h3" sx={{ fontWeight: "500" }}>
-            $1,561,000
+            {home.price.toLocaleString('en-US',{
+              style: 'currency',
+              currency: 'USD',
+              maximumFractionDigits: 0,
+            })}
           </Typography>
         </div>
         <div className={styles.address}>
           <Typography variant="h5">
-            22055 White Stone Road, Marysville OH
+            {home.address}, {home.city}, {home.zip_code}
           </Typography>
         </div>
         <div className={styles.details}>
           <div className={styles.beds}>
-            <Typography variant="h4">3</Typography>
+            <Typography variant="h4">{home.bedrooms}</Typography>
           </div>
           <div className={styles.baths}>
-            <Typography variant="h4">2</Typography>
+            <Typography variant="h4">{home.bathrooms}</Typography>
           </div>
           <div className={styles.sqft}>
-            <Typography variant="h4">2,789</Typography>
+            <Typography variant="h4">{home.square_feet}</Typography>
           </div>
         </div>
         <div className={styles.detailsTitle}>
