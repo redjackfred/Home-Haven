@@ -10,6 +10,7 @@ import json2mq from "json2mq";
 import { useSearchParams } from "next/navigation";
 import { Popup } from "../popup/popup";
 import OfferBig from "../offer/OfferBig";
+import Offer from "../offer/Offer";
 
 type listing = {
   imgData: string;
@@ -51,6 +52,7 @@ export default function HomeListing({
   const searchParams = useSearchParams();
   const searchQuery = searchParams && searchParams.get("q");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isOfferOpen, setIsOfferOpen] = useState(false);
   const [submitHomeIDs, setSubmitHomeIDs] = useState([]);
   const [ID, setID] = useState(null);
 
@@ -58,14 +60,9 @@ export default function HomeListing({
     if(!submitHomeIDs.includes(_id)){
       setSubmitHomeIDs([...submitHomeIDs, _id]);
     }
-    setIsPopupOpen(!isPopupOpen);
+    setIsPopupOpen(false);
+    setIsOfferOpen(false);
   }
-
-  function handleAssetCardClick(_id){
-    setID(_id);
-    setIsPopupOpen(!isPopupOpen);
-  }
- 
 
   const getHomes = async () => {
     try {
@@ -195,7 +192,12 @@ export default function HomeListing({
       )}
       <div className={styles.listingCardContainer}>
         {filteredHomesByFilter.map((home, index) => (
-          
+          <div onClick={submitHomeIDs.includes(home._id) ? null :
+            (e)=>{
+            setID(home._id);
+            setIsPopupOpen(!isPopupOpen);
+            e.stopPropagation();
+            }}>
           <AssetCard
             imgData={home.image_url[0]}
             imgAlt="Placeholder Image"
@@ -210,16 +212,24 @@ export default function HomeListing({
             city={home.city}
             recommended={index <= 2 && true}          
             isSubmit={submitHomeIDs.includes(home._id)}
-            onClick={() => handleAssetCardClick(home._id)}            
+            onClick={(e) => {
+              e.stopPropagation();
+              setID(home._id);
+              setIsOfferOpen(!isOfferOpen);
+            }}            
           />
-          
+          </div>
         ))}
         {isPopupOpen && 
         <div className={styles.showOffer} onClick={()=>setIsPopupOpen(false)}>
           <OfferBig home={targetHome} onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}/>
         </div>}
-  
-        {/* {isPopupOpen && <Popup togglePopup={togglePopup} homeInfo={filteredHomesByFilter[0]} onSubmit={handleSubmit}/>} */}
+        {isOfferOpen &&
+        <div className={`${styles.showOffer} ${styles.center}`} onClick={()=>setIsOfferOpen(false)}>          
+          <Offer home={targetHome} onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}/>
+        </div>
+        }
+          
       </div>
     </ListingsContainer>
   );
