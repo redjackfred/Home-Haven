@@ -12,7 +12,7 @@ export default function Sell() {
   const searchParams = useSearchParams();
 
   const searchQuery = searchParams && searchParams.get("q");
-
+  // Function to fetch homes data from API
   const getHomes = async () => {
     try {
       const res = await fetch("/api");
@@ -22,12 +22,12 @@ export default function Sell() {
       console.error(e);
     }
   };
-
+  // Fetch homes data on component mount
   useEffect(() => {
     getHomes();
   }, []);
   
-
+  // Filter homes based on the search query
   const filteredHomes = homes.filter((home) => {
     let isNum = /^\d+$/.test(searchQuery);
 

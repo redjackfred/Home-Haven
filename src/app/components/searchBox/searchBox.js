@@ -11,18 +11,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { WidthFull } from '@mui/icons-material';
 
-export default function SearchBox({displayBorder}) { 
+export default function SearchBox({displayBorder}) {
+  // Media query for screens with a minimum width of 431px
   const matches = useMediaQuery(
     json2mq({        
       minWidth: 431,
     }),
-  );  
+  );
+
+  // Media query for screens with a maximum width of 430px
   const below400 = useMediaQuery(
     json2mq({
       maxWidth:430
     })
   ); 
 
+  // Styled component for input text field
   const InputTxt = styled.div`
     background-color: white;
     width: 439px;
@@ -45,7 +49,7 @@ export default function SearchBox({displayBorder}) {
       }
     }
   `;
-
+  // Styled component for input text field in "Find Homes" form
   const InputTxtFindhomes = styled.form`
     /* display: flex; */
     position: relative;
@@ -55,8 +59,6 @@ export default function SearchBox({displayBorder}) {
     border-radius: 4px;
     z-index: 2;
     padding-left: 0;
-    
-
     & input {
       width: 85%; 
       border: 0px;
@@ -70,11 +72,8 @@ export default function SearchBox({displayBorder}) {
     & img{
       align-items: center;
     }
-
-  
-
   `;
-
+  // Determine which styled component to use based on screen width
   const OutlinedInputComponent = below400? InputTxtFindhomes : InputTxt;
     
   return (        

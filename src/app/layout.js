@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
   return (    
     <html lang="en">
       <Head>
+        {/* Metadata and font links */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"/>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +39,7 @@ export default function RootLayout({ children }) {
         
         <main>
           <div style={{zIndex:1}}>
-            
+          {/* Additional contents or components */}
           </div>
           <div className="mainContainer">
           {/* Main contents for each page*/}          

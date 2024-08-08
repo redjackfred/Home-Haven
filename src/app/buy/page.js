@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import OfferBig from "../components/offer/OfferBig";
 
 export default function Buy() {
+    // State to store homes data
     const [homes, setHomes] = useState([]); 
-
+    // Function to fetch homes data from API
     const getHomes = async () => {
       try {
         const res = await fetch("/api");
@@ -15,7 +16,7 @@ export default function Buy() {
         console.error(e);
       }
     };
-  
+    // Fetch homes data on component mount
     useEffect(() => {
       getHomes();   
     }, []);

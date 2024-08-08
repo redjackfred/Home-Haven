@@ -5,7 +5,9 @@ import AssetCard from "../components/assetCard/assetCard";
 
 function GridExample() {
   return (
+      // Grid container to hold the asset cards
     <Grid container spacing={3}>
+    {/* Grid item with 12 columns on medium screens and 6 columns on extra large screens */}
       <Grid md={12} xl={6}>
          <div style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "minWidth":"350", "flex":"0 0 auto"}}>
             <AssetCard
@@ -20,6 +22,7 @@ function GridExample() {
             />
         </div>
       </Grid>
+      {/* Repeat the Grid item for additional AssetCards */}
       <Grid md={12} xl={6}>
          <div style={{"display":"flex", "justifyContent":"center", "minWidth":"350", "flex":"0 0 auto"}}>
             <AssetCard

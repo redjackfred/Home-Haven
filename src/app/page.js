@@ -11,26 +11,26 @@ import HowCanWeHelp from "./components/TypeCard/HowCanWeHelp";
 import { useState, useEffect } from "react";
 export default function Home() { 
   const [isload, setIsload] = useState(false);
+  // Media query for screens with a maximum width of 450px
   const matches = useMediaQuery(
     json2mq({        
       maxWidth: 450,
     }),    
-  );  
+  );
+  // Media query for screens with a maximum width of 1200px
   const matchesMedium = useMediaQuery(
     json2mq({        
       maxWidth: 1200,
     }),    
-  );  
+  );
 
-  
+  // Set isload to true after 100ms delay to ensure smooth loading
   useEffect(() => {
       setTimeout(()=>{
           setIsload(true);
       }, 100);
-      
   },[]);
 
-  
   return (
     <div>
       {isload ? 
