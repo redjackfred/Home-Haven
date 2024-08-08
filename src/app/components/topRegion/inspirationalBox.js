@@ -7,12 +7,13 @@ import json2mq from 'json2mq';
 import styles from "./InspirationalBox.module.css";
 
 export default function InspirationalBox() {   
-  
+    // Media query to check if the screen width is 1200px or less
     const matches = useMediaQuery(
         json2mq({        
           maxWidth: 1200,
         }),
-      );    
+      );
+    // Media query to check if the screen width is 430px or less
     const matchesSmall = useMediaQuery(
         json2mq({        
           maxWidth: 430,

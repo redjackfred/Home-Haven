@@ -4,7 +4,7 @@ import Offer from "../components/offer/Offer";
 
 export default function Message() {
   const [homes, setHomes] = useState([]);
-
+   // Function to fetch homes data from API
   const getHomes = async () => {
     try {
       const res = await fetch("/api");
@@ -14,7 +14,7 @@ export default function Message() {
       console.error(e);
     }
   };
-
+  // Fetch homes data on component mount
   useEffect(() => {
     getHomes();   
   }, []);

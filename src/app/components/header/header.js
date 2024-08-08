@@ -5,6 +5,7 @@ import styles from "./header.module.css";
 import { Typography } from "@mui/material";
 
 export default function MainHeader() {
+  // Define navigation links
   const links = [
     { href: "/findhomes", label: "Homes" },
     { href: "/agents", label: "Agents" },

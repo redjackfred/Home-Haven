@@ -11,20 +11,20 @@ export default function NewSearchBox() {
   const pathName = usePathname();
   const [inputValue, setInputValue] = useState("");
   const searchInput = useRef(null);
-
+ // Handle input focus
   function handleInputFocus() {
     searchInput.current.classList.add(styles.focus);
   }
-
+  // Handle input blur
   function handleInputUnFocus() {
     searchInput.current.classList.remove(styles.focus);
   }
-
+  // Handle input change
   function handleOnChange(event) {
     const { value } = event.target;
     setInputValue(value);
   }
-
+  // Handle Enter key press
   function handleKeyPress(event) {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -32,7 +32,7 @@ export default function NewSearchBox() {
     }
   }
 
- 
+  // Handle search logic
   function handleSearch() {
     if(inputValue.length > 5){
       let zipCode = -1;
@@ -50,14 +50,14 @@ export default function NewSearchBox() {
     }
     
   }
-
+  // Media query for responsive design
   const matches = useMediaQuery(
     json2mq({
       minWidth: 431,
     })
   );
 
-  
+  // Function for geocoding address (currently not used)
   function codeAddress(address) {
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address: address }, function (results, status) {

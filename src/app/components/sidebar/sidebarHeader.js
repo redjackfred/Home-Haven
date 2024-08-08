@@ -10,13 +10,16 @@ import windowsize from "../getWindowSize/getWindowSize";
 import styled, {css} from 'styled-components';
 
 export default function SidebarHeader({findhomes}) {
+    // State to manage sidebar open/close
     const [isOpen, setIsOpen] = useState(false);
+    // State to manage selected navigation item
     const [isSelect, setIsSelect] = useState(false);
+    // Reference to the menu element
     const menuRef = useRef(null);
+    // Media query to check screen size
     const screensize = useMediaQuery(json2mq({minWidth:1200}));
-
     const [isload, setIsload] = useState(false);
-
+    // Navigation links
     const links = [
         {href: '/findhomes', label:'Homes'},
         { href: '/agents', label: 'Agents' },
@@ -25,6 +28,7 @@ export default function SidebarHeader({findhomes}) {
         { href: '/message', label: 'Message'},
         { href: '/signIn', label: 'My Homes' }
     ];
+    // Get window size
     const{width, height} = windowsize();
     //The css below only take pixel value.
     const widthPx = typeof width === 'number' ? `${width}px` : width;
@@ -38,9 +42,8 @@ export default function SidebarHeader({findhomes}) {
         @media (max-width: 430px) {
             top:0;
         }
-        
     `;
-
+    // Styled component for menu list
     const MenuList = styled.div`
         display: flex;
         flex-direction: column;
@@ -60,8 +63,8 @@ export default function SidebarHeader({findhomes}) {
 
         ${(props) => props.isActive && ActiveStyles}
     `;
-
-const MenuListFindhomes = styled(MenuList)`
+    // Styled component for menu list in findhomes page
+    const MenuListFindhomes = styled(MenuList)`
     left:-33.29px;
 
     @media (max-width: 430px) {
@@ -73,10 +76,11 @@ const MenuListFindhomes = styled(MenuList)`
 
     ${(props) => props.isActive && ActiveStyles}
     `;
-
+    // Toggle menu open/close
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
+    // Toggle selected navigation item
     const selectNav = () => {
         setIsSelect(!isSelect);
     }
@@ -97,13 +101,14 @@ const MenuListFindhomes = styled(MenuList)`
             document.removeEventListener('mousedown', handleClickoutSide);
         }
     }, []);
-
+    // Remove event listener on screen size change
     useEffect(() =>{
         if (screensize) {
             document.removeEventListener('mousedown', closeMenu());
         }
     }, [screensize])
 
+    // Delay component loading
     useEffect(() => {
         setTimeout(()=>{
             setIsload(true);

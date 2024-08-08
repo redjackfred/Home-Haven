@@ -4,7 +4,7 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import { useEffect, useState } from "react";
 
-// export default function ToggleButtons(){
+    // CSS for inactive and active map position button
     const MappositionButtonInactive = css`
         background-color: #EFFFFC;
         border: 1px solid #14B49C;
@@ -34,7 +34,7 @@ import { useEffect, useState } from "react";
         color: white;
         z-index: 2;
     `;
-
+    // CSS for inactive and active list position button
     const ListpositionButtonInactive = css`
         background-color: #EFFFFC;
         border: 1px solid #14B49C;
@@ -66,22 +66,23 @@ import { useEffect, useState } from "react";
     `;
 
 const ToggleButtons = ({OnMapButtonClick, mapStatus}) =>{
-   
+   // State to manage button active status
     const [isMapActive, setIsMapActive] = useState(mapStatus);
     const [isListActive, setIsListActive] = useState(!isMapActive);
     const [isload, setIsload] = useState(false);
-    // console.log("list: "+isListActive)
+     // Toggle button active status
     const handleClick = () =>{
         setIsMapActive(!isMapActive)
         setIsListActive(!isListActive)
     }
     console.log("list: "+isListActive);
     console.log("map: "+isMapActive);
+    // Combine click handler with parent function
     const combinedClick = ()=> {
         OnMapButtonClick();
         handleClick();
     }
-
+     // Styled components for buttons
     const MapButton = styled.button`
         ${isMapActive ? MappositionButtonActive: MappositionButtonInactive}
         @media (min-width: 801px) {
@@ -95,14 +96,12 @@ const ToggleButtons = ({OnMapButtonClick, mapStatus}) =>{
             display: none;
         }
     `;
+    // Delay component loading
     useEffect(() => {
         setTimeout(()=>{
             setIsload(true);
         }, 100);
     },[]);
-    
-    // console.log(`toggle: ${isMapActive}`)
-
     return(
         <div>
         {isload ? 

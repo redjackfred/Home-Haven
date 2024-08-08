@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function TypeCard() {
     const router = useRouter()
-
+    // Handle navigation to specified path
     const handleNav = (path) => {
         router.push(path)
     }
